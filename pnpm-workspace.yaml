@@ -1,5 +1,6 @@
 allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
+  esbuild: false
+  sharp: false
 minimumReleaseAgeExclude:
   - astro@6.4.3
+  - '@astrojs/react@5.0.7'
