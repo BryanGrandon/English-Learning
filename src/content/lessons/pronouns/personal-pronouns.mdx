@@ -6,16 +6,15 @@ topic: pronouns
 order: 1
 ---
 
-import InfoCard from '../../../shared/mdx/InfoCard.astro'
+import LessonBlock from '../../../shared/mdx/lesson-block/LessonBlock.tsx'
+import { MapPin } from 'lucide-react'
 
 # Personal Pronouns
 
-**themes:**
-
-- Subject Pronouns
-- Object Pronouns.
-- Neutral Form.
-- Subject vs Object Pronouns.
+- [Subject Pronouns](#subject-pronouns).
+- [Object Pronouns](#object-pronouns).
+- [Neutral Form](#neutral-form).
+- [Subject vs Object Pronouns](#subject-vs-object-pronouns).
 
 ---
 
@@ -23,11 +22,22 @@ import InfoCard from '../../../shared/mdx/InfoCard.astro'
 
 Subject pronouns are personal pronouns that **perform the action** in a sentence.
 
-<InfoCard title='Important' icon='⚠️'>
+<section className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+
+<LessonBlock variant='position'>
   <ul>
     <li>Before the verb</li>
   </ul>
-</InfoCard>
+</LessonBlock>
+
+<LessonBlock variant='structure'>
+  <ul>
+    <li>
+      <span className='font-semibold text-green-600'>Subject</span> + verb + Complement
+    </li>
+  </ul>
+</LessonBlock>
+</section>
 
 **Position**
 
