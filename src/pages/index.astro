@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { getCollection, render } from 'astro:content'
+import '../styles/mdx.css'
 
 const lessons = await getCollection('lessons')
 
@@ -14,9 +15,7 @@ const { Content } = await render(lesson)
 ---
 
 <Layout>
-  <h1>{lesson.data.title}</h1>
-
-  <article class='p-4'>
+  <article class='p-4 lesson-content flex flex-col gap-4'>
     <Content />
   </article>
 </Layout>
