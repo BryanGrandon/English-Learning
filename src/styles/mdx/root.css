@@ -1,0 +1,28 @@
+:root {
+  --mdx-surface: #ffffff;
+  --mdx-surface-secondary: #f8fafc;
+  --mdx-border: #e2e8f0;
+  --mdx-text-primary: #0f172a;
+  --mdx-text-secondary: #475569;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mdx-surface: transparent;
+    --mdx-surface-secondary: #0000003d;
+    --mdx-border: #374151;
+    --mdx-text-primary: #f8fafc;
+    --mdx-text-secondary: #cbd5e1;
+  }
+}
+
+/* Tailwind */
+
+@theme {
+  --color-mdx-surface: var(--mdx-surface);
+  --color-mdx-surface-secondary: var(--mdx-surface-secondary);
+  --color-mdx-border: var(--mdx-border);
+  --color-mdx-text-primary: var(--mdx-text-primary);
+  --color-mdx-text-secondary: var(--mdx-text-secondary);
+}

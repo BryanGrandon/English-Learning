@@ -1,0 +1,105 @@
+@import './root.css';
+@import '../root.css';
+
+/* ----- Highlight ----- */
+
+.mdx-content em,
+.mdx-content strong,
+.mdx-content em > strong,
+.mdx-content code {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.mdx-content em /* Important Info -> *text* */ {
+  color: var(--color-highlight-primary);
+}
+.mdx-content strong /* Key Concepts -> **text** */ {
+  color: var(--color-highlight-secondary);
+}
+.mdx-content strong > em  /* Notice / Exceptions -> ***text*** */ {
+  color: var(--color-highlight-emphasis);
+}
+
+/* ----- Titles ----- */
+
+.mdx-content h1,
+.mdx-content h2,
+.mdx-content h3 {
+  color: var(--mdx-text-primary);
+  font-family: var(--custom-source);
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 0;
+}
+
+.mdx-content h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.mdx-content h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.mdx-content h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+/* ----- Paragraphs ----- */
+
+.mdx-content p {
+  color: var(--mdx-text-secondary);
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  max-width: 65ch;
+}
+
+/* ----- Tables ----- */
+
+.mdx-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--mdx-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--mdx-surface);
+}
+
+.mdx-content thead {
+  background: var(--mdx-surface-secondary);
+}
+
+.mdx-content th {
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--mdx-text-primary);
+  border-bottom: 1px solid var(--mdx-border);
+  border-left: 1px solid var(--mdx-border);
+}
+
+.mdx-content td {
+  padding: 0.6rem 1rem;
+  color: var(--mdx-text-secondary);
+}
+
+.mdx-content tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--mdx-border);
+}
+
+.mdx-content tbody tr td:not(:first-child) {
+  border-left: 1px solid var(--mdx-border);
+}
+
+/* ----- Lists ----- */
+
+.mdx-content ul {
+  color: var(--mdx-text-secondary);
+  list-style: disc;
+  list-style-position: inside;
+}
+.mdx-content li {
+  margin-bottom: 0.2rem;
+}

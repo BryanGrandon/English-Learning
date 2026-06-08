@@ -3,6 +3,7 @@
 
 @import './root.css';
 @import './base.css';
+@import './mdx/index.css';
 
 @theme {
   /* THEME */

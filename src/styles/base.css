@@ -35,6 +35,7 @@ body {
   color: var(--underlay-dark);
   background-color: var(--underlay-light);
   font-family: var(--main-source);
+  font-size: 16px;
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
