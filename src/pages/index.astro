@@ -4,8 +4,9 @@ import { getCollection, render } from 'astro:content'
 import '../styles/mdx.css'
 
 const lessons = await getCollection('lessons')
-
-const lesson = lessons.find((lesson) => lesson.id === 'pronouns/personal-pronouns')
+const lesson = lessons.find(
+  (lesson) => lesson.id === 'pronouns/personal-pronouns',
+)
 
 if (!lesson) {
   throw new Error('Lesson not found')
@@ -15,7 +16,7 @@ const { Content } = await render(lesson)
 ---
 
 <Layout>
-  <article class='p-4 lesson-content flex flex-col gap-4'>
+  <article class='p-4 lesson-content flex flex-col gap-4 mdx-content'>
     <Content />
   </article>
 </Layout>
