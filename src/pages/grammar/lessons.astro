@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { getCollection, render } from 'astro:content'
+import '../../styles/mdx/index.css'
+
+const lessons = await getCollection('lessons')
+const lesson = lessons.find(
+  (lesson) => lesson.id === 'pronouns/personal-pronouns',
+)
+
+if (!lesson) {
+  throw new Error('Lesson not found')
+}
+
+const { Content } = await render(lesson)
+---
+
+<Layout>
+  <article class='lessons test'>
+    <header style={{ gridArea: 'navbar' }} class='test'>
+      navbar - {lesson.data.topic} - {lesson.data.title}
+    </header>
+    <aside style={{ gridArea: 'aside' }} class='test'>aside</aside>
+    <main style={{ gridArea: 'content' }} class='grid gap-4 mdx-content p-8'>
+      <Content />
+    </main>
+  </article>
+</Layout>
+
+<style>
+  .lessons {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+      'navbar navbar navbar'
+      'content content content'
+      'content content content'
+      'aside aside aside';
+  }
+
+  @media screen and (min-width: 1100px) {
+    .lessons {
+      grid-template-columns: 250px 1fr 1fr;
+      grid-template-areas:
+        'navbar navbar navbar'
+        'aside content content'
+        'aside content content';
+    }
+  }
+</style>

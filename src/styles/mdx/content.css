@@ -28,7 +28,6 @@
 .mdx-content h3 {
   color: var(--mdx-text-primary);
   font-family: var(--custom-source);
-  font-weight: 600;
   letter-spacing: 0.05rem;
   padding: 0.5rem 0;
 }
@@ -40,10 +39,12 @@
 .mdx-content h2 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  margin-top: 2.5rem;
 }
 .mdx-content h3 {
   font-size: 1.5rem;
   line-height: 2rem;
+  margin-top: 1.5rem;
 }
 
 /* ----- Paragraphs ----- */
