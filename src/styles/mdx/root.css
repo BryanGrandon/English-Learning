@@ -9,8 +9,8 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --mdx-surface: transparent;
-    --mdx-surface-secondary: #0000003d;
+    --mdx-surface: #0b1324;
+    --mdx-surface-secondary: #111c34;
     --mdx-border: #374151;
     --mdx-text-primary: #f8fafc;
     --mdx-text-secondary: #cbd5e1;

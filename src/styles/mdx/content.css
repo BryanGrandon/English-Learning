@@ -33,18 +33,19 @@
 }
 
 .mdx-content h1 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   line-height: 2.5rem;
+  font-weight: 700;
 }
 .mdx-content h2 {
-  font-size: 1.875rem;
+  font-size: 1.8rem;
   line-height: 2.25rem;
   margin-top: 2.5rem;
+  font-weight: 600;
 }
 .mdx-content h3 {
   font-size: 1.5rem;
   line-height: 2rem;
-  margin-top: 1.5rem;
 }
 
 /* ----- Paragraphs ----- */
@@ -65,11 +66,12 @@
   border: 1px solid var(--mdx-border);
   border-radius: 0.75rem;
   overflow: hidden;
-  background: var(--mdx-surface);
+  background: var(--mdx-surface-secondary);
+  box-shadow: 3px 3px 2px #141414;
 }
 
 .mdx-content thead {
-  background: var(--mdx-surface-secondary);
+  background: var(--mdx-surface);
 }
 
 .mdx-content th {
