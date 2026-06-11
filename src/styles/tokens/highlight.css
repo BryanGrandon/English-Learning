@@ -1,0 +1,13 @@
+:root {
+  --color-highlight-primary: #2563eb; /* Información importante */
+  --color-highlight-secondary: #7c3aed; /* Conceptos clave */
+  --color-highlight-emphasis: #dc2626; /* Atención / excepciones */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-highlight-primary: #38bdf8;
+    --color-highlight-secondary: #c084fc;
+    --color-highlight-emphasis: #fbbf24;
+  }
+}

@@ -1,0 +1,13 @@
+@import './colors.css';
+@import './fonts.css';
+@import './highlight.css';
+
+@theme {
+  /* Color */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-underlay-dark: var(--underlay-dark);
+  --color-underlay-light: var(--underlay-light);
+  /* Font */
+  --font-basicaline: var(--custom-source);
+}

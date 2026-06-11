@@ -1,4 +1,5 @@
-@import './root.css';
+@import '../tokens/fonts.css';
+@import '../tokens/colors.css';
 
 html {
   scroll-behavior: smooth;
