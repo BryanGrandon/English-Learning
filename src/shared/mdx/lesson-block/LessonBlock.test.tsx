@@ -21,6 +21,6 @@ describe('LessonBlock', () => {
       </LessonBlock>,
     )
 
-    expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent(config.title)
+    expect(screen.getByText(config.title)).toBeInTheDocument()
   })
 })

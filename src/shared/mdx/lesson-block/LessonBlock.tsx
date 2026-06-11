@@ -11,14 +11,14 @@ const LessonBlock = ({ children, variant }: LessonBlockProps) => {
   const Icon = config.icon
   const title = config.title
   return (
-    <section className='rounded-xl border border-mdx-border bg-mdx-surface p-4'>
+    <section className='rounded-xl border border-mdx-border bg-mdx-surface p-4 w-fit max-w-[65ch] mdx-shadow'>
       <section className='flex items-center gap-2'>
         <Icon size={18} color='var(--level-a1)' />
         <p className='font-semibold text-lg text-mdx-text-primary'>{title}</p>
       </section>
 
       <div className='my-3 border-t border-mdx-border'></div>
-      <section className='text-mdx-text-secondary ml-4'>{children}</section>
+      <section className='text-mdx-text-secondary mx-4'>{children}</section>
     </section>
   )
 }
