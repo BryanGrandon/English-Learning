@@ -4,9 +4,7 @@ import { getCollection, render } from 'astro:content'
 import '../../styles/mdx/index.css'
 
 const lessons = await getCollection('lessons')
-const lesson = lessons.find(
-  (lesson) => lesson.id === 'pronouns/personal-pronouns',
-)
+const lesson = lessons.find((lesson) => lesson.id === 'pronouns/possessives')
 
 if (!lesson) {
   throw new Error('Lesson not found')

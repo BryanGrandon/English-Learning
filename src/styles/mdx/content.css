@@ -60,14 +60,14 @@
 /* ----- Tables ----- */
 
 .mdx-content table {
-  width: 100%;
+  width: max-content;
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid var(--mdx-border);
   border-radius: 0.75rem;
   overflow: hidden;
   background: var(--mdx-surface-secondary);
-  box-shadow: 3px 3px 2px #141414;
+  box-shadow: 2px 2px 5px #000000;
 }
 
 .mdx-content thead {
