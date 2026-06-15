@@ -6,8 +6,9 @@ topic: Pronouns
 order: 2
 ---
 
-import LessonBlock from '../../../shared/mdx/lesson-block/LessonBlock.tsx'
-import GrammarPoint from '../../../shared/mdx/grammar-point/GrammarPoint'
+import LessonBlock from '@shared/mdx/lesson-block/LessonBlock.tsx'
+import GrammarPoint from '@shared/mdx/grammar-point/GrammarPoint.tsx'
+import LessonColumns from '@shared/mdx/lesson-columns/LessonColumns.tsx'
 
 # Possessives
 
@@ -17,7 +18,7 @@ Los pronombres posesivos se clasifican en dos tipos según su función en la ora
 
 Los adjetivos posesivos indican _a quién pertenece algo_. Se colocan _antes de un sustantivo_ y no pueden usarse solos.
 
-<section className='flex flex-col gap-4 lg:flex-row'>
+<LessonColumns className='lg:flex-row'>
 
 | Word  | Meaning                | Example                      |
 | ----- | ---------------------- | ---------------------------- |
@@ -30,7 +31,7 @@ Los adjetivos posesivos indican _a quién pertenece algo_. Se colocan _antes de 
 | your  | vuestro/a/os/as        | These are **your** seats.    |
 | their | su / sus (de ellos/as) | These are **their** books.   |
 
-    <div className='flex flex-col gap-4'>
+    <LessonColumns>
         <LessonBlock variant='structure'>
             - Possessive adjective + noun
         </LessonBlock>
@@ -38,15 +39,15 @@ Los adjetivos posesivos indican _a quién pertenece algo_. Se colocan _antes de 
         <LessonBlock variant='important'>
             Possessive adjectives must always be followed by a noun.
         </LessonBlock>
-    </div>
+    </LessonColumns>
 
-</section>
+</LessonColumns>
 
 ## 2. Possessive Pronouns
 
 Los pronombres posesivos sustituyen a un sintagma nominal para evitar repeticiones. A diferencia de los adjetivos posesivos, _no van seguidos de un sustantivo_.
 
-<section className='flex flex-col gap-4 lg:flex-row'>
+<LessonColumns className='lg:flex-row'>
 
 | Word       | Meaning                     | Example                |
 | ---------- | --------------------------- | ---------------------- |
@@ -58,7 +59,7 @@ Los pronombres posesivos sustituyen a un sintagma nominal para evitar repeticion
 | **yours**  | vuestro/a/os/as             | These seats are yours. |
 | **theirs** | suyo/a/os/as (de ellos/as)  | This pencil is theirs. |
 
-    <div className='flex flex-col gap-4'>
+    <LessonColumns>
         <LessonBlock variant='structure'>
             - Subject + verb + possessive pronoun
         </LessonBlock>
@@ -66,9 +67,9 @@ Los pronombres posesivos sustituyen a un sintagma nominal para evitar repeticion
         <LessonBlock variant='important'>
             Los pronombres posesivos sustituyen a un sustantivo y nunca van seguidos de otro sustantivo.
         </LessonBlock>
-    </div>
+    </LessonColumns>
 
-</section>
+</LessonColumns>
 
 ## 3. Possessive Adjectives vs. the Genitive Case
 

@@ -106,3 +106,14 @@
 .mdx-content li {
   margin-bottom: 0.2rem;
 }
+.mdx-content li ul {
+  margin-left: 1rem;
+}
+.mdx-content li:has(h4) {
+  list-style: none;
+}
+.mdx-content li h4 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}

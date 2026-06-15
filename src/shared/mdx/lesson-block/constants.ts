@@ -1,4 +1,4 @@
-import { AlertTriangle, Blocks, BookOpen, CircleX, Lightbulb, MapPin, Sparkles } from 'lucide-react'
+import { AlertTriangle, Blocks, BookOpen, CircleX, Lightbulb, MapPin, Sparkles, NotebookPen } from 'lucide-react'
 
 const LESSON_BLOCK_VARIANTS = {
   position: {
@@ -19,6 +19,11 @@ const LESSON_BLOCK_VARIANTS = {
   example: {
     title: 'Example',
     icon: Lightbulb,
+  },
+
+  note: {
+    title: 'Note',
+    icon: NotebookPen,
   },
 
   important: {

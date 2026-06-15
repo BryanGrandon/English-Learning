@@ -6,7 +6,8 @@ topic: Pronouns
 order: 1
 ---
 
-import LessonBlock from '../../../shared/mdx/lesson-block/LessonBlock.tsx'
+import LessonBlock from '@shared/mdx/lesson-block/LessonBlock.tsx'
+import LessonColumns from '@shared/mdx/lesson-columns/LessonColumns.tsx'
 
 # Personal Pronouns
 
@@ -17,7 +18,7 @@ con el fin de evitar repeticiones. Varían según la persona, el número, el gé
 
 Los pronombres de sujeto son pronombres personales que _realizan la acción_ en una oración.
 
-<section className='flex flex-col gap-4 lg:flex-row'>
+<LessonColumns className='lg:flex-row'>
 
 | Word | Meaning           | Example                     |
 | ---- | ----------------- | --------------------------- |
@@ -30,7 +31,7 @@ Los pronombres de sujeto son pronombres personales que _realizan la acción_ en 
 | you  | vosotros, ustedes | **You** are angry.          |
 | they | ellos, ellas      | **They** are at the cinema. |
 
-    <div className='flex flex-col gap-4'>
+    <LessonColumns>
       <LessonBlock variant='position'>
         - Antes del verbo
       </LessonBlock>
@@ -38,15 +39,15 @@ Los pronombres de sujeto son pronombres personales que _realizan la acción_ en 
       <LessonBlock variant='structure'>
         - *Subject* + verb + Complement
       </LessonBlock>
-    </div>
+    </LessonColumns>
 
-</section>
+</LessonColumns>
 
 ## 2. Object Pronouns
 
 Los pronombres de objeto sustituyen al objeto de una oración, es decir, a la persona o cosa que _recibe la acción_ del verbo.
 
-<section className='flex flex-col gap-4 lg:flex-row'>
+<LessonColumns className='lg:flex-row'>
 
 | Word | Meaning               | Example               |
 | ---- | --------------------- | --------------------- |
@@ -59,7 +60,7 @@ Los pronombres de objeto sustituyen al objeto de una oración, es decir, a la pe
 | you  | a vosotros, a ustedes | I see **you**.        |
 | them | a ellos               | He can help **them**. |
 
-    <div className='flex flex-col gap-4'>
+    <LessonColumns>
       <LessonBlock variant='position'>
           - Vienen después del verbo.
           - Después de preposiciones como: **for**, **to**, **with**, **in**.
@@ -69,9 +70,9 @@ Los pronombres de objeto sustituyen al objeto de una oración, es decir, a la pe
           - _Subject_ + verb + _Object Pronoun_
           - Preposition + _Object Pronoun_
       </LessonBlock>
-    </div>
+    </LessonColumns>
 
-</section>
+</LessonColumns>
 
 ## 3. Neutral Form
 
@@ -83,7 +84,7 @@ En inglés, los pronombres distinguen el género:
 
 La _forma neutra_ se utiliza para referirse a cosas, ideas, situaciones, el tiempo, la hora, la distancia, o cuando se desconoce el género o este no es relevante.
 
-<section className='flex flex-col gap-4 sm:flex-row'>
+<LessonColumns className='sm:flex-row'>
 
 | Use of it | Examples                  |
 | --------- | ------------------------- |
@@ -95,19 +96,14 @@ La _forma neutra_ se utiliza para referirse a cosas, ideas, situaciones, el tiem
   <LessonBlock variant='important'>
 
       - En inglés suele ser necesario un pronombre de sujeto.
-      <div className='ml-4'>
         - ❌ **_Is raining._**
         - ✅ **_It is raining._**
-      </div>
-
       - Usa **it** para cosas en singular y **they** para cosas en plural.
-      <div className='ml-4'>
         - The book is new. **It** is interesting.
         - The books are new. **They** are interesting.
-      </div>
 
   </LessonBlock>
-</section>
+</LessonColumns>
 
 ## 4. Subject vs Object Pronouns
 
@@ -124,7 +120,7 @@ Los pronombres de sujeto y de objeto pueden referirse a la misma persona o cosa,
 
 </LessonBlock>
 
-<section className='flex flex-col gap-4 sm:flex-row'>
+<LessonColumns className='sm:flex-row'>
 
 | Subject | Object |
 | :-----: | :----: |
@@ -140,16 +136,10 @@ Los pronombres de sujeto y de objeto pueden referirse a la misma persona o cosa,
 
 - Utiliza un **_subject pronoun_** antes del verbo.
 - Utiliza un **_object pronoun_** después del verbo o de una preposición.
-
-<p className='py-2'>Ejemplos:</p>
-
-  <div className='ml-4'>
-  
-    - ✅ **He** likes her.
-    - ✅ She spoke to **him**.
-    - ❌ Him likes her.
-
-  </div>
+- #### Ejemplos:
+  - ✅ **He** likes her.
+  - ✅ She spoke to **him**.
+  - ❌ Him likes her.
 
 </LessonBlock>
-</section>
+</LessonColumns>
