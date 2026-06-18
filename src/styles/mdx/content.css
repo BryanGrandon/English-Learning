@@ -40,8 +40,11 @@
 .mdx-content h2 {
   font-size: 1.8rem;
   line-height: 2.25rem;
-  margin-top: 2.5rem;
+  /* margin-top: 2.5rem; */
   font-weight: 600;
+}
+.mdx-content hr ~ h2 {
+  margin-top: 1.5rem;
 }
 .mdx-content h3 {
   font-size: 1.5rem;
@@ -116,4 +119,11 @@
   margin: 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* hr */
+
+.mdx-content hr {
+  color: var(--mdx-border);
+  margin: 0.6rem 0;
 }

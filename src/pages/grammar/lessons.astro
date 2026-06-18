@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content'
 import '../../styles/mdx/index.css'
 
 const lessons = await getCollection('lessons')
-const lesson = lessons.find((lesson) => lesson.id === 'the-articles/the-indefinite-article')
+const lesson = lessons.find((lesson) => lesson.id === 'the-articles/the-definite-article')
 
 if (!lesson) {
   console.log(lesson)
