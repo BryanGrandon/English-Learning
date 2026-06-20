@@ -6,15 +6,17 @@ topic: Pronouns
 order: 3
 ---
 
-import LessonBlock from '@shared/mdx/lesson-block/LessonBlock.tsx'
+import LessonBlock from '@shared/mdx/lesson-block/LessonBlock'
 import GrammarPoint from '@shared/mdx/grammar-point/GrammarPoint.tsx'
-import LessonColumns from '@shared/mdx/lesson-columns/LessonColumns.tsx'
+import LessonColumns from '@shared/mdx/LessonColumns'
 
 # Demonstrative Pronouns
 
 Los pronombres demostrativos se utilizan para indicar o señalar algo, como si estuvieras señalándolo con el dedo.
 
-## 1. Demonstrative Pronouns
+---
+
+## Pronombres demostrativos
 
 Los pronombres demostrativos nos ayudan a señalar a personas, cosas o ideas concretas. Indican si algo está **cerca** o **lejos**, y si es **singular** o **plural**.
 
@@ -25,51 +27,55 @@ Los pronombres demostrativos nos ayudan a señalar a personas, cosas o ideas con
 | these | estos/as              | plural   | near     |
 | those | esos/as / aquellos/as | plural   | far      |
 
-### How They Work
+### Cómo funcionan
 
-<section className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-<GrammarPoint title='Near + Singular → **this**' >
-Usa **this** para algo que tengas a mano.
+<LessonColumns className='lg:grid-cols-2'>  
+  <LessonBlock title='Near + Singular → "this"' type='topic' icon='position'>
+    Usa **this** para algo que tengas a mano.
 
-- This car is new. (Este coche es nuevo.)
+    - This car is new. (Este coche es nuevo.)
 
-</GrammarPoint>
+  </LessonBlock>
 
-<GrammarPoint title='Far + Singular → **that**' >
-Usa **that** para referirte a algo que está lejos de ti.
+  <LessonBlock title='Far + Singular → "that"' type='topic' icon='position'>
+    Usa **that** para referirte a algo que está lejos de ti.
 
-- That car is new. (Ese coche es nuevo.)
+    - That car is new. (Ese coche es nuevo.)
 
-</GrammarPoint>
+  </LessonBlock>
 
-<GrammarPoint title='Near + Plural → **these**' >
-Usa **these** para varias cosas que tengas a mano.
+  <LessonBlock title='Near + Plural → "these"' type='topic' icon='position'>
+    Usa **these** para varias cosas que tengas a mano.
 
-- These cars are new. (Estos coches son nuevos.)
+    - These cars are new. (Estos coches son nuevos.)
 
-</GrammarPoint>
+  </LessonBlock>
+  
+  <LessonBlock title='Far + Plural → "those"' type='topic' icon='position'>
+    Usa **those** para referirte a varias cosas que están lejos de ti.
 
-<GrammarPoint title='Far + Plural → **those**' >
-Usa **those** para referirte a varias cosas que están lejos de ti.
+    - Those cars are new. (Aquellos coches son nuevos.)
 
-- Those cars are new. (Aquellos coches son nuevos.)
+  </LessonBlock>
+</LessonColumns>
 
-</GrammarPoint>
+---
 
-</section>
-
-## 2. Use Demonstrative Pronouns with or without a noun
+## Utiliza los pronombres demostrativos con o sin sustantivo
 
 Los pronombres demostrativos (**this, that, these, those**) pueden desempeñar dos funciones:
 
-### With a Noun (Determiner Use)
+### Con un sustantivo (uso como determinante)
 
 En este caso, actúan como _determinantes demostrativos_ porque van _antes de un sustantivo_ y lo modifican.
 
-<LessonColumns className='sm:flex-row'>
-  <LessonBlock variant='structure'>Demonstrative + noun</LessonBlock>
+<LessonColumns className='lg:grid-cols-3'>
+  <LessonBlock icon='structure' title='Structure' > 
+    > Demonstrative + noun
+
+  </LessonBlock>
   
-  <LessonBlock variant='example'>
+  <LessonBlock icon='example' title="Example" className='sm:col-span-2' >
     
   - **This car** is new. → Este coche es nuevo.
   - **Those shoes** are expensive. → Esos zapatos son caros.
@@ -77,14 +83,19 @@ En este caso, actúan como _determinantes demostrativos_ porque van _antes de un
   </LessonBlock>
 </LessonColumns>
 
-### Without a Noun (Pronoun Use)
+---
+
+### Sin sustantivo (uso del pronombre)
 
 En este caso, actúan como _pronombres demostrativos_ porque sustituyen al sustantivo.
 
-<LessonColumns className='sm:flex-row'>
-  <LessonBlock variant='structure'>Demonstrative + verb</LessonBlock>
+<LessonColumns className='lg:grid-cols-3'>
+  <LessonBlock icon='structure' title='Structure'>
+    > Demonstrative + verb
 
-  <LessonBlock variant='example'>
+  </LessonBlock>
+
+  <LessonBlock icon='example' title='Example' className='sm:col-span-2'>
 
     - **This** is a good book. → Este es un buen libro.
     - What is that? → Que es eso?
@@ -92,40 +103,45 @@ En este caso, actúan como _pronombres demostrativos_ porque sustituyen al susta
   </LessonBlock>
 </LessonColumns>
 
-## 3. Other Common Uses of Demonstratives
+---
 
-<section className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-<GrammarPoint title='Introducing yourself on the phone' >
-Usa **this** para decir quién eres.
+## Otros usos habituales de los demostrativos
 
-- Hello, **this is** Alicia.
-  - ❌ Don’t say: _I am Alicia_
+<LessonColumns className='sm:grid-cols-2'>
+  <LessonBlock title='Cómo presentarse por teléfono' icon="phoneIntroduction" type="topic" >
+    Usa **this** para decir quién eres.
 
-</GrammarPoint>
+    <LessonBlock icon="example" title='Example' className='bg-mdx-surface-secondary '>
+        - ✅ Hello, **_this is_** Alicia.
+        - ❌ I am Alicia
+    </LessonBlock>
 
-<GrammarPoint title='Asking who someone is' >
-Usa **that** cuando la persona no esté cerca o no se vea bien.
+  </LessonBlock>
 
-- Peter, **is that you?**
-  - 📌 Used when there is distance or uncertainty.
+  <LessonBlock title='Preguntar quién es alguien' icon='question' type='topic'>
+    Usa **that** cuando la persona no esté cerca o no se vea bien.
 
-</GrammarPoint>
+    <LessonBlock icon='example' title='Example' className='bg-mdx-surface-secondary'>
+      - Peter, **_is that you?_**
+    </LessonBlock>
 
-<GrammarPoint title='Introducing people' >
-Usa **this** para presentar a alguien que esté a tu lado.
+  </LessonBlock>
 
-- Lucy, **this is** my friend Jill.
-  - 📌 The person is next to you.
+  <LessonBlock title='Presentar a la gente' icon='people' type='topic'>
 
-</GrammarPoint>
+    Usa **this** para presentar a alguien que esté a tu lado.
+    <LessonBlock icon='example' title='Example' className='bg-mdx-surface-secondary'>
+      - Lucy, **_this is_** my friend Jill.
+    </LessonBlock>
 
-<GrammarPoint title='Talking about the past' >
-Usa **that** para referirte a algo que ya ha terminado o que ocurrió hace tiempo.
+  </LessonBlock>
 
-- **That** pizza was delicious. 📌 It can refer to:
-  - Something you just experienced
-  - Something further in the past
+  <LessonBlock title='Hablar del pasado' icon="reference" type="topic" >
+    Usa **that** para referirte a algo que ya ha terminado o que ocurrió hace tiempo.
 
-</GrammarPoint>
+    <LessonBlock icon="example" title='Example' className='bg-mdx-surface-secondary'>
+        - **That** pizza was delicious.
+    </LessonBlock>
 
-</section>
+  </LessonBlock>
+</LessonColumns>
