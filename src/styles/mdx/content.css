@@ -27,8 +27,8 @@
 .mdx-content h2,
 .mdx-content h3 {
   color: var(--mdx-text-primary);
-  font-family: var(--custom-source);
   letter-spacing: 0.05rem;
+  font-family: var(--font-raleway);
   padding: 0.5rem 0;
 }
 
@@ -40,7 +40,6 @@
 .mdx-content h2 {
   font-size: 1.8rem;
   line-height: 2.25rem;
-  /* margin-top: 2.5rem; */
   font-weight: 600;
 }
 .mdx-content hr ~ h2 {
@@ -71,6 +70,10 @@
   overflow: hidden;
   background: var(--mdx-surface-secondary);
   box-shadow: 2px 2px 5px #000000;
+}
+
+.mdx-content section > table {
+  width: auto;
 }
 
 .mdx-content thead {

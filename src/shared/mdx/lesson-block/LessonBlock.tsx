@@ -1,26 +1,71 @@
-import { LESSON_BLOCK_VARIANTS } from './constants'
-import type { LessonBlockVariant } from './constants'
+import { type IconVariations } from '@shared/components/icons/icon-variation'
+import Icons from '@shared/components/icons/Icons'
+import './lesson-block.css'
 
-type LessonBlockProps = {
+type TypeCard = 'section' | 'topic' | 'card' | 'remember'
+
+type Props = {
+  icon: IconVariations
   children: React.ReactNode
-  variant: LessonBlockVariant
+  title: string
+  type?: TypeCard
+  background?: string
+  className?: string
 }
 
-const LessonBlock = ({ children, variant }: LessonBlockProps) => {
-  const config = LESSON_BLOCK_VARIANTS[variant]
-  const Icon = config.icon
-  const title = config.title
+const LessonCard = ({ title, icon, children, background = '', type = 'card', className = '' }: Props) => {
+  const HEX_COLOR_REGEX = /^#(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/
+  const isHex = (color: string) => HEX_COLOR_REGEX.test(color)
+
+  const hasBackground = isHex(background)
+  const customStyle = {
+    borderColor: hasBackground ? background : undefined,
+    backgroundColor: hasBackground ? (background.length > 6 ? `${background}25` : `${background}2`) : undefined,
+  }
+
+  const types = {
+    section: {
+      title: <h2>{title}</h2>,
+      icon: <Icons variant={icon} size={20} background={true} />,
+      class: `lesson-card-config-1`,
+    },
+    topic: {
+      title: <h3>{title}</h3>,
+      icon: <Icons variant={icon} size={20} background={true} />,
+      class: `lesson-card-config-1`,
+    },
+    card: {
+      title: <p className='font-semibold text-lg'>{title}</p>,
+      icon: <Icons variant={icon} size={18} />,
+      class: `lesson-card-config-1`,
+    },
+    remember: {
+      title: <p className='font-semibold text-lg'>{title}</p>,
+      icon: <Icons variant={icon} size={40} background={true} />,
+      class: `lesson-card-config-2`,
+    },
+  }
+
+  const config = types[type]
+
   return (
-    <section className='rounded-xl border border-mdx-border bg-mdx-surface p-4 w-fit  mdx-shadow'>
-      <section className='flex items-center gap-2'>
-        <Icon size={18} color='var(--level-a1)' />
-        <p className='font-semibold text-lg text-mdx-text-primary'>{title}</p>
+    <section
+      className={`grid ${config.class} items-center p-4 bg-mdx-surface border border-mdx-border rounded-xl mdx-shadow  ${className}`}
+      style={customStyle}
+    >
+      <section className='grid items-center justify-center p-2' style={{ gridArea: 'icon' }}>
+        {config.icon}
       </section>
 
-      <div className='my-3 border-t border-mdx-border'></div>
-      <section className='text-mdx-text-secondary mx-4'>{children}</section>
+      <section style={{ gridArea: 'title' }} className={`px-2 ${type == 'card' ? 'border-b border-inherit pb-2' : ''}`}>
+        {config.title}
+      </section>
+
+      <section className='grid gap-3 justify-start items-start w-full h-full pt-3' style={{ gridArea: 'content' }}>
+        {children}
+      </section>
     </section>
   )
 }
 
-export default LessonBlock
+export default LessonCard

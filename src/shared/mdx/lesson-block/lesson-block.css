@@ -1,0 +1,21 @@
+.lesson-card-config-1 {
+  grid-template-columns: 2.5rem 2fr;
+  grid-template-areas:
+    'icon title '
+    '. content '
+    '. content ';
+}
+
+.lesson-card-config-2 {
+  grid-template-columns: 4rem 1fr 1fr;
+  grid-template-areas:
+    'icon title title'
+    'icon content content';
+}
+
+.lesson-card-config-1 > section > blockquote {
+  display: block;
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  background: #06b6d440;
+}

@@ -4,5 +4,5 @@ type LessonColumnsProps = {
 }
 
 export default function LessonColumns({ className = '', children }: LessonColumnsProps) {
-  return <section className={`flex flex-col gap-4 ${className}`}>{children}</section>
+  return <section className={`grid grid-cols-1 gap-4 ${className}`}>{children}</section>
 }
