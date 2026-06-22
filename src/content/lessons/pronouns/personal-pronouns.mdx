@@ -6,19 +6,30 @@ topic: Pronouns
 order: 1
 ---
 
-import LessonBlock from '@shared/mdx/lesson-block/LessonBlock.tsx'
-import LessonColumns from '@shared/mdx/lesson-columns/LessonColumns.tsx'
+import LessonBlock from '@shared/mdx/lesson-block/LessonBlock'
+import LessonColumns from '@shared/mdx/LessonColumns'
 
-# Personal Pronouns
+# Pronombres personales
 
 Los pronombres personales son palabras breves que se utilizan para sustituir a los sustantivos que se refieren a personas, lugares o cosas,
 con el fin de evitar repeticiones. Varían según la persona, el número, el género y el caso gramatical (sujeto u objeto).
 
-## 1. Subject Pronouns
+---
+
+## Pronombres de sujeto
 
 Los pronombres de sujeto son pronombres personales que _realizan la acción_ en una oración.
 
-<LessonColumns className='lg:flex-row'>
+<LessonColumns className='sm:grid-cols-1 lg:grid-cols-4 test'>
+  <LessonBlock icon="position" title="Position">
+    - Antes del verbo
+  </LessonBlock>
+
+  <LessonBlock icon='structure' title='Structure' className='sm:col-span-2 lg:col-span-2'>
+    > *Subject* + verb + Complement
+
+  </LessonBlock>
+</LessonColumns>
 
 | Word | Meaning           | Example                     |
 | ---- | ----------------- | --------------------------- |
@@ -31,23 +42,25 @@ Los pronombres de sujeto son pronombres personales que _realizan la acción_ en 
 | you  | vosotros, ustedes | **You** are angry.          |
 | they | ellos, ellas      | **They** are at the cinema. |
 
-    <LessonColumns>
-      <LessonBlock variant='position'>
-        - Antes del verbo
-      </LessonBlock>
+---
 
-      <LessonBlock variant='structure'>
-        - *Subject* + verb + Complement
-      </LessonBlock>
-    </LessonColumns>
-
-</LessonColumns>
-
-## 2. Object Pronouns
+## Object Pronouns
 
 Los pronombres de objeto sustituyen al objeto de una oración, es decir, a la persona o cosa que _recibe la acción_ del verbo.
 
-<LessonColumns className='lg:flex-row'>
+<LessonColumns className='sm:grid-cols-2'>
+  <LessonBlock icon='position' title='position'>
+      - Vienen después del verbo.
+      - Después de preposiciones como: **for**, **to**, **with**, **in**.
+  </LessonBlock>
+
+  <LessonBlock icon='structure' title='Structure'>
+      > _Subject_ + verb + _Object Pronoun_
+
+      > Preposition + _Object Pronoun_
+
+  </LessonBlock>
+</LessonColumns>
 
 | Word | Meaning               | Example               |
 | ---- | --------------------- | --------------------- |
@@ -60,21 +73,9 @@ Los pronombres de objeto sustituyen al objeto de una oración, es decir, a la pe
 | you  | a vosotros, a ustedes | I see **you**.        |
 | them | a ellos               | He can help **them**. |
 
-    <LessonColumns>
-      <LessonBlock variant='position'>
-          - Vienen después del verbo.
-          - Después de preposiciones como: **for**, **to**, **with**, **in**.
-      </LessonBlock>
+---
 
-      <LessonBlock variant='structure'>
-          - _Subject_ + verb + _Object Pronoun_
-          - Preposition + _Object Pronoun_
-      </LessonBlock>
-    </LessonColumns>
-
-</LessonColumns>
-
-## 3. Neutral Form
+## Neutral Form
 
 En inglés, los pronombres distinguen el género:
 
@@ -84,7 +85,7 @@ En inglés, los pronombres distinguen el género:
 
 La _forma neutra_ se utiliza para referirse a cosas, ideas, situaciones, el tiempo, la hora, la distancia, o cuando se desconoce el género o este no es relevante.
 
-<LessonColumns className='sm:flex-row'>
+<LessonColumns className='sm:grid-cols-3'>
 
 | Use of it | Examples                  |
 | --------- | ------------------------- |
@@ -93,7 +94,7 @@ La _forma neutra_ se utiliza para referirse a cosas, ideas, situaciones, el tiem
 | Distance. | It is far.                |
 | Things.   | Where is it _[the book]_? |
 
-  <LessonBlock variant='important'>
+  <LessonBlock icon='important' title='Important' background='#ff0' className='sm:col-span-2'>
 
       - En inglés suele ser necesario un pronombre de sujeto.
         - ❌ **_Is raining._**
@@ -105,22 +106,24 @@ La _forma neutra_ se utiliza para referirse a cosas, ideas, situaciones, el tiem
   </LessonBlock>
 </LessonColumns>
 
-## 4. Subject vs Object Pronouns
+---
+
+## Subject vs Object Pronouns
 
 Los pronombres de sujeto y de objeto pueden referirse a la misma persona o cosa, pero cumplen funciones diferentes dentro de la oración.
 
 - El _subject pronoun_ realiza la acción.
 - El _object pronoun_ recibe la acción.
 
-<LessonBlock variant='example'>
+<LessonBlock icon='example' title='Example' className='w-fit pr-10'>
 
 - **She** called **me**.
-- **She** → subject pronoun (realiza la acción)
-- **Me** → object pronoun (recibe la acción)
+  - **She** → subject pronoun (realiza la acción)
+  - **Me** → object pronoun (recibe la acción)
 
 </LessonBlock>
 
-<LessonColumns className='sm:flex-row'>
+<LessonColumns className='sm:grid-cols-4'>
 
 | Subject | Object |
 | :-----: | :----: |
@@ -132,14 +135,14 @@ Los pronombres de sujeto y de objeto pueden referirse a la misma persona o cosa,
 |   we    |   us   |
 |  they   |  them  |
 
-<LessonBlock variant='important'>
+<LessonBlock icon='important' title='Important' className='col-span-3'>
+  - Utiliza un **_subject pronoun_** antes del verbo.
+  - Utiliza un **_object pronoun_** después del verbo o de una preposición.
 
-- Utiliza un **_subject pronoun_** antes del verbo.
-- Utiliza un **_object pronoun_** después del verbo o de una preposición.
-- #### Ejemplos:
-  - ✅ **He** likes her.
-  - ✅ She spoke to **him**.
-  - ❌ Him likes her.
-
+  <LessonBlock icon="example" title='Example' className='bg-mdx-surface-secondary'>
+    - ✅ **He** likes her.
+    - ✅ She spoke to **him**.
+    - ❌ Him likes her.
+  </LessonBlock>
 </LessonBlock>
 </LessonColumns>

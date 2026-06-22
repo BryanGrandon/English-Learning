@@ -6,9 +6,8 @@ topic: Pronouns
 order: 2
 ---
 
-import LessonBlock from '@shared/mdx/lesson-block/LessonBlock.tsx'
-import GrammarPoint from '@shared/mdx/grammar-point/GrammarPoint.tsx'
-import LessonColumns from '@shared/mdx/lesson-columns/LessonColumns.tsx'
+import LessonBlock from '@shared/mdx/lesson-block/LessonBlock'
+import LessonColumns from '@shared/mdx/LessonColumns'
 
 # Possessives
 
@@ -17,8 +16,6 @@ Los pronombres posesivos se clasifican en dos tipos según su función en la ora
 ## 1. Possessive Adjectives
 
 Los adjetivos posesivos indican _a quién pertenece algo_. Se colocan _antes de un sustantivo_ y no pueden usarse solos.
-
-<LessonColumns className='lg:flex-row'>
 
 | Word  | Meaning                | Example                      |
 | ----- | ---------------------- | ---------------------------- |
@@ -31,23 +28,20 @@ Los adjetivos posesivos indican _a quién pertenece algo_. Se colocan _antes de 
 | your  | vuestro/a/os/as        | These are **your** seats.    |
 | their | su / sus (de ellos/as) | These are **their** books.   |
 
-    <LessonColumns>
-        <LessonBlock variant='structure'>
-            - Possessive adjective + noun
-        </LessonBlock>
+<LessonColumns className='sm:grid-cols-2'>
+    <LessonBlock icon='structure' title='Structure'>
+        - Possessive adjective + noun
+    </LessonBlock>
 
-        <LessonBlock variant='important'>
-            Possessive adjectives must always be followed by a noun.
-        </LessonBlock>
-    </LessonColumns>
+    <LessonBlock icon="important" title='important'>
+        Possessive adjectives must always be followed by a noun.
+    </LessonBlock>
 
 </LessonColumns>
 
 ## 2. Possessive Pronouns
 
 Los pronombres posesivos sustituyen a un sintagma nominal para evitar repeticiones. A diferencia de los adjetivos posesivos, _no van seguidos de un sustantivo_.
-
-<LessonColumns className='lg:flex-row'>
 
 | Word       | Meaning                     | Example                |
 | ---------- | --------------------------- | ---------------------- |
@@ -60,22 +54,20 @@ Los pronombres posesivos sustituyen a un sintagma nominal para evitar repeticion
 | **theirs** | suyo/a/os/as (de ellos/as)  | This pencil is theirs. |
 
     <LessonColumns>
-        <LessonBlock variant='structure'>
+        <LessonBlock title='Structure' icon="structure">
             - Subject + verb + possessive pronoun
         </LessonBlock>
 
-        <LessonBlock variant='important'>
+        <LessonBlock icon='important' title='Important'>
             Los pronombres posesivos sustituyen a un sustantivo y nunca van seguidos de otro sustantivo.
         </LessonBlock>
     </LessonColumns>
-
-</LessonColumns>
 
 ## 3. Possessive Adjectives vs. the Genitive Case
 
 Tanto los adjetivos posesivos como el caso genitivo (**'s**) expresan posesión, pero se utilizan de forma diferente.
 
-<LessonBlock variant='example'>
+<LessonBlock icon='example' title='Example'>
 
 - Her dress. → (Su vestido - de ella)
 - Andrea's dress. → (El vestido de Andrea)
@@ -118,19 +110,19 @@ Utiliza el _genitive case_ (**'s**) cuando el propietario sea una persona o un s
 - John's car
 - Sarah's teacher
 
-<LessonBlock variant='important'>
+<LessonBlock icon='important' title='Important'>
   Ambas formas indican posesión. La diferencia radica en si el propietario se expresa mediante un pronombre (**my, your,
   his, her, our, their**) o mediante un sustantivo (**Andrea, John, Sarah**).
 </LessonBlock>
 
 ## 4. Grammatical Rules
 
-<section className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+<LessonColumns className='lg:grid-cols-2'>
 
-<GrammarPoint title='1. Use the Genitive (’s) with People'>
+<LessonBlock title='1. Use the Genitive (’s) with People' icon="concept" type="topic" >
     Normalmente utilizamos **'s** para indicar posesión cuando el propietario es una **persona**.
     
-    <LessonBlock variant='example'>
+    <LessonBlock icon='example' title='Example'>
         - Paul's house.
         - Mary's bike.
         - John's car.
@@ -139,12 +131,12 @@ Utiliza el _genitive case_ (**'s**) cuando el propietario sea una persona o un s
 
     Primero va el posesor, seguido de **'s** y del sustantivo poseído.
 
-</GrammarPoint>
+</LessonBlock>
 
-<GrammarPoint title='2. Use **of** with Things and Places'>
+<LessonBlock title='2. Use **of** with Things and Places' icon="concept" type="topic" >
     Cuando nos referimos a **cosas, objetos o lugares**, solemos usar la preposición **of**.
     
-    <LessonBlock variant='example'>
+    <LessonBlock icon='example' title='Example'>
         - The wheel of the bike.
         - The roof of the house.
         - Washington is the capital of the United States.
@@ -152,18 +144,18 @@ Utiliza el _genitive case_ (**'s**) cuando el propietario sea una persona o un s
 
     Esta estructura es más habitual cuando el propietario no es una persona.
 
-</GrammarPoint>
+</LessonBlock>
 
-<GrammarPoint title='3. Omit the Noun When It Is Already Understood' className='lg:col-span-2'>
+<LessonBlock title='3. Omit the Noun When It Is Already Understood' className='lg:col-span-2' icon="concept" type="topic" >
     El sustantivo al que se refiere se puede omitir cuando el contexto lo deja claro.
     
     <section className='flex flex-col gap-4 lg:flex-row'>
-        <LessonBlock variant='example'>
+        <LessonBlock icon='example' title='Example'>
             - Question: Where is your sister?
             - Answer: She is at my parents'. _(my parents' house)_
         </LessonBlock>
 
-        <LessonBlock variant='example'>
+        <LessonBlock icon='example' title='Example'>
             - Question: Whose house is this?
             - Answer: It is Michael's. _(Michael's house)_
         </LessonBlock>
@@ -171,13 +163,13 @@ Utiliza el _genitive case_ (**'s**) cuando el propietario sea una persona o un s
 
     Se omite el sustantivo porque el oyente ya lo da por supuesto.
 
-</GrammarPoint>
+</LessonBlock>
 
-<GrammarPoint title='4. Plural Possessors' className='lg:col-span-2'>
+<LessonBlock title='4. Plural Possessors' className='lg:col-span-2' icon="concept" type="topic" >
     Cuando un sustantivo en plural ya termine en **-s**, solo hay que añadir un apóstrofo (**'**) después de la **s**.
     
     <section className='flex flex-col gap-4 lg:flex-row'>
-        <LessonBlock variant='example'>
+        <LessonBlock icon='example' title='Example'>
             - The girls' toys.
             - The students' exams.
             - The teachers' room.
@@ -193,6 +185,6 @@ Utiliza el _genitive case_ (**'s**) cuando el propietario sea una persona o un s
 
     Los sustantivos en singular terminan en **'s**, mientras que los sustantivos en plural que terminan en **-s** terminan en **'**.
 
-</GrammarPoint>
+</LessonBlock>
 
-</section>
+</LessonColumns>
