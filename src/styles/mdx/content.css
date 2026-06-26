@@ -73,7 +73,7 @@
 }
 
 .mdx-content section > table {
-  width: auto;
+  width: 100%;
 }
 
 .mdx-content thead {
@@ -129,4 +129,22 @@
 .mdx-content hr {
   color: var(--mdx-border);
   margin: 0.6rem 0;
+}
+
+/* ----- Lesson Block ----- */
+
+.mdx-content .lesson-block > section > blockquote {
+  display: block;
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  background: #06b6d440;
+}
+
+.mdx-content .lesson-block > section > ul {
+  list-style: circle;
+  list-style-position: inside;
+}
+
+.mdx-content .lesson-block > section > ul > li {
+  padding: 0.1rem 0.5rem;
 }
