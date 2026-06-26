@@ -1,70 +1,62 @@
 import { type IconVariations } from '@shared/components/icons/icon-variation'
+import { LESSON_BLOCK_VARIANTS } from './lesson-block-variants'
+import { isHex } from '@shared/utilities/color/isHex'
 import Icons from '@shared/components/icons/Icons'
-import './lesson-block.css'
 
-type TypeCard = 'section' | 'topic' | 'card' | 'remember'
+type HeadingLevel = 'h2' | 'h3' | 'p'
+type ContainerVariant = 'aside' | 'section' | 'article' | 'blockquote' | 'div'
+type Variant = 'default' | 'highlight' // background and size of the Icon
+
+// aside → tips, ayudas, contenido extra
+// section → bloques estructurados (ej: ejemplos)
+// article → contenido independiente completo
+// blockquote → notas destacadas o advertencias
+// div → solo si no encaja en nada (último recurso)
 
 type Props = {
   icon: IconVariations
   children: React.ReactNode
   title: string
-  type?: TypeCard
+  container: ContainerVariant
+  heading: HeadingLevel
+  variant?: Variant
   background?: string
   className?: string
 }
 
-const LessonCard = ({ title, icon, children, background = '', type = 'card', className = '' }: Props) => {
-  const HEX_COLOR_REGEX = /^#(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$/
-  const isHex = (color: string) => HEX_COLOR_REGEX.test(color)
-
+const LessonCard = ({
+  title,
+  icon,
+  children,
+  container,
+  heading,
+  background = '',
+  className = '',
+  variant = 'default',
+}: Props) => {
   const hasBackground = isHex(background)
+
   const customStyle = {
     borderColor: hasBackground ? background : undefined,
     backgroundColor: hasBackground ? (background.length > 6 ? `${background}25` : `${background}2`) : undefined,
   }
 
-  const types = {
-    section: {
-      title: <h2>{title}</h2>,
-      icon: <Icons variant={icon} size={20} background={true} />,
-      class: `lesson-card-config-1`,
-    },
-    topic: {
-      title: <h3>{title}</h3>,
-      icon: <Icons variant={icon} size={20} background={true} />,
-      class: `lesson-card-config-1`,
-    },
-    card: {
-      title: <p className='font-semibold text-lg'>{title}</p>,
-      icon: <Icons variant={icon} size={18} />,
-      class: `lesson-card-config-1`,
-    },
-    remember: {
-      title: <p className='font-semibold text-lg'>{title}</p>,
-      icon: <Icons variant={icon} size={40} background={true} />,
-      class: `lesson-card-config-2`,
-    },
-  }
-
-  const config = types[type]
+  const config = LESSON_BLOCK_VARIANTS[variant]
+  const TagTitle = heading
+  const TagContainer = container
 
   return (
-    <section
-      className={`grid ${config.class} items-center p-4 bg-mdx-surface border border-mdx-border rounded-xl mdx-shadow  ${className}`}
+    <TagContainer
+      className={`lesson-block flex flex-col gap-4 p-4 bg-mdx-surface border border-mdx-border rounded-xl mdx-shadow${className}`}
       style={customStyle}
     >
-      <section className='grid items-center justify-center p-2' style={{ gridArea: 'icon' }}>
-        {config.icon}
-      </section>
+      <header className={`flex gap-4 items-center ${heading === 'p' ? 'border-b border-inherit pb-2' : ''}`}>
+        <Icons variant={icon} size={config.iconSize} background={config.iconBackground} />
+        <TagTitle className={`capitalize w-full ${heading === 'p' ? 'font-semibold text-lg' : ''}`}>{title}</TagTitle>
+      </header>
 
-      <section style={{ gridArea: 'title' }} className={`px-2 ${type == 'card' ? 'border-b border-inherit pb-2' : ''}`}>
-        {config.title}
-      </section>
-
-      <section className='grid gap-3 justify-start items-start w-full h-full pt-3' style={{ gridArea: 'content' }}>
-        {children}
-      </section>
-    </section>
+      <section className='grid gap-4'>{children}</section>
+    </TagContainer>
   )
 }
 
