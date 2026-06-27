@@ -1,21 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { getCollection, render } from 'astro:content'
-
-const lessons = await getCollection('lessons')
-const lesson = lessons.find(
-  (lesson) => lesson.id === 'pronouns/personal-pronouns',
-)
-
-if (!lesson) {
-  throw new Error('Lesson not found')
-}
-
-const { Content } = await render(lesson)
 ---
 
 <Layout>
-  <article class='p-4 lesson-content flex flex-col gap-4 mdx-content'>
-    <Content />
-  </article>
+  <article class='p-4 lesson-content flex flex-col gap-4 mdx-content'>Home</article>
 </Layout>
