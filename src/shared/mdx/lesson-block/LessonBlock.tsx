@@ -47,7 +47,7 @@ const LessonCard = ({
 
   return (
     <TagContainer
-      className={`lesson-block flex flex-col gap-4 p-4 bg-mdx-surface border border-mdx-border rounded-xl mdx-shadow${className}`}
+      className={`lesson-block flex flex-col gap-4 p-4 bg-mdx-surface border border-mdx-border rounded-xl mdx-shadow ${className}`}
       style={customStyle}
     >
       <header className={`flex gap-4 items-center ${heading === 'p' ? 'border-b border-inherit pb-2' : ''}`}>
