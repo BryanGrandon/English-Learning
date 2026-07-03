@@ -1,0 +1,160 @@
+@import './tokens.css';
+@import '../tokens/index.css';
+
+/* ----- Highlight ----- */
+
+.lesson-content em,
+.lesson-content strong,
+.lesson-content em > strong {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lesson-content {
+  em {
+    color: var(--color-highlight-primary);
+  }
+
+  strong {
+    color: var(--color-highlight-secondary);
+  }
+
+  strong > em {
+    color: var(--color-highlight-emphasis);
+  }
+}
+
+/* ----- Titles ----- */
+
+.lesson-content > h1,
+.lesson-content > h2,
+.lesson-content > h3 {
+  color: var(--mdx-text-primary);
+  letter-spacing: 0.05rem;
+  font-family: var(--font-raleway);
+  padding: 0.5rem 0;
+}
+
+.lesson-content {
+  > h1 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+  }
+
+  > h2 {
+    font-size: 1.8rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+  }
+
+  > hr + h2 {
+    margin-top: 1.5rem;
+  }
+
+  > h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+}
+
+/* ----- Paragraphs ----- */
+
+.lesson-content > p {
+  color: var(--mdx-text-secondary);
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  max-width: 65ch;
+}
+
+/* ----- Tables ----- */
+
+.lesson-content {
+  table {
+    width: max-content;
+    min-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+
+    background: var(--lesson-surface-secondary);
+    border: 1px solid var(--lesson-border);
+    border-radius: 1rem;
+
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 0.05),
+      0 8px 24px rgb(0 0 0 / 0.08);
+  }
+
+  thead {
+    background: var(--lesson-surface);
+  }
+
+  th,
+  td {
+    padding: 0.85rem 1.25rem;
+    white-space: nowrap;
+  }
+
+  th {
+    font-weight: 600;
+    color: var(--lesson-text-primary);
+    text-align: left;
+    border-bottom: 1px solid var(--lesson-border);
+  }
+
+  td {
+    color: var(--lesson-text-secondary);
+  }
+
+  tbody tr {
+    transition: background-color 150ms ease;
+  }
+
+  tbody tr:hover {
+    background: rgb(255 255 255 / 0.03);
+  }
+
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid var(--lesson-border);
+  }
+
+  th:not(:first-child),
+  td:not(:first-child) {
+    border-left: 1px solid var(--lesson-border);
+  }
+}
+
+/* ----- Lists ----- */
+
+.lesson-content > ul {
+  color: var(--mdx-text-secondary);
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.lesson-content > li {
+  margin-bottom: 0.2rem;
+
+  ul {
+    margin-left: 1rem;
+  }
+
+  &:has(h4) {
+    list-style: none;
+  }
+
+  h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+/* hr */
+
+.lesson-content hr {
+  color: var(--lesson-border);
+  margin: 0.6rem 0;
+}
