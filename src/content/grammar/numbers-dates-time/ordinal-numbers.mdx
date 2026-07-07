@@ -6,33 +6,31 @@ topic: Number / Dates / Time
 order: 2
 ---
 
-import LessonBlock from '@shared/mdx/lesson-block/LessonBlock'
-import LessonColumns from '@shared/mdx/LessonColumns'
-import GroupVocabularyCard from '@shared/mdx/vocabulary-card/GroupVocabularyCard'
+import LessonGrid from '@shared/lessons/LessonGrid'
 import Grammar from '@shared/lessons/grammar/Grammar'
 import Callout from '@shared/lessons/callout/Callout'
 import Vocabulary from '@shared/lessons/vocabulary/Vocabulary'
-import { BASIC_ORDINAL_WORDS, ORDINAL_NUMBERS_13_20 } from '../../data/number-dates-time/ordinal-numbers'
+import { ORDINAL_NUMBERS } from '../../data/number-dates-time/ordinal-numbers'
 
 # What are Ordinal Numbers?
 
 Ordinal numbers are used to show the _position or order_ of something in a sequence.
 
-<LessonColumns className='sm:grid-cols-2'>
-  <LessonBlock icon='example' title='Examples' container="section" heading="p" >
+<LessonGrid className='sm:grid-cols-2'>
+<Callout type='example'>
 
-    - first, second, third
-    - fourth, fifth
+- first, second, third
+- fourth, fifth
 
-  </LessonBlock>
-  
-  <LessonBlock icon='example' title='Examples Sentence' container="section" heading="p" >
+</Callout>
 
-    - first, second, third
-    - fourth, fifth
+<Callout type='example'>
 
-  </LessonBlock>
-</LessonColumns>
+- first, second, third
+- fourth, fifth
+
+</Callout>
+</LessonGrid>
 
 ---
 
@@ -46,64 +44,25 @@ Cardinal number + **_-th_**
 
 </Grammar>
 
-<Callout type='tip'>Remember to add -th to most cardinal numbers to form ordinal numbers.</Callout>
+<Callout type='example'>
 
-<Vocabulary
-  title='Ordinal Numbers'
-  description='Ordinal numbers indicate position or order in a sequence.'
-  level='A1'
-  words={[
-    {
-      value: 1,
-      word: 'first',
-      pronunciation: '/fɜːst/',
-      badge: 'Irregular',
-    },
-    {
-      value: 2,
-      word: 'second',
-      pronunciation: '/ˈsek.ənd/',
-      badge: 'Irregular',
-    },
-    {
-      value: 3,
-      word: 'third',
-      pronunciation: '/θɜːd/',
-      badge: 'Irregular',
-    },
-    {
-      value: 4,
-      word: 'fourth',
-      pronunciation: '/fɔːrθ/',
-    },
-  ]}
-  tip='Practice saying each word aloud before checking the pronunciation.'
-/>
+- four + **_th_** → _fourth_
+- six + **_th_** → _sixth_
+- ten + **_th_** → _tenth_
 
-<LessonColumns className='sm:grid-cols-2 lg:grid-cols-3'>
-  <LessonBlock title='General Rule' icon='rule' container='aside' heading='p'>
-    - Cardinal number + **_-th_**
-  </LessonBlock>
-  <LessonBlock title='Example' icon='example' container='section' heading='p'>
-  
-      - four → fourth 
-      - six → sixth 
-      - ten → tenth
-
-  </LessonBlock>
-</LessonColumns>
+</Callout>
 
 ### Exceptions (memorize)
 
 The first three ordinal numbers are irregular and must be memorized.
 
-    - one → **first**
-    - two → **second**
-    - three → **third**
+- **first** ( one )
+- **second** ( two )
+- **third** ( three )
 
 ### Spelling Changes
 
-Some numbers change their spelling before adding **-th**.
+Some numbers change their spelling before adding **_-th_**.
 
 | Cardinal | Ordinal |
 | -------- | ------- |
@@ -117,7 +76,7 @@ Some numbers change their spelling before adding **-th**.
 
 Ordinal numbers are used to show the position or order of people or things in a sequence.
 
-<GroupVocabularyCard values={BASIC_ORDINAL_WORDS} />
+<Vocabulary data={ORDINAL_NUMBERS.basic} />
 
 ---
 
@@ -125,7 +84,7 @@ Ordinal numbers are used to show the position or order of people or things in a 
 
 Ordinal numbers from 13th to 20th are formed by adding -th to the cardinal number. Some words have small spelling changes.
 
-<GroupVocabularyCard values={ORDINAL_NUMBERS_13_20} />
+<Vocabulary data={ORDINAL_NUMBERS.advanced} />
 
 ---
 
@@ -133,10 +92,13 @@ Ordinal numbers from 13th to 20th are formed by adding -th to the cardinal numbe
 
 Compound ordinal numbers are formed by combining a multiple of ten with an ordinal number. Only the last word changes to its ordinal form.
 
-<LessonBlock title='General Rule' icon='rule' container='aside' heading='p'>
-  - tens + hyphen (-) + ordinal number
-</LessonBlock>
-<LessonBlock title='Example' icon='example' container='section' heading='p'>
+<Grammar type="rule" title="General Rule" description="Most ordinal numbers are formed by adding -th to the cardinal number.">
+
+tens + hyphen (-) + ordinal number
+
+</Grammar>
+
+<Callout type='example'>
 
 - 21 → twenty-first
 - 32 → thirty-second
@@ -144,7 +106,7 @@ Compound ordinal numbers are formed by combining a multiple of ten with an ordin
 - 58 → fifty-eighth
 - 99 → ninety-ninth
 
-</LessonBlock>
+</Callout>
 
 ### Remember
 
@@ -160,10 +122,13 @@ Only the last number becomes an ordinal.
 
 Ordinal numbers can be written in a short form by adding the last letters of the ordinal word to the number.
 
-<LessonBlock title='General Rule' icon='rule' container='aside' heading='p'>
-  - number + ordinal ending
-</LessonBlock>
-<LessonBlock title='Example' icon='example' container='section' heading='p'>
+<Grammar type="rule" title="General Rule" description="Most ordinal numbers are formed by adding -th to the cardinal number.">
+
+number + ordinal ending
+
+</Grammar>
+
+<Callout type='example'>
 
 - 1st → first
 - 2nd → second
@@ -171,32 +136,35 @@ Ordinal numbers can be written in a short form by adding the last letters of the
 - 4th → fourth
 - 21st → twenty-first
 
-</LessonBlock>
+</Callout>
 
 ### Remember
 
 The ending depends on the last digit of the number.
 
-<LessonColumns className='sm:grid-cols-2 lg:grid-cols-3'>
-  <LessonBlock title='Spelling Rules' icon='rule' container='aside' heading='p'>
-    - 1 → st (except 11th)
-    - 2 → nd (except 12th)
-    - 3 → rd (except 13th)
-    - 4–9, 0 → th
-  </LessonBlock>
-  <LessonBlock title='Example' icon='example' container='section' heading='p'>
-    - 31st
-    - 42nd
-    - 53rd
-    - 64th
-  </LessonBlock>
-  <LessonBlock title='Exceptions' icon='exception' container='aside' heading='p'>    
-    - 11th
-    - 12th
-    - 13th
-  </LessonBlock>
+<Grammar title='Spelling Rules' type='rule'>
 
-</LessonColumns>
+- 1 → st (except 11th)
+- 2 → nd (except 12th)
+- 3 → rd (except 13th)
+- 4–9, 0 → th
+
+</Grammar>
+<Callout type='example'>
+
+- 31st
+- 42nd
+- 53rd
+- 64th
+
+</Callout>
+<Callout type="remember">
+
+- 11th
+- 12th
+- 13th
+
+</Callout>
 
 ---
 

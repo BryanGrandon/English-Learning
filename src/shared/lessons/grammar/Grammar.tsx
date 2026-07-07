@@ -26,7 +26,7 @@ const Grammar = ({ type, title, description, children }: GrammarProps) => {
         </div>
       </header>
       <section className='grid gap-4 grid-cols-[3.25rem_1fr]'>
-        <section className='prose dark:prose-invert max-w-none col-start-2'>{children}</section>
+        <section className='max-w-none col-start-2'>{children}</section>
       </section>
     </section>
   )

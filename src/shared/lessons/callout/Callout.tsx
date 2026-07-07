@@ -21,7 +21,7 @@ const Callout = ({ type, children }: CalloutProps) => {
         <h3 className='font-bold capitalize text-xl'>{type}</h3>
       </header>
       <section className='grid gap-4 grid-cols-[2rem_1fr]'>
-        <section className='prose dark:prose-invert max-w-none col-start-2'>{children}</section>
+        <section className='max-w-none col-start-2'>{children}</section>
       </section>
     </section>
   )

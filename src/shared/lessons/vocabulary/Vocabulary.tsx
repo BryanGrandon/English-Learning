@@ -9,14 +9,16 @@ export type VocabularyWord = {
 }
 
 type VocabularyProps = {
-  title: string
-  description: string
-  level?: string
-  tip?: string
-  words: VocabularyWord[]
+  data: {
+    title: string
+    description: string
+    level?: string
+    words: VocabularyWord[]
+  }
 }
 
-const Vocabulary = ({ title, description, level = 'A1', tip, words }: VocabularyProps) => {
+const Vocabulary = ({ data }: VocabularyProps) => {
+  const { title, description, level = 'A1', words } = data
   const { color, background } = VOCABULARY_CONFIG
   const Icon = VOCABULARY_CONFIG.icon
 

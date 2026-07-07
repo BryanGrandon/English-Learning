@@ -74,17 +74,18 @@
   table {
     width: max-content;
     min-width: 100%;
+
     border-collapse: separate;
     border-spacing: 0;
     overflow: hidden;
 
     background: var(--lesson-surface-secondary);
     border: 1px solid var(--lesson-border);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 
     box-shadow:
-      0 2px 8px rgb(0 0 0 / 0.05),
-      0 8px 24px rgb(0 0 0 / 0.08);
+      0 4px 12px rgb(0 0 0 / 0.12),
+      inset 0 1px 0 rgb(255 255 255 / 0.03);
   }
 
   thead {
@@ -93,27 +94,26 @@
 
   th,
   td {
-    padding: 0.85rem 1.25rem;
+    padding: 1rem 1.5rem;
     white-space: nowrap;
+    font-size: 1rem;
   }
 
   th {
-    font-weight: 600;
     color: var(--lesson-text-primary);
+    font-weight: 600;
     text-align: left;
+    text-transform: uppercase;
+    font-family: var(--font-raleway);
     border-bottom: 1px solid var(--lesson-border);
   }
 
   td {
     color: var(--lesson-text-secondary);
-  }
-
-  tbody tr {
-    transition: background-color 150ms ease;
-  }
-
-  tbody tr:hover {
-    background: rgb(255 255 255 / 0.03);
+    text-transform: capitalize;
+    transition:
+      color 150ms ease,
+      background-color 150ms ease;
   }
 
   tbody tr:not(:last-child) td {
@@ -128,17 +128,21 @@
 
 /* ----- Lists ----- */
 
-.lesson-content > ul {
+.lesson-content ul {
   color: var(--mdx-text-secondary);
   list-style: disc;
   list-style-position: inside;
 }
 
-.lesson-content > li {
+.lesson-content li {
   margin-bottom: 0.2rem;
 
-  ul {
+  > ul {
     margin-left: 1rem;
+  }
+
+  &::first-letter {
+    text-transform: capitalize;
   }
 
   &:has(h4) {

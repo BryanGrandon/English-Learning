@@ -1,20 +1,32 @@
 :root {
-  --lesson-surface: #111827;
-  --lesson-surface-secondary: #1f2937;
-  --lesson-border: #374151;
-  --lesson-text-primary: #f9fafb;
-  --lesson-text-secondary: #d1d5db;
+  /* Backgrounds */
+  --lesson-surface: #f8fafc;
+  --lesson-surface-secondary: #ffffff;
+
+  /* Borders */
+  --lesson-border: #d7dee9;
+
+  /* Text */
+  --lesson-text-primary: #0f172a;
+  --lesson-text-secondary: #475569;
+
   --lesson-hover: #293548;
   --lesson-shadow: 0 2px 8px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --lesson-surface: #111827;
-    --lesson-surface-secondary: #1f2937;
-    --lesson-border: #374151;
-    --lesson-text-primary: #f9fafb;
-    --lesson-text-secondary: #d1d5db;
+    /* Backgrounds */
+    --lesson-surface: #1b2335;
+    --lesson-surface-secondary: #232d40;
+
+    /* Borders */
+    --lesson-border: #3c4a63;
+
+    /* Text */
+    --lesson-text-primary: #f8fafc;
+    --lesson-text-secondary: #cbd5e1;
+
     --lesson-hover: #293548;
     --lesson-shadow: 0 2px 8px rgb(0 0 0 / 0.25), 0 8px 24px rgb(0 0 0 / 0.45);
   }
