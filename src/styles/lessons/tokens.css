@@ -31,3 +31,16 @@
     --lesson-shadow: 0 2px 8px rgb(0 0 0 / 0.25), 0 8px 24px rgb(0 0 0 / 0.45);
   }
 }
+
+@theme {
+  /* Backgrounds */
+  --color-lesson-surface: var(--lesson-surface);
+  --color-lesson-surface-secondary: var(--lesson-surface-secondary);
+
+  /* Borders */
+  --color-lesson-border: var(--lesson-border);
+
+  /* Text */
+  --color-lesson-text-primary: var(--lesson-text-primary);
+  --color-lesson-text-secondary: var(--lesson-text-secondary);
+}
