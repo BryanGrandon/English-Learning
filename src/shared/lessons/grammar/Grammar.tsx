@@ -18,15 +18,15 @@ const Grammar = ({ type, title, description, children }: GrammarProps) => {
           <Icon size={26} color='white' />
         </div>
         <div>
-          <span className='font-bold uppercase text-[10px]' style={{ color: color }}>
+          <span className='font-bold uppercase text-xs' style={{ color: color }}>
             {type}
           </span>
           <h3 className='text-xl font-semibold'>{title}</h3>
           {description && <p className='text-sm dark:text-gray-400 text-gray-700'>{description}</p>}
         </div>
       </header>
-      <section className='grid gap-4 grid-cols-[3.25rem_1fr]'>
-        <section className='max-w-none col-start-2'>{children}</section>
+      <section className='grid gap-4 lg:grid-cols-[3.25rem_1fr]'>
+        <section className='max-w-none lg:col-start-2 grid gap-4 py-1'>{children}</section>
       </section>
     </section>
   )

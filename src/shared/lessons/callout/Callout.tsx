@@ -18,10 +18,10 @@ const Callout = ({ type, children }: CalloutProps) => {
         <div className='flex items-center justify-center size-8  rounded-lg ' style={{ backgroundColor: config.color }}>
           <Icon size={18} color='white' />
         </div>
-        <h3 className='font-bold capitalize text-xl'>{type}</h3>
+        <h3 className='font-bold capitalize text-xl'>{type.split('_').join(' ')}</h3>
       </header>
-      <section className='grid gap-4 grid-cols-[2rem_1fr]'>
-        <section className='max-w-none col-start-2'>{children}</section>
+      <section className='grid gap-4 sm:grid-cols-[2rem_1fr]'>
+        <section className='max-w-none sm:col-start-2'>{children}</section>
       </section>
     </section>
   )

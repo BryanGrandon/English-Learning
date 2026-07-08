@@ -10,14 +10,14 @@ const VocabularyItem = ({ value, word, pronunciation, badge }: VocabularyWord) =
     >
       <section
         style={{ backgroundColor: color }}
-        className='flex size-10 shrink-0 items-center justify-center rounded-lg text-lg font-bold text-white '
+        className='flex size-13 shrink-0 items-center justify-center rounded-lg text-lg font-semibold text-white'
       >
         {value}
       </section>
 
       <section className='min-w-0 flex-1'>
         <div className='flex items-center justify-between gap-2'>
-          <h3 className='text-lg font-semibold capitalize font-raleway '>{word}</h3>
+          <h3 className='text-lg capitalize font-raleway'>{word}</h3>
 
           {badge && (
             <span
