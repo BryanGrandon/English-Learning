@@ -6,99 +6,111 @@ topic: Number / Dates / Time
 order: 1
 ---
 
-import LessonBlock from '@shared/mdx/lesson-block/LessonBlock'
-import LessonColumns from '@shared/mdx/LessonColumns'
-import GroupVocabularyCard from '@shared/mdx/vocabulary-card/GroupVocabularyCard'
-import { BASIC_NUMBERS, BASIC_NUMBERS_TEEN, TENS_NUMBERS } from '../../data/number-dates-time'
+import LessonGrid from '@shared/lessons/LessonGrid'
+import Grammar from '@shared/lessons/grammar/Grammar'
+import Callout from '@shared/lessons/callout/Callout'
+import TopicBlock from '@shared/lessons/topic-block/TopicBlock'
+import Vocabulary from '@shared/lessons/vocabulary/Vocabulary'
+import { CARDINAL_NUMBERS } from '@data/grammar/number-dates-time/cardinal-numbers'
+import { Layers3 } from 'lucide-react'
 
 # Cardinal Numbers
 
-Cardinal numbers are used to _count people and things_ and **express quantity**.
+Cardinal numbers tell us **how many** people or things there are. They are used to count and express quantity.
 
-<LessonColumns className='sm:grid-cols-2 lg:grid-cols-3'>
-<LessonBlock icon='example' title='Examples' container="section" heading="p" >
-  - one.
-  - two.
-  - three.
-  - ten.
-  - twenty.
-  - one hundred.
-</LessonBlock>
+### Common Uses
 
-<LessonBlock title='Used For' icon="usage" container="blockquote" heading="p">
-  - Age.
-  - Dates.
-  - Prices.
-  - Quantities.
-  - Phone numbers.
-
-</LessonBlock>
-
-<LessonBlock title='Example Sentences' icon="example" container="section" heading="p">
-  - I have **three** books.
-  - She is **twenty** years old.
-  - We bought **two** tickets.
-  - The book costs **fifteen** dollars.
-</LessonBlock>
-</LessonColumns>
+- Age.
+- Dates.
+- Prices.
+- Quantities.
+- Phone numbers.
 
 ---
 
-## Basic Numbers (1–12)
+## Basic Cardinal Numbers
 
 These are the first twelve numbers in English. They form the basis for counting, telling time, dates, ages, and larger numbers.
 
-<GroupVocabularyCard values={BASIC_NUMBERS} />
-
-<LessonBlock icon='note' title='Remember' container='aside' heading='p'>
-  Numbers 1–12 are the base for all larger numbers in English.
-</LessonBlock>
+<Vocabulary data={CARDINAL_NUMBERS.basic} />
 
 ---
 
-## Numbers 13–19
+<Callout type='remember'>Numbers 1–12 are the base for all larger numbers in English.</Callout>
+
+---
+
+## Teens Cardinal Numbers
 
 The numbers 13 through 19 follow a simple pattern. They all end in “-teen,” which represents the numbers 13 through 19.
 
-<LessonColumns className='sm:grid-cols-2'>
-  <LessonBlock icon='rule' title='Rule' container='aside' heading='p'>
-    - They end in **-teen**
-  </LessonBlock>
-</LessonColumns>
+<Grammar
+  type="rule"
+  title="Forming Teen Numbers"
+  description="Most teen numbers are formed by adding **_-teen_** to the base number."
+>
 
-<GroupVocabularyCard values={BASIC_NUMBERS_TEEN} />
+Base number + **_-teen_** = Teen number
+
+- #### _Examples_
+  - four + **_teen_** → _fourteen_
+  - six + **_teen_** → _sixteen_
+  - seven + **_teen_** → _seventeen_
+
+</Grammar>
 
 ---
 
-## Tens (20–90)
+<Vocabulary data={CARDINAL_NUMBERS.teens} />
+
+---
+
+## Tens Cardinal Number
 
 The numbers from 20 to 90 are the multiples of ten in English. Learning them will help you form larger numbers, such as twenty-one, thirty-five, and ninety-nine.
 
-<LessonColumns className='sm:grid-cols-2'>
-  <LessonBlock icon='rule' title='Rule' container='aside' heading='p'>
-    - They end in **-ty**
-  </LessonBlock>
-</LessonColumns>
+<Grammar
+  type="rule"
+  title="Forming Tens"
+  description="The multiples of ten usually end in **_-ty_**."
+>
 
-<GroupVocabularyCard values={TENS_NUMBERS} />
+Base number + **_-ty_** = Tens number
+
+- #### _Examples_
+  - six + **_ty_** → _sixty_
+  - seven + **_ty_** → _seventy_
+
+</Grammar>
 
 ---
 
-## Compound Numbers (21–99)
+<Vocabulary data={CARDINAL_NUMBERS.tens} />
+
+---
+
+## Compound Cardinal Numbers
 
 The numbers from 21 to 99 are formed by combining a multiple of ten with a single-digit number.
 
-<LessonColumns className='sm:grid-cols-2'>
-  <LessonBlock icon='rule' title='Rule' container='aside' heading='p'>
-    - tens + **_"-"_** + number
-  </LessonBlock>
-  <LessonBlock icon='example' title='Example' container='section' heading='p'>
-    - twenty-one → 21
-  </LessonBlock>
-  <LessonBlock icon='example' title='Example Sentence' container='section' heading='p'>
-    - I am **twenty-one** years old.
-  </LessonBlock>
-</LessonColumns>
+<Grammar
+  type="rule"
+  title="Forming Compound Numbers"
+  description="Compound numbers from 21 to 99 are formed by combining the tens and the ones with a hyphen (-)."
+>
+
+Tens + **_-_** + One = Compound number
+
+- #### _Examples_
+  - twenty + **_-_** + one → _twenty-one_
+  - thirty + **_-_** + five → _thirty-five_
+  - sixty + **_-_** + eight → _sixty-eight_
+
+</Grammar>
+
+---
+
+<Vocabulary data={CARDINAL_NUMBERS.compound} />
 
 ---
 
@@ -106,48 +118,95 @@ The numbers from 21 to 99 are formed by combining a multiple of ten with a singl
 
 Learn how to express larger numbers in English by combining hundreds, thousands, and millions.
 
-<LessonColumns className='sm:grid-cols-2 lg:grid-cols-3'>
-  <LessonBlock title='Hundreds' icon='note' heading='h3' variant='default' container='section'>
+<Grammar
+  type="rule"
+  title="Combining Large Numbers"
+  description="Large numbers are formed by combining a cardinal number with hundred, thousand, or million."
+>
 
-    - one hundred → 100
-    - two hundred → 200
-    - five hundred → 500
+Cardinal number + **hundred / thousand / million**
 
-  </LessonBlock>
-  <LessonBlock title='Thousands' icon='note' heading='h3' variant='default' container='section'>
+- #### _Examples_
+  - one + **_hundred_** → _one hundred_
+  - two + **_thousand_** → _two thousand_
+  - ten + **_million_** → _ten million_
 
-    - one thousand → 1,000
-    - ten thousand → 10,000
-    - fifty thousand → 50,000
-
-  </LessonBlock>
-  <LessonBlock title='Millions' icon='note' heading='h3' variant='default' container='section'>
-
-    - one million → 1,000,000
-    - two million → 2,000,000
-    - ten million → 10,000,000
-
-  </LessonBlock>
-</LessonColumns>
-
-<LessonBlock title='Remember' icon="concept" heading='p' variant='default' container='section'>
-  Hundred, thousand, and million do not take -s when they follow a number.
-
-- ✅ two hundred
-- ✅ five thousand
-- ✅ three million
-
-</LessonBlock>
-
-### Using **_"and"_**
-
-- #### In British English, and is commonly used between the hundreds and the tens or units.
-  - one hundred and twenty → 120
-  - three hundred and fifty-five → 355
-  - one thousand two hundred and ten → 1,210
-
-- #### American English often omits and in whole numbers:
-  - one hundred twenty → 120
-  - three hundred fifty-five → 355
+</Grammar>
 
 ---
+
+<Callout type='remember'>
+
+**Hundred**, **thousand**, and **million** do not take **_-s_** when they follow a number.
+
+</Callout>
+
+---
+
+<LessonGrid className='sm:grid-cols-2 lg:grid-cols-3'>
+
+<TopicBlock title='Hundred' icon={Layers3}>
+Use **hundred** to express numbers from **100** to **999**.
+
+| Cardinal     | Number |
+| ------------ | -----: |
+| one hundred  |    100 |
+| two hundred  |    200 |
+| five hundred |    500 |
+
+</TopicBlock>
+
+<TopicBlock title='Thousand' icon={Layers3}>
+
+Use **thousand** to express numbers from **1,000** to **999,999**.
+
+| Cardinal       | Number |
+| -------------- | -----: |
+| one thousand   |  1,000 |
+| ten thousand   | 10,000 |
+| fifty thousand | 50,000 |
+
+</TopicBlock>
+
+<TopicBlock title='Million' icon={Layers3}>
+
+Use **million** to express numbers from **1,000,000** and above.
+
+| Cardinal    |     Number |
+| ----------- | ---------: |
+| one million |  1,000,000 |
+| two million |  2,000,000 |
+| ten million | 10,000,000 |
+
+</TopicBlock>
+</LessonGrid>
+
+---
+
+### Using "and" in Numbers
+
+In British English, **and** is commonly used between the hundreds and the tens or units. In American English, **and** is _often omitted in whole numbers_.
+
+<Grammar
+  type="rule"
+  title="Using and in Large Numbers"
+  description="In British English, and is used before tens or units. American English often omits it."
+>
+
+### British English
+
+| Number | Example                              |
+| ------ | ------------------------------------ |
+| 120    | one hundred **and** twenty           |
+| 355    | three hundred **and** fifty-five     |
+| 1,210  | one thousand two hundred **and** ten |
+
+### American English
+
+| Number | Example                      |
+| ------ | ---------------------------- |
+| 120    | one hundred twenty           |
+| 355    | three hundred fifty-five     |
+| 1,210  | one thousand two hundred ten |
+
+</Grammar>
