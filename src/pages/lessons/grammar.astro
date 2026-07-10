@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content'
 import '@styles/lessons/index.css'
 
 const lessons = await getCollection('grammar')
-const lesson = lessons.find((lesson) => lesson.id === 'numbers-dates-time/the-date')
+const lesson = lessons.find((lesson) => lesson.id === 'numbers-dates-time/time')
 
 if (!lesson) {
   console.log(lesson)

@@ -25,9 +25,7 @@ const Grammar = ({ type, title, description, children }: GrammarProps) => {
           {description && <p className='text-sm dark:text-gray-400 text-gray-700'>{description}</p>}
         </div>
       </header>
-      <section className='grid gap-4 lg:grid-cols-[3.25rem_1fr]'>
-        <section className='max-w-none lg:col-start-2 grid gap-4 py-1'>{children}</section>
-      </section>
+      <section className='grid gap-4 py-1'>{children}</section>
     </section>
   )
 }
