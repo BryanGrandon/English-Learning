@@ -21,7 +21,7 @@ const Grammar = ({ type, title, description, children }: GrammarProps) => {
           <span className='font-bold uppercase text-xs' style={{ color: color }}>
             {type}
           </span>
-          <h3 className='text-xl font-semibold'>{title}</h3>
+          <h3 className='text-xl font-semibold font-raleway'>{title}</h3>
           {description && <p className='text-sm dark:text-gray-400 text-gray-700'>{description}</p>}
         </div>
       </header>

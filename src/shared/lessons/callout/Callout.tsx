@@ -12,7 +12,7 @@ const Callout = ({ type, children, className = '' }: CalloutProps) => {
 
   return (
     <section
-      className={`grid gap-4 p-4 border rounded-lg ${className}`}
+      className={`flex flex-col gap-4 p-4 border rounded-lg ${className}`}
       style={{ borderColor: config.color, backgroundColor: config.background }}
     >
       <header className='flex items-center gap-4 pb-2 border-b' style={{ borderColor: config.color }}>
