@@ -8,8 +8,7 @@ order: 3
 
 import LessonGrid from '@shared/lessons/LessonGrid'
 import Callout from '@shared/lessons/callout/Callout'
-import TopicBlock from '@shared/lessons/topic-block/TopicBlock'
-import { Flag } from 'lucide-react'
+import Grammar from '@shared/lessons/grammar/Grammar'
 
 # Date
 
@@ -34,26 +33,37 @@ Learning how to read, write, and say dates correctly is an essential skill in ev
 Dates can be written in two common ways.
 
 <LessonGrid className='sm:grid-cols-2'>
-  <TopicBlock title='British English (UK)' icon={Flag} >
-    **_Day + Month + Year_**
+  <Grammar
+  type="comparison"
+  title="British English (UK)"
+  highlight="Day + Month + Year"
+>
 
-    - #### With _Words_
-      - 15 October 2024
+- #### With Words
+  - 15 October 2024
+  - 5 January 2025
 
-    - #### With _Numbers_
-      - 15/10/2024
+- #### With Numbers
+  - 15/10/2024
+  - 05/01/2025
 
-  </TopicBlock>
-  <TopicBlock title='American English (US)' icon={Flag} >
-    **_Month + Day + Year_**
+</Grammar>
 
-    - #### With _Words_
-      - October 15, 2024
+<Grammar
+  type="comparison"
+  title="American English (US)"
+  highlight="Month + Day + Year"
+>
 
-    - #### With _Numbers_
-      - 10/15/2024
+- #### With Words
+  - October 15, 2024
+  - January 5, 2025
 
-  </TopicBlock>
+- #### With Numbers
+  - 10/15/2024
+  - 01/05/2025
+
+</Grammar>
 </LessonGrid>
 
 ---

@@ -9,6 +9,7 @@ import {
   Brain,
   TriangleAlert,
   Star,
+  BookOpenText,
 } from 'lucide-react'
 
 export const ALL_VERSIONS_OF_THE_LESSONS = {
@@ -23,4 +24,5 @@ export const ALL_VERSIONS_OF_THE_LESSONS = {
   remember: { color: '#d97706', icon: Brain },
   warning: { color: '#ea580c', icon: TriangleAlert },
   important: { color: '#db2777', icon: Star },
+  vocabulary: { color: '#0f766e', icon: BookOpenText },
 } as const
