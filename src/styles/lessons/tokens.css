@@ -12,6 +12,11 @@
 
   --lesson-hover: #293548;
   --lesson-shadow: 0 2px 8px rgb(0 0 0 / 0.05), 0 8px 24px rgb(0 0 0 / 0.08);
+
+  /* Highlight */
+  --lesson-highlight-primary: #2563eb; /* Información importante */
+  --lesson-highlight-accent: #7c3aed; /* Conceptos y términos clave */
+  --lesson-highlight-warning: #dc2626; /* Errores, excepciones y reglas especiales */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +34,11 @@
 
     --lesson-hover: #293548;
     --lesson-shadow: 0 2px 8px rgb(0 0 0 / 0.25), 0 8px 24px rgb(0 0 0 / 0.45);
+
+    /* Highlight */
+    --lesson-highlight-primary: #60a5fa;
+    --lesson-highlight-accent: #a78bfa;
+    --lesson-highlight-warning: #f87171;
   }
 }
 
@@ -43,4 +53,9 @@
   /* Text */
   --color-lesson-text-primary: var(--lesson-text-primary);
   --color-lesson-text-secondary: var(--lesson-text-secondary);
+
+  /* Highlight */
+  --color-lesson-highlight-primary: var(--lesson-highlight-primary);
+  --color-lesson-highlight-accent: var(--lesson-highlight-accent);
+  --color-lesson-highlight-warning: var(--lesson-highlight-warning);
 }
