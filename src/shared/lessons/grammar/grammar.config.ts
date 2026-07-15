@@ -1,10 +1,22 @@
 import { createLessonTheme } from '@shared/utilities/config/lesson-theme'
-import { Scale, GitCompareArrows, CircleX } from 'lucide-react'
 
 const GRAMMAR_CONFIG = {
-  rule: createLessonTheme({ icon: Scale, color: '#8b5cf6' }),
-  comparison: createLessonTheme({ icon: GitCompareArrows, color: '#06b6d4' }),
-  common_mistake: createLessonTheme({ icon: CircleX, color: '#f97316' }),
+  rule: {
+    ...createLessonTheme({ variant: 'rule' }),
+    label: 'Rule',
+  },
+  structure: {
+    ...createLessonTheme({ variant: 'structure' }),
+    label: 'Pattern',
+  },
+  comparison: {
+    ...createLessonTheme({ variant: 'comparison' }),
+    label: 'Key Differences',
+  },
+  common_mistake: {
+    ...createLessonTheme({ variant: 'common_mistake' }),
+    label: 'Avoid This Mistake',
+  },
 } as const
 
 type GrammarVariant = keyof typeof GRAMMAR_CONFIG

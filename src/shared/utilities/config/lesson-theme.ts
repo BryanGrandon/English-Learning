@@ -1,13 +1,13 @@
-import { type LucideIcon } from 'lucide-react'
-import { isHex } from '../color/isHex'
+import { ALL_VERSIONS_OF_THE_LESSONS } from '@shared/constants/lesson-variants'
+
+type AllVersionOfTheLessons = keyof typeof ALL_VERSIONS_OF_THE_LESSONS
 
 type LessonTheme = {
-  color: string
-  icon: LucideIcon
+  variant: AllVersionOfTheLessons
 }
 
-export const createLessonTheme = ({ color, icon }: LessonTheme) => {
-  if (!isHex(color)) throw new Error(`Invalid color: ${color}. Color must be a valid hex code.`)
+export const createLessonTheme = ({ variant }: LessonTheme) => {
+  const { color, icon } = ALL_VERSIONS_OF_THE_LESSONS[variant]
 
   return {
     color,
