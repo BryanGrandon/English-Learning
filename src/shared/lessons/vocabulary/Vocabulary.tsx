@@ -1,26 +1,25 @@
+import type { NumberCardProps } from './items/NumberCard'
+import NumberCard from './items/NumberCard'
+import type { PrepositionCardProps } from './items/PrepositionCard'
+import PrepositionCard from './items/PrepositionCard'
 import VocabularyItem from './VocabularyItem'
-import { VOCABULARY_CONFIG } from './vocabulary.config'
 
-export type VocabularyWord = {
-  value: string | number
-  word: string
-  pronunciation?: string
-  badge?: string
-}
+import { VOCABULARY_CONFIG } from './vocabulary.config'
 
 type VocabularyProps = {
   data: {
     title: string
     description: string
     level?: string
-    words: VocabularyWord[]
+    words: PrepositionCardProps[] | NumberCardProps[]
   }
+  variant: 'preposition' | 'number'
 }
 
-const Vocabulary = ({ data }: VocabularyProps) => {
+const Vocabulary = ({ data, variant }: VocabularyProps) => {
   const { title, description, level = 'A1', words } = data
-  const { color, background } = VOCABULARY_CONFIG
-  const Icon = VOCABULARY_CONFIG.icon
+  const { color, background, icon } = VOCABULARY_CONFIG
+  const Icon = icon
 
   return (
     <section className={`overflow-hidden rounded-lg border shadow-sm`} style={{ borderColor: color }}>
@@ -36,12 +35,12 @@ const Vocabulary = ({ data }: VocabularyProps) => {
         </div>
 
         <section className='flex-1 grid gap-0.5'>
-          <section className='flex items-center justify-between'>
+          <div className='flex items-center justify-between'>
             <h3 className='text-xl font-bold'>{title}</h3>
             <span className='text-sm font-medium text-slate-500'>
               {level} • {words.length} words
             </span>
-          </section>
+          </div>
 
           <p className='max-w-2xl dark:text-slate-400 text-slate-600'>{description}</p>
         </section>
@@ -53,11 +52,9 @@ const Vocabulary = ({ data }: VocabularyProps) => {
           <span className='text-sm text-slate-400'>{words.length} items</span>
         </section>
 
-        <div className='grid gap-4 md:grid-cols-2'>
-          {words.map((word) => (
-            <VocabularyItem key={`${word.value}-${word.word}`} {...word} />
-          ))}
-        </div>
+        <section className={`grid gap-4  ${variant == 'preposition' ? 'md:grid-cols-2' : 'md:grid-cols-2'}`}>
+          <VocabularyItem words={words} variant={variant} />
+        </section>
       </article>
     </section>
   )

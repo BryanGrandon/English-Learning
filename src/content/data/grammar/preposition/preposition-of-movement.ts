@@ -1,0 +1,108 @@
+export const PREPOSITIONS_OF_MOVEMENT = {
+  basic: {
+    title: 'Common Prepositions of Movement',
+    description: 'Learn the most common prepositions used to express movement or direction.',
+    level: 'A1',
+    type: 'preposition',
+    words: [
+      {
+        term: 'to',
+        pronunciation: '/tuː/',
+        definition: 'Toward a destination.',
+        example: 'She walked to school.',
+      },
+      {
+        term: 'into',
+        pronunciation: '/ˈɪn.tuː/',
+        definition: 'From outside to inside.',
+        example: 'The cat jumped into the box.',
+      },
+      {
+        term: 'out of',
+        pronunciation: '/ˈaʊt əv/',
+        definition: 'From inside to outside.',
+        example: 'He ran out of the house.',
+      },
+      {
+        term: 'onto',
+        pronunciation: '/ˈɒn.tuː/',
+        definition: 'To a surface.',
+        example: 'The child climbed onto the chair.',
+      },
+      {
+        term: 'off',
+        pronunciation: '/ɒf/',
+        definition: 'Away from a surface.',
+        example: 'The book fell off the table.',
+      },
+      {
+        term: 'through',
+        pronunciation: '/θruː/',
+        definition: 'From one side to the other inside something.',
+        example: 'We walked through the park.',
+      },
+      {
+        term: 'across',
+        pronunciation: '/əˈkrɒs/',
+        definition: 'From one side to the other.',
+        example: 'They swam across the river.',
+      },
+      {
+        term: 'over',
+        pronunciation: '/ˈəʊ.vər/',
+        definition: 'Above and across.',
+        example: 'The bird flew over the trees.',
+      },
+      {
+        term: 'under',
+        pronunciation: '/ˈʌn.dər/',
+        definition: 'Below something.',
+        example: 'The dog crawled under the fence.',
+      },
+      {
+        term: 'up',
+        pronunciation: '/ʌp/',
+        definition: 'Toward a higher place.',
+        example: 'She ran up the stairs.',
+      },
+      {
+        term: 'down',
+        pronunciation: '/daʊn/',
+        definition: 'Toward a lower place.',
+        example: 'They walked down the hill.',
+      },
+      {
+        term: 'along',
+        pronunciation: '/əˈlɒŋ/',
+        definition: 'Following the length of something.',
+        example: 'We cycled along the beach.',
+      },
+      {
+        term: 'past',
+        pronunciation: '/pɑːst/',
+        definition: 'Beyond someone or something.',
+        example: 'He drove past the supermarket.',
+      },
+      {
+        term: 'around',
+        pronunciation: '/əˈraʊnd/',
+        definition: 'In a circular direction.',
+        example: 'They walked around the lake.',
+      },
+      {
+        term: 'towards',
+        pronunciation: '/təˈwɔːdz/',
+        definition: 'In the direction of.',
+        example: 'She walked towards the station.',
+        badge: 'UK',
+      },
+      {
+        term: 'toward',
+        pronunciation: '/təˈwɔːrd/',
+        definition: 'In the direction of.',
+        example: 'She walked toward the station.',
+        badge: 'US',
+      },
+    ],
+  },
+} as const

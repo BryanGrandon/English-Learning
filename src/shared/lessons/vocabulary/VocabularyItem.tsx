@@ -1,38 +1,37 @@
-import type { VocabularyWord } from './Vocabulary'
-import { VOCABULARY_CONFIG } from './vocabulary.config'
+import type { NumberCardProps } from './items/NumberCard'
+import NumberCard from './items/NumberCard'
+import type { PrepositionCardProps } from './items/PrepositionCard'
+import PrepositionCard from './items/PrepositionCard'
 
-const VocabularyItem = ({ value, word, pronunciation, badge }: VocabularyWord) => {
-  const { color, background } = VOCABULARY_CONFIG
-  return (
-    <article
-      style={{ borderColor: color, backgroundColor: background }}
-      className='group flex items-center gap-2 rounded-lg border p-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg'
-    >
-      <section
-        style={{ backgroundColor: color }}
-        className='flex size-13 shrink-0 items-center justify-center rounded-lg text-lg font-semibold text-white'
-      >
-        {value}
-      </section>
+type VocabularyWord = {
+  variant: 'number' | 'preposition'
+  words: NumberCardProps[] | PrepositionCardProps[]
+}
 
-      <section className='min-w-0 flex-1'>
-        <div className='flex items-center justify-between gap-2'>
-          <h3 className='text-lg capitalize font-raleway'>{word}</h3>
+const VocabularyItem = ({ variant, words }: VocabularyWord) => {
+  console.log(variant)
+  switch (variant) {
+    case 'number':
+      const numbers = words as NumberCardProps[]
+      return (
+        <>
+          {numbers.map((data) => (
+            <NumberCard key={data.word} {...data} />
+          ))}
+        </>
+      )
 
-          {badge && (
-            <span
-              style={{ border: `1px solid ${color}`, backgroundColor: background }}
-              className='rounded px-3 py-1 text-xs font-medium font-raleway'
-            >
-              {badge}
-            </span>
-          )}
-        </div>
+    case 'preposition':
+      const preposition = words as PrepositionCardProps[]
 
-        {pronunciation && <p className=' font-mono text-sm dark:text-slate-400'>{pronunciation}</p>}
-      </section>
-    </article>
-  )
+      return (
+        <>
+          {preposition.map((data) => (
+            <PrepositionCard key={data.term} {...data} />
+          ))}
+        </>
+      )
+  }
 }
 
 export default VocabularyItem
