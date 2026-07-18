@@ -91,10 +91,9 @@
     border-collapse: separate;
     border-spacing: 0;
     overflow: hidden;
-
     background: var(--lesson-surface-secondary);
     border: 1px solid var(--lesson-border);
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
 
     box-shadow:
       0 4px 12px rgb(0 0 0 / 0.08),
@@ -118,17 +117,14 @@
     font-family: var(--font-raleway);
     font-size: 0.8rem;
     font-weight: 700;
-
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-
     border-bottom: 1px solid var(--lesson-border);
   }
 
   td {
     color: var(--lesson-text-secondary);
-
     transition:
       background-color 150ms ease,
       color 150ms ease;
@@ -157,6 +153,33 @@
     color: var(--lesson-text-primary);
     font-weight: 700;
     font-family: var(--font-raleway);
+  }
+}
+
+/* Custom Vocabulary */
+
+.vocabulary {
+  table {
+    background: #0f766e20;
+    border: 1px solid #0f766e;
+  }
+  thead {
+    background: #0f766e50;
+  }
+  th {
+    border-bottom: 1px solid #0f766e;
+  }
+
+  tbody tr:hover {
+    background: #0f766e30;
+  }
+  tbody tr:not(:last-child) td {
+    border-bottom: 1px solid #0f766e;
+  }
+
+  th:not(:first-child),
+  td:not(:first-child) {
+    border-left: 1px solid #0f766e;
   }
 }
 
