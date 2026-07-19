@@ -1,5 +1,5 @@
-import { Children } from 'react'
 import { VOCABULARY_CONFIG } from './vocabulary.config'
+import './vocabulary.css'
 
 type VocabularyProps = {
   title: string

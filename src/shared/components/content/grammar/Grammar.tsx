@@ -1,3 +1,4 @@
+import { cn } from '@shared/lib/cn'
 import { GRAMMAR_CONFIG, type GrammarVariant } from './grammar.config'
 
 type GrammarProps = {
@@ -6,14 +7,18 @@ type GrammarProps = {
   description?: string
   highlight?: string
   children: React.ReactNode
+  className?: string
 }
 
-const Grammar = ({ type, title, description, children, highlight }: GrammarProps) => {
+const Grammar = ({ type, title, description, children, highlight, className = '' }: GrammarProps) => {
   const { icon, color, background, label } = GRAMMAR_CONFIG[type]
   const Icon = icon
 
   return (
-    <section className='grid gap-2 p-4 border rounded-lg' style={{ borderColor: color, backgroundColor: background }}>
+    <section
+      className={cn('grid gap-2 p-4 border rounded-lg', className)}
+      style={{ borderColor: color, backgroundColor: background }}
+    >
       <header
         className='grid grid-cols-[auto_1fr] items-center gap-4 pb-2 border-b relative'
         style={{ borderColor: color }}
@@ -22,9 +27,7 @@ const Grammar = ({ type, title, description, children, highlight }: GrammarProps
           <Icon size={26} color='white' />
         </div>
         <div className='grid gap-1'>
-          <span className='font-raleway capitalize tracking-wider font-semibold text-xs'>
-            {type.split('_').join(' ')}
-          </span>
+          <span className='font-raleway capitalize tracking-wider font-semibold text-xs'>{label}</span>
           <h3 className='text-xl font-semibold font-raleway tracking-wider'>{title}</h3>
           {description && <p className='text-sm dark:text-gray-400 text-gray-700'>{description}</p>}
         </div>
