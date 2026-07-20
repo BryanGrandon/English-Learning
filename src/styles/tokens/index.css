@@ -1,14 +1,2 @@
-@import './colors.css';
+@import './palette.css';
 @import './fonts.css';
-
-@theme {
-  /* Color */
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-underlay-dark: var(--underlay-dark);
-  --color-underlay-light: var(--underlay-light);
-
-  /* Font */
-  --font-basicaline: var(--custom-source);
-  --font-raleway: var(--font-raleway);
-}

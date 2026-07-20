@@ -1,0 +1,14 @@
+@import '../tokens/palette.css';
+
+[data-theme='dark'] {
+  --color-brand: var(--purple-600);
+  --color-accent: var(--blue-600);
+
+  --background: var(--slate-950);
+
+  --text-primary: var(--slate-50);
+  --text-secondary: var(--slate-300);
+
+  --color-overlay: var(--slate-950);
+  --color-selection: var(--gray-900);
+}

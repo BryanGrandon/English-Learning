@@ -1,0 +1,39 @@
+/* ----- Unordered  Lists  ----- */
+
+.mdx-content ul {
+  color: var(--mdx-text-secondary);
+  list-style: disc;
+  list-style-position: inside;
+}
+
+/* ----- Ordered Lists ----- */
+
+.mdx-content ol {
+  color: var(--mdx-text-secondary);
+  list-style: decimal;
+  list-style-position: inside;
+}
+
+/* ----- Item List ----- */
+
+.mdx-content li {
+  margin-bottom: 0.2rem;
+
+  > ul {
+    margin-left: 1rem;
+  }
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+
+  &:has(h4) {
+    list-style: none;
+  }
+
+  h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}

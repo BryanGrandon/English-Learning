@@ -3,7 +3,64 @@
 
 @import './tokens/index.css';
 
-@import './base/base.css';
-@import './base/utilities.css';
+/* Tailwind */
+@import './tailwind.css';
 
-@import './lessons/tokens.css';
+/* Themes */
+@import './themes/light.css';
+@import './themes/dark.css';
+
+/* Mdx */
+@import './mdx/index.css';
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 0.2rem;
+    height: 0.3rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-brand);
+    border-radius: 100vw;
+  }
+  ::-webkit-scrollbar-track {
+    /* margin-block: 0.1rem; */
+    /* margin-inline: 0.1rem; */
+    background: var(--color-selection);
+  }
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+
+  /* selection */
+  ::-moz-selection {
+    background-color: var(--color-selection);
+    color: var(--color-brand);
+  }
+  ::selection {
+    background-color: var(--color-selection);
+    color: var(--color-brand);
+  }
+  scrollbar-gutter: stable;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-family: var(--font-body);
+  font-size: 16px;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1 {
+  font-family: var(--font-display);
+}
+
+/* Class Utilities */
+
+.test {
+  border: 1px solid #f00;
+}
