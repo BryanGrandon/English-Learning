@@ -2,7 +2,14 @@ import { cn } from '@shared/lib/cn'
 import type { ContentGridProps } from './types'
 import ContentGridItem from './ContentGridItem'
 
-const ContentGrid = ({ children, columns = '1fr', rows, areas, gap = '1rem', className = '' }: ContentGridProps) => {
+const ContentGrid = ({
+  children,
+  columns = 'repeat(auto-fill, minmax(20rem, 1fr))',
+  rows,
+  areas,
+  gap = '1rem',
+  className = '',
+}: ContentGridProps) => {
   return (
     <article
       className={cn('grid', className)}

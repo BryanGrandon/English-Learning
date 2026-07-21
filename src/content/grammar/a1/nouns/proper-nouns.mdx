@@ -6,15 +6,13 @@ topic: Nouns
 order: 2
 ---
 
-import LessonGrid from '@shared/lessons/LessonGrid'
-import Grammar from '@shared/lessons/grammar/Grammar'
-import Callout from '@shared/lessons/callout/Callout'
+import { ContentGrid, Callout, Grammar, SectionCard } from '@shared/components/content/index'
 
 # Proper Nouns
 
-A **_proper noun_** is the name of a specific **person**, **place**, **thing**, or **organization**. Proper nouns _always begin with a capital letter_.
+A **proper noun** is the name of a specific **person**, **place**, **thing**, or **organization**. Proper nouns _always begin with a capital letter_.
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type="example">
 
 - Maria
@@ -32,7 +30,7 @@ A **_proper noun_** is the name of a specific **person**, **place**, **thing**, 
 - ✅ I study **_English_**.
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 <Callout type="important">
 
@@ -46,6 +44,10 @@ Always use a **capital letter** for **_proper nouns_**.
 
 Proper nouns can refer to many different kinds of names.
 
+<ContentGrid>
+
+<SectionCard title='Using capital letters'>
+
 - People's Names
 - Countries, Cities, and Towns
 - Days and Months
@@ -55,7 +57,8 @@ Proper nouns can refer to many different kinds of names.
 - Rivers, Mountains, Oceans, and Planets
 - Monuments and Buildings
 
-<LessonGrid className='sm:grid-cols-2'>
+</SectionCard>
+
 <Grammar title='Capital letters' type="common_mistake">
 - #### Not using capital letters
   - ❌ i live in paris
@@ -68,6 +71,6 @@ Proper nouns can refer to many different kinds of names.
   - ✅ I speak **English**
 
 </Grammar>
-</LessonGrid>
+</ContentGrid>
 
 ---

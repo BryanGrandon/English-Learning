@@ -27,9 +27,9 @@ const Grammar = ({ type, title, description, children, highlight, className = ''
           <Icon size={26} color='white' />
         </div>
         <div className='grid gap-1'>
-          <span className='font-raleway capitalize tracking-wider font-semibold text-xs'>{label}</span>
-          <h3 className='text-xl font-semibold font-raleway tracking-wider'>{title}</h3>
-          {description && <p className='text-sm dark:text-gray-400 text-gray-700'>{description}</p>}
+          <span className='font-display capitalize tracking-wider font-semibold text-xs'>{label}</span>
+          <h3 className='text-xl font-semibold font-display tracking-wider'>{title}</h3>
+          {description && <p className='text-sm text-color-secondary '>{description}</p>}
         </div>
       </header>
       <section className='grid gap-4 py-1'>
@@ -38,7 +38,7 @@ const Grammar = ({ type, title, description, children, highlight, className = ''
             <span className='font-raleway tracking-wider font-semibold '>{label}</span>
 
             <p
-              className='w-fit rounded-lg px-4 py-2 ml-4 font-mono font-medium dark:bg-black/20 bg-lesson-surface  border-2 '
+              className='w-fit rounded-lg px-4 py-2 ml-4 font-mono font-medium dark:bg-black/20 bg-white/70 border-2 '
               style={{ borderColor: color }}
             >
               {highlight}

@@ -1,10 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { getCollection, render } from 'astro:content'
-import '@styles/lessons/index.css'
 
 const lessons = await getCollection('grammar')
-const lesson = lessons.find((lesson) => lesson.id === 'preposition/preposition-of-movement')
+const lesson = lessons.find((lesson) => lesson.id === 'a1/numbers-dates-time/cardinal-numbers')
 
 if (!lesson) {
   throw new Error('Lesson not found')
@@ -42,7 +41,7 @@ const { Content } = await render(lesson)
     </aside>
 
     <main class='lesson-main grid p-8'>
-      <article class='max-w-4xl lesson-content grid gap-4'>
+      <article class='max-w-4xl grid gap-4 mdx-content'>
         <Content />
       </article>
     </main>

@@ -21,4 +21,7 @@
   td:not(:first-child) {
     border-left: 1px solid #0f766e;
   }
+  ::-webkit-scrollbar-thumb {
+    background: #0f766e;
+  }
 }

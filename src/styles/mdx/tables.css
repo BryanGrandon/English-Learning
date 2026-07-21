@@ -1,7 +1,11 @@
+.mdx-content article table {
+  min-width: 100%;
+}
+
 .mdx-content {
   table {
     width: max-content;
-    min-width: 100%;
+    overflow-x: auto;
     border-collapse: separate;
     border-spacing: 0;
     overflow: hidden;
@@ -60,12 +64,12 @@
 
   th:not(:first-child),
   td:not(:first-child) {
-    border-left: 1px solid var(--mex-border);
+    border-left: 1px solid var(--mdx-border);
   }
 
   tbody td:first-child {
     color: var(--mdx-text-primary);
-    font-weight: 700;
+    font-weight: 600;
     font-family: var(--font-heading);
   }
 }

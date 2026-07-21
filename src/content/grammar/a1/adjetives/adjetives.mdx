@@ -6,11 +6,8 @@ topic: Adjectives
 order: 1
 ---
 
-import LessonGrid from '@shared/lessons/LessonGrid'
-import Grammar from '@shared/lessons/grammar/Grammar'
-import Callout from '@shared/lessons/callout/Callout'
-import TopicBlock from '@shared/lessons/topic-block/TopicBlock'
 import { Shapes } from 'lucide-react'
+import { ContentGrid, Callout, Grammar, SectionCard } from '@shared/components/content/index'
 
 # Adjectives
 
@@ -25,7 +22,7 @@ Adjectives answer questions such as:
 - _How many?_
   - three **small** boxes
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type='example'>
 
 - a **big** house
@@ -40,7 +37,7 @@ Adjectives answer questions such as:
 - The **red** ball is on the table.
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -48,8 +45,8 @@ Adjectives answer questions such as:
 
 English adjectives can be divided into **six main types**. Each type has a different purpose and helps describe nouns in a specific way.
 
-<LessonGrid className="md:grid-cols-2">
-  <TopicBlock
+<ContentGrid>
+  <SectionCard
     icon={Shapes}
     title="The Six Types"
   >
@@ -59,12 +56,12 @@ English adjectives can be divided into **six main types**. Each type has a diffe
     - Possessive
     - Interrogative
     - Distributive
-  </TopicBlock>
+  </SectionCard>
 
   <Callout type="important">
     Learning these types will help you describe people, places, things, and ideas more accurately.
   </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -80,12 +77,14 @@ In English, adjectives _usually come before the noun_ they describe.
 >
 
 - #### Examples
-  - a **red** car
-  - a **small** house
-  - an **interesting** book
-  - two **happy** children
+  - a **_red_** car
+  - a **_small_** house
+  - an **_interesting_** book
+  - two **_happy_** children
 
 </Grammar>
+
+---
 
 <Grammar
   type="rule"
@@ -94,15 +93,18 @@ In English, adjectives _usually come before the noun_ they describe.
 >
 
 - #### Common Linking Verbs
-  - **to be**
-  - **to feel**
-  - **to look**
-  - **to seem**
-  - **to smell**
-  - **to taste**
+  - to be
+  - to feel
+  - to look
+  - to seem
+  - to smell
+  - to taste
 
 </Grammar>
 
+---
+
+<ContentGrid>
 <Grammar
   type="structure"
   title="Sentence Pattern"
@@ -110,14 +112,13 @@ In English, adjectives _usually come before the noun_ they describe.
 >
 
 - #### Examples
-  - She **looks tired**.
-  - I **feel good**.
-  - You **are beautiful**.
+  - She **_looks tired_**.
+  - I **_feel good_**.
+  - You **_are beautiful_**.
 
 </Grammar>
-
 <Callout type="tip">
-Adjectives **do not change** for singular or plural nouns.
+Adjectives _do not change_ for singular or plural nouns.
 
 - a **small** dog
 - two **small** dogs
@@ -125,6 +126,7 @@ Adjectives **do not change** for singular or plural nouns.
 - three **happy** children
 
 </Callout>
+</ContentGrid>
 
 ---
 
@@ -136,28 +138,37 @@ These are some important rules about adjectives in English.
 
 Adjectives do not change for masculine or feminine nouns. **Same adjective**
 
+<ContentGrid>
 <Callout type="example_sentences" >
 
 - a **tall** man
 - a **tall** woman
 
 </Callout>
+</ContentGrid>
+
+---
 
 ### No Plural Forms
 
 Adjectives usually have the same form in singular and plural. **Same adjective**
 
+<ContentGrid>
 <Callout type="example_sentences" >
 
 - a **red** car
 - two **red** cars
 
 </Callout>
+</ContentGrid>
+
+---
 
 ### Multiple Adjectives
 
 More than one adjective can be used to describe the same noun.
 
+<ContentGrid>
 <Grammar
   type="rule"
   title="General Rule"
@@ -170,6 +181,7 @@ More than one adjective can be used to describe the same noun.
   - a **large glass** table
 
 </Grammar>
+</ContentGrid>
 
 ---
 

@@ -6,9 +6,7 @@ topic: Nouns
 order: 3
 ---
 
-import LessonGrid from '@shared/lessons/LessonGrid'
-import Grammar from '@shared/lessons/grammar/Grammar'
-import Callout from '@shared/lessons/callout/Callout'
+import { ContentGrid, Callout, Grammar } from '@shared/components/content/index'
 
 # Countable Nouns
 
@@ -80,6 +78,7 @@ Uncountable nouns are **not** used with **a** or **an**.
 
 Countable nouns have singular and plural forms. (**_Singular → Plural_**)
 
+<ContentGrid>
 <Callout type='example'>
 
 - **egg** → **_eggs_**
@@ -87,14 +86,14 @@ Countable nouns have singular and plural forms. (**_Singular → Plural_**)
 - **dress** → **_dresses_**
 
 </Callout>
-
+</ContentGrid>
 ---
 
 ### Use a / an
 
 Use **a** or **an** with singular countable nouns. (**_a / an + Singular Countable Noun_**)
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type='example'>
 
 - an **apple**
@@ -108,7 +107,7 @@ Use **a** or **an** with singular countable nouns. (**_a / an + Singular Countab
 - ✅ **milk**
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -116,7 +115,7 @@ Use **a** or **an** with singular countable nouns. (**_a / an + Singular Countab
 
 Use numbers with countable nouns. (**_Number + Countable Noun_**)
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type='example'>
 
 - three **apples**
@@ -130,19 +129,20 @@ Use numbers with countable nouns. (**_Number + Countable Noun_**)
 - ✅ two **bottles of water**
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
 <Callout type='important'>
   Countable nouns can be used with **a**, **an**, **numbers**, **many**, and **a few**.
 </Callout>
-
 ---
 
 ## Making Uncountable Nouns Countable
 
 Sometimes we can _make uncountable nouns countable_ using **measure expressions**.
+
+<ContentGrid>
 
 | Expression | Example          |
 | ---------- | ---------------- |
@@ -157,5 +157,5 @@ Sometimes we can _make uncountable nouns countable_ using **measure expressions*
 - She bought **a piece of bread**.
 
 </Callout>
-
+</ContentGrid>
 ---

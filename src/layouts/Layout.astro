@@ -10,6 +10,27 @@
     <link rel='stylesheet' href='/src/styles/global.css' />
   </head>
   <body class=''>
+    <script is:inline>
+      const root = document.documentElement
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+      function updateTheme() {
+        const savedTheme = localStorage.getItem('theme')
+
+        const theme = savedTheme ?? (mediaQuery.matches ? 'dark' : 'light')
+
+        console.log(theme)
+        root.dataset.theme = theme
+      }
+
+      updateTheme()
+
+      mediaQuery.addEventListener('change', () => {
+        if (!localStorage.getItem('theme')) {
+          updateTheme()
+        }
+      })
+    </script>
     <slot />
   </body>
 </html>

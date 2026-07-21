@@ -6,17 +6,14 @@ topic: Nouns
 order: 1
 ---
 
-import LessonGrid from '@shared/lessons/LessonGrid'
-import Grammar from '@shared/lessons/grammar/Grammar'
-import Callout from '@shared/lessons/callout/Callout'
-import TopicBlock from '@shared/lessons/topic-block/TopicBlock'
+import { ContentGrid, Callout, Grammar, SectionCard } from '@shared/components/content/index'
 import { Shapes } from 'lucide-react'
 
 # Nouns
 
 A **noun** is a word that names **a person, animal, place, thing, event, or idea**. Nouns tell us **who** or **what** we are talking about.
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type='example'>
 
 - **Person:** teacher
@@ -37,7 +34,7 @@ A **noun** is a word that names **a person, animal, place, thing, event, or idea
 - **Happiness** is important.
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -45,9 +42,9 @@ A **noun** is a word that names **a person, animal, place, thing, event, or idea
 
 Nouns can refer to different kinds of people, places, things, and ideas. Learning the different types of nouns will help you use them correctly in sentences.
 
-<LessonGrid className="md:grid-cols-2">
+<ContentGrid>
 
-<TopicBlock icon={Shapes} title='Main Types'>
+<SectionCard icon={Shapes} title='Main Types'>
 
 - Common Nouns
 - Proper Nouns
@@ -56,12 +53,12 @@ Nouns can refer to different kinds of people, places, things, and ideas. Learnin
 - Concrete Nouns
 - Abstract Nouns
 
-</TopicBlock>
+</SectionCard>
 
 <Callout type="tip">
  Each type of noun has its own rules for capitalization, plural forms, and usage. 
 </Callout> 
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -88,8 +85,6 @@ Most nouns form the plural by adding **-s**.
 
 <Grammar type="rule" title="General Rule" highlight='Noun + s' >
 
-**_Noun + s_**
-
 - #### Examples
   - car → cars
   - house → houses
@@ -97,6 +92,8 @@ Most nouns form the plural by adding **-s**.
   - book → books
 
 </Grammar>
+
+---
 
 ### Consonant + y → ies
 
@@ -121,6 +118,8 @@ If a noun ends in a **vowel + y**, simply add **-s**.
 - toy → toys
 
 </Callout>
+
+---
 
 ### Add -es
 
