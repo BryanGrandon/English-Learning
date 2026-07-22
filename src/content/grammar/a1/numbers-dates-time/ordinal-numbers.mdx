@@ -6,17 +6,13 @@ topic: Number / Dates / Time
 order: 2
 ---
 
-import LessonGrid from '@shared/lessons/LessonGrid'
-import Grammar from '@shared/components/content/grammar/Grammar'
-import Callout from '@shared/components/content/callout/Callout'
-import Vocabulary from '@shared/components/content/vocabulary/Vocabulary'
-import { ORDINAL_NUMBERS } from '@data/grammar/number-dates-time/ordinal-numbers'
+import { ContentGrid, Callout, Grammar, Vocabulary, SectionCard } from '@shared/components/content/index'
 
 # What are Ordinal Numbers?
 
 Ordinal numbers are used to show the position or order of people or things in a sequence.
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 
 | Cardinal | Ordinal |
 | -------- | ------- |
@@ -35,7 +31,7 @@ Ordinal numbers are used to show the position or order of people or things in a 
 5. Today is the **_fifth_** day of the course.
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -59,7 +55,9 @@ Most ordinal numbers are formed by adding -th to the cardinal number. However, s
 
 ---
 
-### Exceptions
+<ContentGrid>
+
+<SectionCard title='Exceptions'>
 
 The first three ordinal numbers are irregular.
 
@@ -69,9 +67,9 @@ The first three ordinal numbers are irregular.
 | two      | second  |
 | three    | third   |
 
----
+</SectionCard>
 
-### Spelling Changes
+<SectionCard title='Spelling Changes'>
 
 Some numbers change their spelling before adding **_-th_**.
 
@@ -81,13 +79,34 @@ Some numbers change their spelling before adding **_-th_**.
 | nine     | ninth   |
 | twelve   | twelfth |
 
+</SectionCard>
+
+</ContentGrid>
+
 ---
 
 ## Basic Ordinal Numbers
 
 Ordinal numbers are used to show the position or order of people or things in a sequence.
 
-<Vocabulary data={ORDINAL_NUMBERS.basic} variant='number' />
+<Vocabulary title='Ordinal Numbers (1st–12th)' description='Learn the basic ordinal numbers from 1st to 12th.' level='A1' words={12}>
+
+| Number | Word     | Pronunciation |
+| :----: | :------- | :------------ |
+|  1st   | first    | /fɜːst/       |
+|  2nd   | second   | /ˈsek.ənd/    |
+|  3rd   | third    | /θɜːd/        |
+|  4th   | fourth   | /fɔːrθ/       |
+|  5th   | fifth    | /fɪfθ/        |
+|  6th   | sixth    | /sɪksθ/       |
+|  7th   | seventh  | /ˈsev.ənθ/    |
+|  8th   | eighth   | /eɪtθ/        |
+|  9th   | ninth    | /naɪnθ/       |
+|  10th  | tenth    | /tenθ/        |
+|  11th  | eleventh | /ɪˈlev.ənθ/   |
+|  12th  | twelfth  | /twelfθ/      |
+
+</Vocabulary>
 
 ---
 
@@ -95,7 +114,20 @@ Ordinal numbers are used to show the position or order of people or things in a 
 
 Ordinal numbers from 13th to 20th are formed by adding -th to the cardinal number. Some words have small spelling changes.
 
-<Vocabulary data={ORDINAL_NUMBERS.teens} variant='number' />
+<Vocabulary title='Ordinal Numbers (13th–20th)' description='Learn ordinal numbers from 13th to 20th and the spelling patterns they follow.' level='A1' words={8} >
+
+| Number | Word        | Pronunciation   |
+| :----: | :---------- | :-------------- |
+|  13th  | thirteenth  | /ˌθɜːˈtiːnθ/    |
+|  14th  | fourteenth  | /ˌfɔːˈtiːnθ/    |
+|  15th  | fifteenth   | /ˌfɪfˈtiːnθ/    |
+|  16th  | sixteenth   | /ˌsɪksˈtiːnθ/   |
+|  17th  | seventeenth | /ˌsev.ənˈtiːnθ/ |
+|  18th  | eighteenth  | /ˌeɪˈtiːnθ/     |
+|  19th  | nineteenth  | /ˌnaɪnˈtiːnθ/   |
+|  20th  | twentieth   | /ˈtwen.ti.əθ/   |
+
+</Vocabulary>
 
 ---
 
@@ -118,7 +150,20 @@ Compound ordinal numbers are formed by combining a multiple of ten with an ordin
 
 </Grammar>
 
-<Vocabulary data={ORDINAL_NUMBERS.compound} variant='number' />
+<Vocabulary title='Ordinal Numbers (21st–100th)' description='Learn how to form compound ordinal numbers such as 21st, 32nd, and 43rd.' level='A1' words={8} >
+
+| Number | Word          | Pronunciation       |
+| :----: | :------------ | :------------------ |
+|  21st  | twenty-first  | /ˌtwen.ti ˈfɜːst/   |
+|  22nd  | twenty-second | /ˌtwen.ti ˈsek.ənd/ |
+|  23rd  | twenty-third  | /ˌtwen.ti ˈθɜːd/    |
+|  24th  | twenty-fourth | /ˌtwen.ti ˈfɔːrθ/   |
+|  31st  | thirty-first  | /ˌθɜː.ti ˈfɜːst/    |
+|  42nd  | forty-second  | /ˌfɔː.ti ˈsek.ənd/  |
+|  53rd  | fifty-third   | /ˌfɪf.ti ˈθɜːd/     |
+| 100th  | one hundredth | /wʌn ˈhʌn.drədθ     |
+
+</Vocabulary>
 
 <Callout type="remember">
 
@@ -163,7 +208,7 @@ Ordinal numbers are used to show the order, position, or date of people and thin
 
 Use ordinal numbers when saying or writing dates.
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type="example">
 
 - April 5th
@@ -172,7 +217,7 @@ Use ordinal numbers when saying or writing dates.
 - October 31st
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -180,7 +225,7 @@ Use ordinal numbers when saying or writing dates.
 
 Use ordinal numbers to show someone's position in a race, competition, or list.
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type="example_sentences">
 
 - She finished first in the race.
@@ -189,7 +234,7 @@ Use ordinal numbers to show someone's position in a race, competition, or list.
 - I was the fourth person to arrive.
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -197,7 +242,7 @@ Use ordinal numbers to show someone's position in a race, competition, or list.
 
 Use ordinal numbers to describe the order of things, such as floors, chapters, pages, lessons, or attempts.
 
-<LessonGrid className='sm:grid-cols-2'>
+<ContentGrid>
 <Callout type="example_sentences">
 
 - She lives on the third floor.
@@ -206,5 +251,5 @@ Use ordinal numbers to describe the order of things, such as floors, chapters, p
 - This is my second attempt.
 
 </Callout>
-</LessonGrid>
+</ContentGrid>
 ---

@@ -6,12 +6,7 @@ topic: Number / Dates / Time
 order: 1
 ---
 
-import { ContentGrid, Callout, Grammar, Vocabulary } from '@shared/components/content/index'
-
-import LessonGrid from '@shared/lessons/LessonGrid'
-import TopicBlock from '@shared/lessons/topic-block/TopicBlock'
-
-import { CARDINAL_NUMBERS } from '@data/grammar/number-dates-time/cardinal-numbers'
+import { ContentGrid, Callout, Grammar, Vocabulary, SectionCard } from '@shared/components/content/index'
 import { Layers3 } from 'lucide-react'
 
 # Cardinal Numbers
@@ -110,9 +105,20 @@ The numbers from 20 to 90 are the multiples of ten in English. Learning them wil
 
 </Grammar>
 
----
+<Vocabulary title='Cardinal Numbers (20–90)' description='Learn the multiples of ten.' level='A1' words={8}>
 
-<Vocabulary data={CARDINAL_NUMBERS.tens} />
+| N°  | Word    | Pronunciation | Note          |
+| :-: | :------ | :------------ | :------------ |
+| 20  | twenty  | /ˈtwen.ti/    | Changes **y** |
+| 30  | thirty  | /ˈθɜː.ti/     | Irregular     |
+| 40  | forty   | /ˈfɔːr.ti/    | Drops **u**   |
+| 50  | fifty   | /ˈfɪf.ti/     | Drops **-ve** |
+| 60  | sixty   | /ˈsɪk.sti/    | —             |
+| 70  | seventy | /ˈsev.ən.ti/  | —             |
+| 80  | eighty  | /ˈeɪ.ti/      | Drops **-t**  |
+| 90  | ninety  | /ˈnaɪn.ti/    | Drops **-e**  |
+
+</Vocabulary>
 
 ---
 
@@ -134,9 +140,18 @@ The numbers from 21 to 99 are formed by combining a multiple of ten with a singl
 
 </Grammar>
 
----
+<Vocabulary title='Compound Numbers (21–99)' description='Learn how to form compound numbers using a hyphen.' level='A1' words={7}>
 
-<Vocabulary data={CARDINAL_NUMBERS.compound} />
+| Number | Word        | Pronunciation      |
+| :----: | :---------- | :----------------- |
+|   21   | twenty-one  | /ˌtwen.ti ˈwʌn/    |
+|   32   | thirty-two  | /ˌθɜː.ti ˈtuː/     |
+|   45   | forty-five  | /ˌfɔːr.ti ˈfaɪv/   |
+|   67   | sixty-seven | /ˌsɪk.sti ˈsev.ən/ |
+|   89   | eighty-nine | /ˌeɪ.ti ˈnaɪn/     |
+|   99   | ninety-nine | /ˌnaɪn.ti ˈnaɪn/   |
+
+</Vocabulary>
 
 ---
 
@@ -168,9 +183,9 @@ Learn how to express larger numbers in English by combining hundreds, thousands,
 
 ---
 
-<LessonGrid className='sm:grid-cols-2 lg:grid-cols-3'>
+<ContentGrid columns='repeat(auto-fill, minmax(13rem, 1fr))'>
 
-<TopicBlock title='Hundred' icon={Layers3}>
+<SectionCard title='Hundred' icon={Layers3}>
 Use **hundred** to express numbers from **100** to **999**.
 
 | Cardinal     | Number |
@@ -179,9 +194,9 @@ Use **hundred** to express numbers from **100** to **999**.
 | two hundred  |    200 |
 | five hundred |    500 |
 
-</TopicBlock>
+</SectionCard>
 
-<TopicBlock title='Thousand' icon={Layers3}>
+<SectionCard title='Thousand' icon={Layers3}>
 
 Use **thousand** to express numbers from **1,000** to **999,999**.
 
@@ -191,9 +206,9 @@ Use **thousand** to express numbers from **1,000** to **999,999**.
 | ten thousand   | 10,000 |
 | fifty thousand | 50,000 |
 
-</TopicBlock>
+</SectionCard>
 
-<TopicBlock title='Million' icon={Layers3}>
+<SectionCard title='Million' icon={Layers3}>
 
 Use **million** to express numbers from **1,000,000** and above.
 
@@ -203,8 +218,8 @@ Use **million** to express numbers from **1,000,000** and above.
 | two million |  2,000,000 |
 | ten million | 10,000,000 |
 
-</TopicBlock>
-</LessonGrid>
+</SectionCard>
+</ContentGrid>
 
 ---
 

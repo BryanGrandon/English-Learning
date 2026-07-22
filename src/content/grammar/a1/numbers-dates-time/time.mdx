@@ -6,10 +6,7 @@ topic: Number / Dates / Time
 order: 4
 ---
 
-import LessonGrid from '@shared/lessons/LessonGrid'
-import Callout from '@shared/components/content/callout/Callout'
-import TopicBlock from '@shared/lessons/topic-block/TopicBlock'
-import Grammar from '@shared/components/content/grammar/Grammar'
+import { ContentGrid, Callout, Grammar, SectionCard, ContentGridItem } from '@shared/components/content/index'
 import { ArrowRightLeft, Briefcase, MessageCircleMore } from 'lucide-react'
 
 # Time
@@ -62,20 +59,20 @@ Before learning how to tell the time, know these common words.
 
 Use these expressions to ask someone the time.
 
-<LessonGrid className='sm:grid-cols-2'>
-  <TopicBlock icon={Briefcase} title="Formal"  >
+<ContentGrid>
+  <SectionCard icon={Briefcase} title="Formal"  >
 
       - What time is it?
       - Excuse me, what time is it?
 
-  </TopicBlock>
-  <TopicBlock icon={MessageCircleMore} title="Informal"  >
+  </SectionCard>
+  <SectionCard icon={MessageCircleMore} title="Informal"  >
 
       - What's the time?
       - Do you have the time?
 
-  </TopicBlock>
-</LessonGrid>
+  </SectionCard>
+</ContentGrid>
 
 <Callout type="tip">
 
@@ -116,7 +113,7 @@ When the minutes are between **01** and **09**, English speakers often say **oh*
 
 Use **o'clock** only when there are _no minutes_.
 
-<LessonGrid className='md:grid-cols-3'>
+<ContentGrid columns='repeat(auto-fill, minmax(13rem, 1fr))'>
 <Callout type="example">
 
 | Time  | Read         |
@@ -126,9 +123,9 @@ Use **o'clock** only when there are _no minutes_.
 | 10:00 | ten o'clock  |
 
 </Callout>
-<div className='col-span-2'>
+<ContentGridItem column='span 2'>
   <Grammar
-    type="commonMistake"
+    type="common_mistake"
     title="Don't use *o'clock* with minutes"  
   >
 
@@ -139,8 +136,8 @@ Use **o'clock** only when there are _no minutes_.
 | ten to three o'clock      | ten to three      |
 
   </Grammar>
-</div>
-</LessonGrid>
+</ContentGridItem>
+</ContentGrid>
 
 ---
 
@@ -148,8 +145,8 @@ Use **o'clock** only when there are _no minutes_.
 
 English also has a traditional way to tell the time.
 
-<LessonGrid className='sm:grid-cols-2'>
-  <TopicBlock icon={ArrowRightLeft} title="Past"  >
+<ContentGrid>
+  <SectionCard icon={ArrowRightLeft} title="Past"  >
 
       Use **past** for 1-30 _minutes after the hour_.
 
@@ -159,8 +156,8 @@ English also has a traditional way to tell the time.
       | 3:10 | ten past three    |
       | 7:20 | twenty past seven |
 
-  </TopicBlock>
-  <TopicBlock icon={ArrowRightLeft} title="To"  >
+  </SectionCard>
+  <SectionCard icon={ArrowRightLeft} title="To"  >
 
       Use **to** for 31-59 _minutes before the next hour_.
 
@@ -170,8 +167,8 @@ English also has a traditional way to tell the time.
       |  8:45 | fifteen to nine |
       | 11:55 | five to twelve  |
 
-  </TopicBlock>
-</LessonGrid>
+  </SectionCard>
+</ContentGrid>
 
 ---
 
@@ -187,7 +184,7 @@ These expressions are very common in everyday English.
 | 6:30 | half past six      |
 | 7:45 | quarter to eight   |
 
-<LessonGrid className="sm:grid-cols-2">
+<ContentGrid>
 
 <Callout type="tip" title="Remember">
 
@@ -197,7 +194,7 @@ These expressions are very common in everyday English.
 
 </Callout>
 
-</LessonGrid>
+</ContentGrid>
 
 ---
 
@@ -214,7 +211,7 @@ Use **a.m.** and **p.m.** to show whether a time is before or after noon.
 
 English also uses different expressions for each part of the day.
 
-<LessonGrid className='md:grid-cols-2'>
+<ContentGrid>
 
 | Part      | Approximate Time       |
 | --------- | ---------------------- |
@@ -232,7 +229,7 @@ English also uses different expressions for each part of the day.
 
 </Callout>
 
-</LessonGrid>
+</ContentGrid>
 
 ---
 
