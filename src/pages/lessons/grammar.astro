@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro'
 import { getCollection, render } from 'astro:content'
 
 const lessons = await getCollection('grammar')
-const lesson = lessons.find((lesson) => lesson.id === 'a1/preposition/preposition-of-movement')
+const lesson = lessons.find((lesson) => lesson.id === 'a1/preposition/preposition')
 
 if (!lesson) {
   throw new Error('Lesson not found')
@@ -19,6 +19,7 @@ const { Content } = await render(lesson)
     </header>
 
     <aside class='lesson-aside p-4 test'>
+      <p>Add css for view table in mobile</p>
       <p>Grammar</p>
       <ul class='list-disc list-inside'>
         <li>Pronouns</li>
