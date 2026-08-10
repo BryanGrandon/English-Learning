@@ -6,9 +6,7 @@ topic: The Articles
 order: 1
 ---
 
-import LessonBlock from '@shared/mdx/lesson-block/LessonBlock'
-import GrammarPoint from '@shared/mdx/grammar-point/GrammarPoint.tsx'
-import LessonColumns from '@shared/mdx/LessonColumns'
+import { ContentGrid, Callout, Grammar, SectionCard } from '@shared/components/content/index'
 
 # The Definite Article
 
@@ -22,16 +20,16 @@ Utilizamos **the** delante de un sustantivo cuando la persona, la cosa o el luga
 
 Equivalent to: **el, la, los, las** (Spanish)
 
-<LessonColumns className='sm:grid-cols-2'>
-<LessonBlock icon='example' title='Example'>
+<ContentGrid>
+<Callout type='example'>
 
 - The boy → el niño
 - The book → el libro
 - The girls → las niñas
 
-</LessonBlock>
+</Callout>
 
-<LessonBlock icon='important' title='Important' background='#f97316'>
+<Callout type='important'>
 
 En inglés, **the** _nunca cambia_
 
@@ -39,8 +37,8 @@ En inglés, **the** _nunca cambia_
   - singular & plural
   - masculine & feminine
 
-</LessonBlock>
-</LessonColumns>
+</Callout>
+</ContentGrid>
 
 ---
 
@@ -48,74 +46,67 @@ En inglés, **the** _nunca cambia_
 
 El artículo **the** va antes del sustantivo. Si hay un adjetivo, **the** va antes del adjetivo.
 
-<LessonColumns className='sm:grid-cols-2'>
-  <LessonBlock icon='structure' title='Structure'>
-  
-    > the + adjective + noun
+<Grammar type='structure' title='Regla de posición' highlight='the + adjective + noun'>
 
-  </LessonBlock>
+- #### Examples.
+  - the car
+  - the red car
+  - the new teacher
 
-  <LessonBlock icon='example' title='Example'>
-
-    - the car
-    - the red car
-    - the new teacher
-
-  </LessonBlock>
-</LessonColumns>
+</Grammar>
 
 ---
 
 ## Usos de **the**
 
-<LessonColumns className='lg:grid-cols-2'>
-  <LessonBlock title='Cuando algo es específico' icon="focus" type="topic">
+<ContentGrid >
+  <SectionCard title='Cuando algo es específico' iconName='focus'>
     Úsalo cuando tanto el hablante como el oyente sepan exactamente de qué se está hablando.
 
     - What is the name of the restaurant?
     - Where is the bathroom?
 
-  </LessonBlock>
+  </SectionCard>
 
-  <LessonBlock title='Cuando se mencionó algo anteriormente' icon="reference" type="topic">
+  <SectionCard title='Cuando se mencionó algo anteriormente' iconName='reference'>
     Úsalo cuando ya se haya mencionado un sustantivo.
 
     - I saw a dog.
     - The dog was very big.
 
-  </LessonBlock>
+  </SectionCard>
 
-  <LessonBlock title='Cuando algo es único' icon="unique" type="topic">
+  <SectionCard title='Cuando algo es único' iconName='unique'>
     Úsalo cuando solo haya uno de algo.
 
     - the sun
     - the moon
     - the president
 
-  </LessonBlock>
+  </SectionCard>
 
-  <LessonBlock title='Al describir a una persona o cosa concreta' icon="identify" type="topic">
+  <SectionCard title='Al describir a una persona o cosa concreta' iconName='identify'>
     Utiliza el artículo **the** para identificar a una persona o cosa concreta dentro de un grupo.
 
     - The boy with the red shirt
     - The teacher in my class
     - The house on the corner
 
-  </LessonBlock>
-</LessonColumns>
+  </SectionCard>
+</ContentGrid>
 
 ---
 
 ## Errores habituales
 
-<LessonColumns className='lg:grid-cols-2'>
-  <LessonBlock title='Se utiliza para cosas en general' icon="mistake" type="topic" background='#f00'>
+<ContentGrid >
+  <SectionCard title='Se utiliza para cosas en general' iconName='mistake'>
     - ❌ The dogs are friendly (general idea)
     - ✅ Dogs are friendly
-  </LessonBlock>
+  </SectionCard>
 
-  <LessonBlock title='Olvidar cuándo algo es concreto' icon="mistake" type="topic" background='#f00'>
+  <SectionCard title='Olvidar cuándo algo es concreto' iconName='mistake' >
     - ❌ Where is bathroom?
     - ✅ Where is **the** bathroom?
-  </LessonBlock>
-</LessonColumns>
+  </SectionCard>
+</ContentGrid>
