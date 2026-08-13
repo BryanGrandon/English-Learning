@@ -1,0 +1,93 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import { getLessonsByTopic } from '../../../features/grammar/utilities/getLessonsByTopic'
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('grammar')
+
+  return lessons.map((lesson) => ({
+    params: {
+      slug: lesson.id,
+    },
+    props: {
+      lesson,
+    },
+  }))
+}
+
+const { lesson } = Astro.props
+const { Content } = await render(lesson)
+
+const listContent = await getLessonsByTopic('A1')
+// Create function in Aside for create [> topic] and click view => [> lessons]
+---
+
+<Layout>
+  <article class='lesson mx-auto'>
+    <header class='lesson-header test'>
+      navbar - {lesson.data.topic} - {lesson.data.title}
+    </header>
+
+    <!-- Crate Aside in the feature grammar/components params = level, lesson -->
+
+    <aside class='lesson-aside p-4 test'>
+      <p>Grammar</p>
+      <ul class='list-disc list-inside'>
+        <!-- GRAMMAR_A1 -->
+        {listContent.map((data) => <li>{data.topic}</li>)}
+      </ul>
+      <br />
+      <p>This lesson</p>
+      <ul class='list-disc list-inside'>
+        <li>theme 1</li>
+        <li>theme 2</li>
+        <li>theme 3</li>
+      </ul>
+    </aside>
+
+    <main class='lesson-main grid p-8'>
+      <article class='max-w-4xl grid gap-4 mdx-content'>
+        <Content />
+      </article>
+    </main>
+  </article>
+
+  <style>
+    .lesson {
+      display: grid;
+      grid-template-rows: 60px 1fr;
+      grid-template-areas:
+        'navbar'
+        'content';
+    }
+
+    .lesson-header {
+      grid-area: navbar;
+      border: 1px solid #0f0;
+    }
+
+    .lesson-main {
+      grid-area: content;
+      border: 1px solid #0ff;
+    }
+
+    .lesson-aside {
+      display: none;
+      grid-area: aside;
+    }
+
+    @media screen and (min-width: 1200px) {
+      .lesson-aside {
+        display: block;
+      }
+      .lesson {
+        grid-template-columns: 250px 56rem;
+        grid-template-areas:
+          'navbar navbar'
+          'aside content'
+          'aside content';
+      }
+    }
+  </style>
+</Layout>

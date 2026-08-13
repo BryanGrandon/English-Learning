@@ -16,10 +16,7 @@
 
       function updateTheme() {
         const savedTheme = localStorage.getItem('theme')
-
         const theme = savedTheme ?? (mediaQuery.matches ? 'dark' : 'light')
-
-        console.log(theme)
         root.dataset.theme = theme
       }
 
