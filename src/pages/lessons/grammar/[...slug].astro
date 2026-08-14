@@ -1,7 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
-import { getLessonsByTopic } from '../../../features/grammar/utilities/getLessonsByTopic'
+
+import Aside from '../../../features/grammar/components/Aside'
 
 export async function getStaticPaths() {
   const lessons = await getCollection('grammar')
@@ -19,7 +20,8 @@ export async function getStaticPaths() {
 const { lesson } = Astro.props
 const { Content } = await render(lesson)
 
-const listContent = await getLessonsByTopic('A1')
+const data = await getCollection('grammar')
+
 // Create function in Aside for create [> topic] and click view => [> lessons]
 ---
 
@@ -31,11 +33,12 @@ const listContent = await getLessonsByTopic('A1')
 
     <!-- Crate Aside in the feature grammar/components params = level, lesson -->
 
-    <aside class='lesson-aside p-4 test'>
+    <Aside level={lesson.data.level} lessonId={lesson.id} data={data} client:load />
+
+    <aside class='p-4 test'>
       <p>Grammar</p>
       <ul class='list-disc list-inside'>
         <!-- GRAMMAR_A1 -->
-        {listContent.map((data) => <li>{data.topic}</li>)}
       </ul>
       <br />
       <p>This lesson</p>
