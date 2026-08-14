@@ -1,19 +1,8 @@
-import { GRAMMAR_A1, type GrammarLevel } from '../config'
 import { ChevronDown } from 'lucide-react'
 import { useGrammarEngine } from '../hooks/useGrammarEngine'
-
-export type GrammarLesson = {
-  id: string
-  body?: string
-  collection: 'grammar'
-  data: {
-    title: string
-    description: string
-    level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'
-    topic: string
-    order: number
-  }
-}
+import type { GrammarLesson } from '../utilities/types/grammar-lesson'
+import type { GrammarLevel } from '../utilities/constants/level'
+import { GRAMMAR_A1 } from '../utilities/constants/grammar-level'
 
 type AsideProps = {
   level: GrammarLevel
@@ -22,32 +11,40 @@ type AsideProps = {
 }
 
 const Aside = ({ level, lessonId, data }: AsideProps) => {
-  const { getLessonsByTopic } = useGrammarEngine(data, level)
+  const { getLessonsByTopic } = useGrammarEngine({ data, grammarLevel: level })
 
   return (
-    <aside className='lesson-aside p-4 test'>
-      <h2>Grammar</h2>
-      <article>
-        <h3>Level {level}</h3>
-        <section className='flex flex-col gap-3'>
-          {GRAMMAR_A1.map((lesson) => (
-            <details className='group' key={lesson.id}>
-              <summary className='flex cursor-pointer list-none items-center justify-between font-medium'>
-                <span>{lesson.title}</span>
+    <aside className='lesson-aside p-2 '>
+      <article className='border border-gray-500 p-4 rounded-lg flex flex-col gap-2'>
+        <div className=''>
+          <h2 className='font-display text-2xl'>Grammar</h2>
+          <p className='pl-4 text-text-secondary font-display'>Level {level}</p>
+        </div>
+        <hr className='text-gray-500' />
+        <article>
+          <section className='flex flex-col gap-3 p-2'>
+            {GRAMMAR_A1.map((lesson) => (
+              <details className='group flex flex-col gap-2' key={lesson.id}>
+                <summary className='flex cursor-pointer list-none items-center justify-between font-medium'>
+                  <span>{lesson.title}</span>
+                  <ChevronDown size={20} className='transition-transform duration-200 group-open:rotate-180' />
+                </summary>
 
-                <ChevronDown size={20} className='transition-transform duration-200 group-open:rotate-180' />
-              </summary>
-
-              <div className='px-4 py-2'>
-                {getLessonsByTopic(lesson.topic).map((el) => (
-                  <a key={el.order} href={el.id} className='block'>
-                    {el.title}
-                  </a>
-                ))}
-              </div>
-            </details>
-          ))}
-        </section>
+                <section className='pl-2 py-2 flex flex-col gap-2 '>
+                  {getLessonsByTopic(lesson.topic).map((el) => (
+                    <a
+                      key={el.order}
+                      href={'/lessons/grammar/' + el.id}
+                      className='block border border-gray-500 py-1 px-3 rounded-lg'
+                    >
+                      {el.title}
+                    </a>
+                  ))}
+                </section>
+              </details>
+            ))}
+          </section>
+        </article>
       </article>
     </aside>
   )

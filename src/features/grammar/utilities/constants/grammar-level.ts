@@ -1,14 +1,3 @@
-export const LEVEL = {
-  A1: 'A1',
-  A2: 'A2',
-  B1: 'B1',
-  B2: 'B2',
-  C1: 'C1',
-  C2: 'C2',
-} as const
-
-export type GrammarLevel = keyof typeof LEVEL
-
 export const GRAMMAR_A1 = [
   { id: 1, topic: 'nouns', title: 'Nouns' },
   { id: 2, topic: 'articles', title: 'Articles' },
