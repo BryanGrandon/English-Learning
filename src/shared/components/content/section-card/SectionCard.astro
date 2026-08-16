@@ -1,0 +1,27 @@
+---
+import { cn } from '@shared/lib/cn'
+import Icon from '@shared/components/icons/Icon'
+import type { IconName } from '@shared/components/icons/icon-variation'
+
+interface Props {
+  title: string
+  icon?: IconName
+  className?: string
+}
+
+const { title, icon, className } = Astro.props
+---
+
+<section class={cn('lesson-block flex flex-col gap-4 rounded-xl border border-gray-500 bg-black/10 p-4', className)}>
+  <header class='flex items-center gap-3 border-b border-gray-500 pb-3'>
+    {icon && <Icon name={icon} size={20} className='shrink-0' aria-hidden='true' />}
+
+    <h3 class='font-display text-xl font-semibold capitalize'>
+      {title}
+    </h3>
+  </header>
+
+  <div class='grid gap-4'>
+    <slot />
+  </div>
+</section>

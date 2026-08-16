@@ -6,15 +6,17 @@ topic: nouns
 order: 1
 ---
 
-import { ContentGrid, Callout, Grammar, SectionCard } from '@shared/components/content/index'
+import ContentGrid from '@shared/components/content/content-grid/ContentGrid.astro'
+import { Callout, Grammar, SectionCard } from '@shared/components/content/index'
 import { Shapes } from 'lucide-react'
 
 # Nouns
 
 A **noun** is a word that names **a person, animal, place, thing, event, or idea**. Nouns tell us **who** or **what** we are talking about.
 
-<ContentGrid>
-<Callout type='example'>
+<ContentGrid columns={3}>
+
+<Callout type='example' className='col-span-2'>
 
 - **Person:** teacher
 - **Animal:** dog

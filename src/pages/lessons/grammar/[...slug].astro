@@ -21,8 +21,6 @@ const { lesson } = Astro.props
 const { Content } = await render(lesson)
 
 const data = await getCollection('grammar')
-
-// Create function in Aside for create [> topic] and click view => [> lessons]
 ---
 
 <Layout>
@@ -31,23 +29,7 @@ const data = await getCollection('grammar')
       navbar - {lesson.data.topic} - {lesson.data.title}
     </header>
 
-    <!-- Crate Aside in the feature grammar/components params = level, lesson -->
-
     <Aside level={lesson.data.level} lessonId={lesson.id} data={data} client:load />
-
-    <aside class='p-4 test'>
-      <p>Grammar</p>
-      <ul class='list-disc list-inside'>
-        <!-- GRAMMAR_A1 -->
-      </ul>
-      <br />
-      <p>This lesson</p>
-      <ul class='list-disc list-inside'>
-        <li>theme 1</li>
-        <li>theme 2</li>
-        <li>theme 3</li>
-      </ul>
-    </aside>
 
     <main class='lesson-main grid p-8'>
       <article class='max-w-4xl grid gap-4 mdx-content'>
