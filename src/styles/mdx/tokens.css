@@ -18,9 +18,9 @@
   --mdx-shadow: 0 2px 8px var(--shadow-light), 0 8px 24px var(--shadow-light-lg);
 
   /* Highlight */
-  --mdx-highlight-primary: var(--blue-600);
-  --mdx-highlight-accent: var(--purple-600);
-  --mdx-highlight-warning: var(--red-600);
+  --mdx-highlight-primary: #2563eb;
+  --mdx-highlight-accent: #7c3aed;
+  --mdx-highlight-warning: #d97706;
 }
 
 [data-theme='dark'] {
@@ -44,5 +44,5 @@
   /* Highlight */
   --mdx-highlight-primary: #60a5fa;
   --mdx-highlight-accent: #a78bfa;
-  --mdx-highlight-warning: var(--red-400);
+  --mdx-highlight-warning: #fbbf24;
 }

@@ -63,7 +63,7 @@
 
   tbody td:first-child {
     color: var(--mdx-text-primary);
-    font-weight: 600;
+    font-weight: 500;
     font-family: var(--font-heading);
   }
 }
