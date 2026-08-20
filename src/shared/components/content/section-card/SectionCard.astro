@@ -7,16 +7,18 @@ interface Props {
   title: string
   icon?: IconName
   className?: string
+  withBorder?: boolean
 }
 
-const { title, icon, className } = Astro.props
+const { title, icon, className = '', withBorder = false } = Astro.props
+const border = withBorder ? 'section-card--border' : ''
 ---
 
-<section class={cn('lesson-block flex flex-col gap-4 rounded-xl border border-gray-500 bg-black/10 p-4', className)}>
-  <header class='flex items-center gap-3 border-b border-gray-500 pb-3'>
+<section class={cn('lesson-block flex flex-col gap-4 rounded-xl p-4 section-card', className, border)}>
+  <header class='flex items-center gap-3 pb-3'>
     {icon && <Icon name={icon} size={20} className='shrink-0' aria-hidden='true' />}
 
-    <h3 class='font-display text-xl font-semibold capitalize'>
+    <h3 class='font-semibold capitalize'>
       {title}
     </h3>
   </header>
@@ -25,3 +27,13 @@ const { title, icon, className } = Astro.props
     <slot />
   </div>
 </section>
+
+<style>
+  .section-card--border {
+    border: 1px solid gray;
+
+    header {
+      border-bottom: 1px solid gray;
+    }
+  }
+</style>

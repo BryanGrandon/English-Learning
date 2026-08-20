@@ -1,0 +1,62 @@
+---
+import { cn } from '@shared/lib/cn'
+import { GRAMMAR_CONFIG, type GrammarVariant } from './grammar.config'
+
+interface Props {
+  type: GrammarVariant
+  title: string
+  description?: string
+  highlight?: string
+  className?: string
+  fullWidth?: boolean
+}
+
+const { type, title, description, highlight, className = '', fullWidth = false } = Astro.props
+const { icon: Icon, color, background, label } = GRAMMAR_CONFIG[type]
+const width = fullWidth ? 'w-full' : 'w-fit'
+---
+
+<section
+  class={cn('grid gap-2 rounded-lg border p-4', className, width)}
+  style={{
+    borderColor: color,
+    backgroundColor: background,
+  }}
+>
+  <header class='relative grid grid-cols-[auto_1fr] items-center gap-4 border-b pb-2' style={{ borderColor: color }}>
+    <div class='flex size-13 items-center justify-center rounded-lg' style={{ backgroundColor: color }}>
+      <Icon size={26} color='white' />
+    </div>
+
+    <div class='grid gap-1'>
+      <span class='font-display text-xs font-semibold capitalize tracking-wider'>
+        {label}
+      </span>
+
+      <p class='font-display text-xl font-semibold tracking-wider'>
+        {title}
+      </p>
+
+      {description && <p class='text-sm text-color-secondary'>{description}</p>}
+    </div>
+  </header>
+
+  <div class='grid gap-4 py-1 w-full overflow-x-auto'>
+    {
+      highlight && (
+        <div class='flex flex-col gap-3'>
+          <span class='font-display font-semibold tracking-wider'>{label}</span>
+
+          <p
+            class='ml-4 w-fit rounded-lg border-2 bg-white/70 px-4 py-2 font-mono font-medium dark:bg-black/20'
+            style={{ borderColor: color }}
+          >
+            {highlight}
+          </p>
+        </div>
+      )
+    }
+
+    <slot />
+  </div>
+</section>
