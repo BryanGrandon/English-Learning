@@ -1,0 +1,68 @@
+---
+import { cn } from '@shared/lib/cn'
+import { LESSON_BLOCK_VARIANTS, type LessonBlockVariants } from './lesson-block.config'
+
+interface Props {
+  type: LessonBlockVariants
+  className?: string
+  fullWidth?: boolean
+  title?: string
+}
+
+const { type, className = '', title, fullWidth = false } = Astro.props
+const { color, background, icon: Icon } = LESSON_BLOCK_VARIANTS[type]
+
+const label = type.replaceAll('_', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase())
+const width = fullWidth ? 'w-full' : 'w-fit'
+---
+
+<section
+  class={cn('flex flex-col gap-2 p-4 border rounded-lg', 'lesson-block', width, className)}
+  style={{
+    '--lesson-color': color,
+    '--lesson-background-light': background.light,
+    '--lesson-background-dark': background.dark,
+  }}
+>
+  <header class='flex items-center gap-3'>
+    <div class={cn('flex items-center justify-center rounded', 'lesson-block__icon', title ? 'size-11' : 'size-8')}>
+      <Icon size={title ? 24 : 18} color='white' />
+    </div>
+    <section>
+      {
+        title ? (
+          <>
+            <span class='block text-xs font-body capitalize'>{label}</span>
+            <p class='text-lg'>{title}</p>
+          </>
+        ) : (
+          <p class='capitalize text-lg'>{label}</p>
+        )
+      }
+    </section>
+  </header>
+  <hr class='lesson-block__hr' />
+  <section class={cn('grid gap-4 w-full overflow-x-auto')}>
+    <slot />
+  </section>
+</section>
+
+<style>
+  .lesson-block {
+    border: 1px solid var(--lesson-color);
+    background-color: var(--lesson-background-light);
+  }
+
+  .lesson-block__icon {
+    background: var(--lesson-color);
+  }
+
+  .lesson-block__hr {
+    border-color: var(--lesson-color);
+    margin: 0;
+  }
+
+  [data-theme='dark'] .lesson-block {
+    background-color: var(--lesson-background-dark);
+  }
+</style>
