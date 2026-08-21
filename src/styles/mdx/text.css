@@ -8,12 +8,12 @@
 
   strong {
     color: var(--mdx-highlight-accent);
-    font-weight: 500;
+    font-weight: inherit;
   }
 
   strong em,
   em strong {
-    font-weight: 500;
+    font-weight: inherit;
     color: var(--mdx-highlight-warning);
   }
 }
@@ -21,9 +21,9 @@
 /* ----- Titles ----- */
 
 .mdx-content {
-  h1,
-  h2,
-  h3 {
+  > h1,
+  > h2,
+  > h3 {
     color: var(--mdx-text-primary);
     font-weight: 600;
     line-height: 1.2;

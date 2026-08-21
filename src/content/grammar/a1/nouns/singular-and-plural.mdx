@@ -1,19 +1,17 @@
 ---
 title: Singular and Plural Nouns
-description: PASAR DE DESCRIPTION A TRANSLATION FOR CREATE IN ...SLUG.ASTRO AND REMOVE LessonHeader and add in features Grammar
+translation: Sustantivos en singular y plural
 level: A1
 topic: nouns
 order: 1
 ---
 
-import { ContentGrid, Callout, Grammar, SectionCard, LessonHeader, LessonBlock } from '@shared/components/content/index'
-
-<LessonHeader title='Singular and Plural Nouns' translation='Sustantivos en singular y plural' />
+import { ContentGrid, Callout, Grammar, SectionCard, LessonBlock } from '@shared/components/content/index'
 
 A noun can be singular or plural. A **singular noun** refers to **_one_** person, place, animal, thing, or idea,
 while a **plural noun** refers to **_two or more_** people, places, animals, things, or ideas.
 
-<Grammar type="comparison" title='Singular vs. Plural Nouns' >
+<LessonBlock type='comparison' title='Singular vs. Plural Nouns'>
 
 | Singular | Plural   |
 | -------- | -------- |
@@ -22,134 +20,180 @@ while a **plural noun** refers to **_two or more_** people, places, animals, thi
 | car      | cars     |
 | apple    | apples   |
 
-</Grammar>
+</LessonBlock>
 
 ---
 
 ## How to form plural nouns
 
-- Adding **_-s_**
-- Adding **_-es_**
-- Nouns Ending in **_-y_**
-- Nouns Ending in **_-f_** or **_-fe_**
+<LessonBlock type="rule" >
 
-<LessonBlock type='rule'>
-
-- Adding **_-s_**
-- Adding **_-es_**
-- Nouns Ending in **_-y_**
-- Nouns Ending in **_-f_** or **_-fe_**
+| Ending                                 | Plural Rule                   | Example         |
+| -------------------------------------- | ----------------------------- | --------------- |
+| most nouns                             | add **-s**                    | book → books    |
+| **-s, -ss, -sh, -ch, -x, -z**          | add **-es**                   | bus → buses     |
+| consonant + **y**                      | change **-y** to **-ies**     | party → parties |
+| vowel + **y**                          | add **-s**                    | boy → boys      |
+| some nouns ending in **-f** or **-fe** | change **-f/-fe** to **-ves** | leaf → leaves   |
 
 </LessonBlock>
-
-<LessonBlock type='rule' title='Noun + s' layout='card'>
-
-- Adding **_-s_**
-- Adding **_-es_**
-- Nouns Ending in **_-y_**
-- Nouns Ending in **_-f_** or **_-fe_**
-
-</LessonBlock>
-
-<Callout type="example">
-
-- Adding **_-s_**
-- Adding **_-es_**
-- Nouns Ending in **_-y_**
-- Nouns Ending in **_-f_** or **_-fe_**
-
-</Callout>
 
 ---
 
-<ContentGrid>
-
-<SectionCard title='1. Adding -s'>
+### 1. Add -s
 
 Most nouns form the plural by adding **-s**.
 
-<Grammar type='rule' title='Regular Plural Nouns' highlight='Noun + s' fullWidth={true}>
+<ContentGrid columns={3}>
+<LessonBlock type='structure' title='Singular + -s' fullWidth >
 
-- #### Examples
-  - car → cars
-  - house → houses
-  - pen → pens
-  - book → books
+- _car_ + **_-s_** → **cars**
+- _house_ + **_-s_** → **houses**
 
-</Grammar>
+</LessonBlock>
 
-</SectionCard>
+<LessonBlock type='example' fullWidth>
 
-<SectionCard title='2. Adding -es'>
+- I have three **books**.
 
-If a noun ends in **s, ss, sh, ch, x, or o**, add **-es**.
-
-<Grammar type='rule' title='' highlight='Noun + es' fullWidth={true}>
-
-- #### Examples
-  - bus → buses
-  - box → boxes
-  - watch → watches
-  - dish → dishes
-
-</Grammar>
-
-</SectionCard>
-
-<SectionCard title='3. Nouns Ending in -y'>
-
-If a noun ends in **consonant + y**, change **y** to **ies**.
-
-<Grammar type='rule' title='Consonant + y → ies' highlight='Consonant + y → ies' fullWidth={true}>
-
-- #### Examples
-  - party → parties
-  - city → cities
-  - baby → babies
-  - country → countries
-
-</Grammar>
-
-</SectionCard>
-
-<SectionCard title='4. Nouns Ending in -f or -fe'>
-
-Some nouns ending in **f** or **fe** change to **ves** in the plural.
-
-<Grammar type='rule' title='Add -s' highlight='f / fe → ves' fullWidth={true}>
-
-- #### Examples
-  - leaf → leaves
-  - wife → wives
-  - life → lives
-  - wolf → wolves
-
-</Grammar>
-
-</SectionCard>
-
+</LessonBlock>
 </ContentGrid>
 
-### 1. Add -s
+---
 
 ### 2. Add -es
 
+If a noun ends in _s, ss, sh, ch, x, or o_, add **_-es_**.
+
+<ContentGrid>
+<LessonBlock type='structure' title='Singular + es' fullWidth>
+
+- _bus_ + **_-es_** → **buses**
+- _box_ + **_-es_** → **boxes**
+
+</LessonBlock>
+
+<LessonBlock type='example' fullWidth>
+  - There are three **buses** outside.
+</LessonBlock>
+</ContentGrid>
+
+---
+
 ### 3. Nouns ending in -y
 
+Check the letter before **-y**:
+
+- If a _consonant_, change **-y** to **_-ies_**
+- If a _vowel_, simply add **_-s_**.
+
+<ContentGrid>
+<LessonBlock type='structure' title='Ending in -y' fullWidth>
+
+| Ending            | Plural Rule               |
+| ----------------- | ------------------------- |
+| consonant + **y** | change **-y** to **-ies** |
+| vowel + **y**     | add **-s**                |
+
+</LessonBlock>
+
+<LessonBlock type='example' fullWidth>
+  - There are three part***ies*** this weekend.
+</LessonBlock>
+</ContentGrid>
+
+---
+
 ### 4. Nouns ending in -f or -fe
+
+Some nouns ending in **f** or **fe** change to **ves** in the plural.
+
+<ContentGrid>
+
+<LessonBlock type='structure' title='f / fe → ves' fullWidth>
+
+- lea**f** → lea***ves***
+- wi**fe** → wi***ves***
+
+</LessonBlock>
+
+<LessonBlock type='example' fullWidth>
+  - She has two **knives** in the kitchen.
+</LessonBlock>
+</ContentGrid>
 
 ---
 
 ## Irregular plural nouns
 
+Some nouns do **_not_** follow the _regular plural rules_. Their forms change completely.
+
+<LessonBlock type="important">
+| Singular | Plural   |
+| -------- | -------- |
+| man      | men      |
+| woman    | women    |
+| child    | children |
+| person   | people   |
+| mouse    | mice     |
+| tooth    | teeth    |
+| foot     | feet     |
+
+</LessonBlock>
+
 ---
 
 ## Nouns with the same singular and plural form
+
+Some nouns have the same form in both singular and plural.
+
+<LessonBlock type='remember'>
+
+| Singular | Plural |
+| -------- | ------ |
+| sheep    | sheep  |
+| fish     | fish   |
+| deer     | deer   |
+
+</LessonBlock>
 
 ---
 
 ## Singular and plural with articles
 
+- #### Use **a/an** with _singular countable nouns_.
+  - a book
+  - a car
+  - an apple
+  - an orange
+- #### Do **_not_** use **a/an** with _plural nouns_.
+  - books
+  - cars
+  - apples
+  - oranges
+
+<ContentGrid columns={3}>
+<LessonBlock type="example" fullWidth>
+
+- I have a book.
+- I have three books.
+- She is a teacher.
+- They are teachers.
+
+</LessonBlock>
+</ContentGrid>
+
 ---
 
 ## Singular and plural with verbs
+
+Singular and plural nouns can affect the form of the verb be.
+
+- #### Singular
+  - The boy is happy.
+  - The dog is outside.
+  - The book is interesting.
+- #### Plural
+  - The boys are happy.
+  - The dogs are outside.
+  - The books are interesting.

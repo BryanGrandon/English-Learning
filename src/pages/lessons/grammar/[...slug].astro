@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 
 import Aside from '../../../features/grammar/components/Aside'
+import LessonHeader from '../../../features/grammar/components/LessonHeader.astro'
 
 export async function getStaticPaths() {
   const lessons = await getCollection('grammar')
@@ -33,6 +34,7 @@ const data = await getCollection('grammar')
 
     <main class='lesson-main grid p-8'>
       <article class='max-w-4xl grid gap-4 mdx-content'>
+        <LessonHeader title={lesson.data.title} translation={lesson.data.translation} />
         <Content />
       </article>
     </main>

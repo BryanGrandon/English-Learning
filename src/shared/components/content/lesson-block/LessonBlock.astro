@@ -17,7 +17,7 @@ const width = fullWidth ? 'w-full' : 'w-fit'
 ---
 
 <section
-  class={cn('flex flex-col gap-2 p-4 border rounded-lg', 'lesson-block', width, className)}
+  class={cn('flex flex-col gap-3 p-4 rounded-lg', 'lesson-block', width, className)}
   style={{
     '--lesson-color': color,
     '--lesson-background-light': background.light,
@@ -51,6 +51,32 @@ const width = fullWidth ? 'w-full' : 'w-fit'
   .lesson-block {
     border: 1px solid var(--lesson-color);
     background-color: var(--lesson-background-light);
+
+    table {
+      background: #0000000e;
+      border: 1px solid var(--lesson-color);
+    }
+    thead {
+      background: var(--lesson-background-light);
+    }
+    th {
+      border-bottom: 1px solid var(--lesson-color);
+    }
+
+    tbody tr:hover {
+      background: var(--lesson-background-light);
+    }
+    tbody tr:not(:last-child) td {
+      border-bottom: 1px solid var(--lesson-color);
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      border-left: 1px solid var(--lesson-color);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--lesson-color);
+    }
   }
 
   .lesson-block__icon {
@@ -62,7 +88,11 @@ const width = fullWidth ? 'w-full' : 'w-fit'
     margin: 0;
   }
 
-  [data-theme='dark'] .lesson-block {
+  :global([data-theme='dark']) .lesson-block {
     background-color: var(--lesson-background-dark);
+
+    thead {
+      background: var(--lesson-background-dark);
+    }
   }
 </style>
