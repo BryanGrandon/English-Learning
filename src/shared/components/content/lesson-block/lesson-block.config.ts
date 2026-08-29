@@ -1,4 +1,5 @@
 import { createVariants } from './lesson-block.utils'
+
 import {
   Scale,
   GitCompareArrows,
@@ -17,9 +18,10 @@ import {
 const LESSON_BLOCK_VARIANTS = {
   rule: createVariants({ color: '#7c3aed', icon: Scale }),
   structure: createVariants({ color: '#2563eb', icon: Blocks }),
-  definition: createVariants({ color: '#6366f1', icon: BookOpen }),
+  definition: createVariants({ color: '#6366f1', icon: FileText }),
+  usage: createVariants({ color: '#4f46e5', icon: BookOpen }),
   comparison: createVariants({ color: '#0891b2', icon: GitCompareArrows }),
-  example: createVariants({ color: '#16a34a', icon: FileText }),
+  example: createVariants({ color: '#16a34a', icon: Lightbulb }),
   common_mistake: createVariants({ color: '#dc2626', icon: CircleX }),
   note: createVariants({ color: '#475569', icon: NotebookPen }),
   tip: createVariants({ color: '#0d9488', icon: Lightbulb }),

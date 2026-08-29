@@ -1,12 +1,12 @@
 ---
 title: Time
-description: Learn how to tell the time in English using digital and traditional expressions.
+translation: translation
 level: A1
 topic: numbers-dates-time
 order: 4
 ---
 
-import { ContentGrid, Callout, Grammar, SectionCard, ContentGridItem } from '@shared/components/content/index'
+import { ContentGrid, SectionCard, LessonBlock } from '@shared/components/content/index'
 import { ArrowRightLeft, Briefcase, MessageCircleMore } from 'lucide-react'
 
 # Time
@@ -19,20 +19,20 @@ Time is used to express _hours and minutes_ during the day.
   - talk about daily routines
   - describe schedules and appointments
 
-<Callout type="example_sentences">
+<LessonBlock type="example">
 
 - It's three o'clock.
 - What time is it?
 - School starts at eight.
 - I go to bed at ten.
 
-</Callout>
+</LessonBlock>
 
-<Callout type="remember">
+<LessonBlock type="remember">
 
 Learning how to tell the time helps you talk about **daily activities**, **school**, **work**, and **appointments**.
 
-</Callout>
+</LessonBlock>
 
 ---
 
@@ -74,11 +74,11 @@ Use these expressions to ask someone the time.
   </SectionCard>
 </ContentGrid>
 
-<Callout type="tip">
+<LessonBlock type="tip">
 
 The most common question is **_What time is it?_**
 
-</Callout>
+</LessonBlock>
 
 ---
 
@@ -96,16 +96,15 @@ The most common way to tell the time is to say: **Hour + Minutes**
 | 9:09 | nine oh nine     |
 | 9:55 | nine fifty-five  |
 
-<Callout type="note">
+<LessonBlock type="note">
 
 When the minutes are between **01** and **09**, English speakers often say **oh** before the minute.
 
-- #### Examples:
-  - 5:01 → five **oh** one
-  - 7:05 → seven **oh** five
-  - 9:09 → nine **oh** nine
+- 5:01 → five **oh** one
+- 7:05 → seven **oh** five
+- 9:09 → nine **oh** nine
 
-</Callout>
+</LessonBlock>
 
 ---
 
@@ -113,8 +112,8 @@ When the minutes are between **01** and **09**, English speakers often say **oh*
 
 Use **o'clock** only when there are _no minutes_.
 
-<ContentGrid columns='repeat(auto-fill, minmax(13rem, 1fr))'>
-<Callout type="example">
+<ContentGrid columns={3} >
+<LessonBlock type="example">
 
 | Time  | Read         |
 | :---: | ------------ |
@@ -122,12 +121,9 @@ Use **o'clock** only when there are _no minutes_.
 | 5:00  | five o'clock |
 | 10:00 | ten o'clock  |
 
-</Callout>
-<ContentGridItem column='span 2'>
-  <Grammar
-    type="common_mistake"
-    title="Don't use *o'clock* with minutes"  
-  >
+</LessonBlock>
+
+<LessonBlock type="common_mistake" title="Don't use *o'clock* with minutes" className='col-span-2' >
 
 | ❌ Incorrect              | ✅ Correct        |
 | ------------------------- | ----------------- |
@@ -135,8 +131,7 @@ Use **o'clock** only when there are _no minutes_.
 | quarter past four o'clock | quarter past four |
 | ten to three o'clock      | ten to three      |
 
-  </Grammar>
-</ContentGridItem>
+</LessonBlock>
 </ContentGrid>
 
 ---
@@ -184,17 +179,13 @@ These expressions are very common in everyday English.
 | 6:30 | half past six      |
 | 7:45 | quarter to eight   |
 
-<ContentGrid>
-
-<Callout type="tip" title="Remember">
+<LessonBlock type="remember" >
 
 - **quarter past** = 15 minutes **after** the hour
 - **half past** = 30 minutes **after** the hour
 - **quarter to** = 15 minutes **before** the next hour
 
-</Callout>
-
-</ContentGrid>
+</LessonBlock>
 
 ---
 
@@ -202,40 +193,44 @@ These expressions are very common in everyday English.
 
 Use **a.m.** and **p.m.** to show whether a time is before or after noon.
 
+<LessonBlock type='usage'>
+
 | Abbreviation | Meaning                                   |
 | ------------ | ----------------------------------------- |
 | a.m.         | Midnight (12:00 a.m.) → Noon (12:00 p.m.) |
 | p.m.         | Noon (12:00 p.m.) → Midnight (12:00 a.m.) |
+
+</LessonBlock>
 
 ### Parts of the Day
 
 English also uses different expressions for each part of the day.
 
 <ContentGrid>
+<LessonBlock type='usage'>
 
 | Part      | Approximate Time       |
 | --------- | ---------------------- |
-| Morning   | 6:00 a.m. – 12:00 p.m. |
-| Afternoon | 12:00 p.m. – 6:00 p.m. |
-| Evening   | 6:00 p.m. – 9:00 p.m.  |
-| Night     | 9:00 p.m. – 6:00 a.m.  |
+| Morning   | 6:00 a.m. - 12:00 p.m. |
+| Afternoon | 12:00 p.m. - 6:00 p.m. |
+| Evening   | 6:00 p.m. - 9:00 p.m.  |
+| Night     | 9:00 p.m. - 6:00 a.m.  |
 
-<Callout type="example">
+</LessonBlock>
+
+<LessonBlock type="example">
 
 - 7:00 a.m. → seven in the morning
 - 1:00 p.m. → one in the afternoon
 - 6:30 p.m. → six thirty in the evening
 - 10:00 p.m. → ten at night
 
-</Callout>
-
+</LessonBlock>
 </ContentGrid>
 
 ---
 
-## Remember
-
-<Callout type="remember">
+<LessonBlock type="remember">
 
 - Read the **hour first**, then the **minutes**.
 - Use **o'clock** only for exact hours.
@@ -244,4 +239,4 @@ English also uses different expressions for each part of the day.
 - Learn both digital and traditional expressions.
 - Practice by reading clocks every day.
 
-</Callout>
+</LessonBlock>
