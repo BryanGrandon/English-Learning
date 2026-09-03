@@ -1,0 +1,64 @@
+---
+import { cn } from '@shared/lib/cn'
+import type { Course } from '../utilities/types/courses'
+
+interface Props {
+  course: Course
+}
+
+const {
+  course: { url, level, color, title, icon: Icon, description },
+} = Astro.props
+
+const colorLight = color.light
+const colorDark = color.dark
+---
+
+<a
+  href={url}
+  class={cn(
+    'relative flex flex-col items-center gap-4 overflow-hidden rounded-lg border-2 p-4 hover:scale-102 active:scale-98',
+    'course-card',
+  )}
+>
+  <span class='absolute top-0 right-0 text-xs rounded-bl-lg rounded-tr-lg px-4 py-2 border-l-2 border-b-2'>
+    {level}
+  </span>
+
+  <div class='icon py-6 w-full flex flex-col items-center'>
+    <Icon size={60} />
+  </div>
+
+  <div class='flex flex-col gap-2'>
+    <h3 class='text-lg font-semibold'>{title}</h3>
+    <p class='text-sm text-text-secondary'>{description}</p>
+  </div>
+</a>
+
+<style define:vars={{ colorLight, colorDark }}>
+  .course-card {
+    border-color: var(--colorLight);
+
+    .icon {
+      color: var(--colorLight);
+      border-bottom: 2px solid var(--colorLight);
+    }
+
+    span {
+      border-color: var(--colorLight);
+    }
+  }
+
+  :global([data-theme='dark']) .course-card {
+    border-color: var(--colorDark);
+
+    .icon {
+      color: var(--colorDark);
+      border-bottom: 2px solid var(--colorDark);
+    }
+
+    span {
+      border-color: var(--colorDark);
+    }
+  }
+</style>

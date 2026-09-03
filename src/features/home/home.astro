@@ -1,69 +1,43 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import { LEVELS } from './utilities/constants/grammar'
+import { COURSES } from './utilities/config/courses'
+import CourseCard from './components/CourseCard.astro'
 ---
 
-<Layout>
-  <article class='flex flex-col gap-16 max-w-350 mx-auto w-full test relative'>
-    <header class='flex flex-col items-center gap-4 test py-20 px-4'>
-      <div>
-        <h1>Learning English</h1>
-        <p>description</p>
+<article class='flex flex-col gap-16 max-w-350 mx-auto w-full relative'>
+  <header class='flex flex-col items-center gap-12 test py-20 px-4'>
+    <div class='space-y-4'>
+      <h1 class='text-4xl'>Learning English</h1>
+      <p>description</p>
+    </div>
+
+    <section>
+      <p>Search Lessons</p>
+    </section>
+  </header>
+
+  <main>
+    <article class='flex flex-col gap-6 test p-4'>
+      <div class='space-y-2'>
+        <h2 class='font-bold text-3xl'>Courses</h2>
+        <p>Explore our English courses and improve your grammar step by step, from A1 Beginner to C2 Proficient.</p>
       </div>
 
-      <section>
-        <p>Search Lessons</p>
+      <section class='grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4'>
+        {COURSES.map((el) => <CourseCard course={el.data} />)}
       </section>
-    </header>
+    </article>
 
-    <main>
-      <article class='flex flex-col gap-4 test p-4'>
-        <div class='py-5'>
-          <h2 class='font-bold'>Courses ?? Grammar</h2>
-          <p>Explore our comprehensive grammar courses designed to improve your English skills.</p>
-        </div>
+    <article>
+      <h2>Vocabulary</h2>
+      <section>
+        <p>Travel</p>
+        <p>School</p>
+        <p>Work</p>
+      </section>
+    </article>
+  </main>
 
-        <section class='grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4 test'>
-          {
-            Object.entries(LEVELS).map(([level, { icon: Icon, title, color }]) => (
-              <a href={''} class='flex border rounded-lg px-4 py-2 gap-4 border-[]' style={{ borderColor: color }}>
-                <Icon size={20} color={color} />
-                <p>
-                  {title}
-                  <span>({level})</span>
-                </p>
-              </a>
-            ))
-          }
-        </section>
-
-        <section class='flex flex-col gap-2'>
-          {
-            Object.entries(LEVELS).map(([level, { icon: Icon, title, color }]) => (
-              <a href={''} class='flex border rounded-lg px-4 py-2 gap-4 border-[]' style={{ borderColor: color }}>
-                <Icon size={20} color={color} />
-                <p>
-                  {title}
-                  <span>({level})</span>
-                </p>
-              </a>
-            ))
-          }
-        </section>
-      </article>
-
-      <article>
-        <h2>Vocabulary</h2>
-        <section>
-          <p>Travel</p>
-          <p>School</p>
-          <p>Work</p>
-        </section>
-      </article>
-    </main>
-
-    <footer>
-      <p>nav - links</p>
-    </footer>
-  </article>
-</Layout>
+  <footer>
+    <p>nav - links</p>
+  </footer>
+</article>
