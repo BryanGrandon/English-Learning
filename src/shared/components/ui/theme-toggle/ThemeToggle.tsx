@@ -1,6 +1,6 @@
 import { cn } from '@shared/lib/cn'
+import useTheme from '@shared/hooks/useTheme'
 import { Moon, Sun } from 'lucide-react'
-import useTheme from '../../../../features/home/hooks/useTheme'
 
 const ThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme()

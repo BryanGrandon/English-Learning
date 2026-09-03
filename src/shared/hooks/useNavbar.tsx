@@ -1,30 +1,40 @@
-import { NAVIGATION } from '@shared/components/layout/navbar/navbar.config'
-import { useState } from 'react'
+import { clickHamburgerMenu } from '@shared/components/ui/hamburger-menu-animation/clickHamburgerMenu'
+import { useEffect, useState } from 'react'
 
 const useNavbar = () => {
-  const [selected, setSelected] = useState('home')
-  const CONTENT_CLASS = 'article'
+  useEffect(() => {
+    const $links = document.querySelectorAll('.navigation-link')
+    $links.forEach((el) => {
+      el.addEventListener('click', clickHamburgerMenu)
+      return () => el.removeEventListener('click', clickHamburgerMenu)
+    })
+  }, [])
 
-  // Add the same class to each container so that the observer can detect them.
-  NAVIGATION.forEach((el) => {
-    const $article = document.getElementById(el.nav)
-    $article?.classList.add(CONTENT_CLASS)
-  })
+  const NAVIGATION = [
+    {
+      id: 0,
+      nav: 'home',
+      url: '/',
+    },
+    {
+      id: 1,
+      nav: 'Learning',
+      url: '/learning',
+    },
+    {
+      id: 2,
+      nav: 'vocabulary',
+      url: '/vocabulary',
+    },
+  ]
 
-  const visibleSectionListener = () => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(({ isIntersecting, target }) => {
-          if (isIntersecting) setSelected(target.id ?? 'home')
-        })
-      },
-      { rootMargin: '-30% 0px -70% 0px' },
-    )
-    const $articles = document.querySelectorAll(`.${CONTENT_CLASS}`)
-    $articles.forEach((article) => observer.observe(article))
+  const getSelectedLink = () => {
+    const currentPath = window.location.pathname
+    const selectedLink = NAVIGATION.find((el) => el.url === currentPath)
+    return selectedLink?.nav || 'home'
   }
 
-  return { selected, visibleSectionListener }
+  return { NAVIGATION, getSelectedLink }
 }
 
 export default useNavbar

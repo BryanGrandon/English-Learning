@@ -1,58 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Navbar from '@shared/components/layout/navbar/Navbar'
-import { LEVELS } from '../features/home/utilities/constants/grammar'
+import Home from '../features/home/home.astro'
 ---
 
 <Layout>
-  <article class='flex flex-col gap-16 max-w-350 mx-auto w-full test'>
-    <header class='flex flex-col gap-4 test'>
-      <Navbar client:only />
-      <section class='flex flex-col items-center gap-8 py-14 px-4'>
-        <div class='flex flex-col items-center gap-2'>
-          <h1>Learning English</h1>
-          <p>description</p>
-        </div>
-
-        <section>
-          <p>Search Lessons</p>
-        </section>
-      </section>
-    </header>
-
-    <!-- Create Layout for Main Content. (Grammar, Vocabulary, etc.) -->
-
-    <main>
-      <article>
-        <h2>Courses ?? Grammar</h2>
-
-        <section class='flex flex-col gap-2'>
-          {
-            Object.entries(LEVELS).map(([level, { icon: Icon, title, color }]) => (
-              <a href={''} class='flex border rounded-lg px-4 py-2 gap-4 border-[]' style={{ borderColor: color }}>
-                <Icon size={20} color={color} />
-                <p>
-                  {title}
-                  <span>({level})</span>
-                </p>
-              </a>
-            ))
-          }
-        </section>
-      </article>
-
-      <article>
-        <h2>Vocabulary</h2>
-        <section>
-          <p>Travel</p>
-          <p>School</p>
-          <p>Work</p>
-        </section>
-      </article>
-    </main>
-
-    <footer>
-      <p>nav - links</p>
-    </footer>
-  </article>
+  <Home />
 </Layout>
