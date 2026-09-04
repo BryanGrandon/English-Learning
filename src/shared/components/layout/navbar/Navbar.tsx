@@ -32,9 +32,9 @@ const Navbar = () => {
 
       <article
         id='menu-phone'
-        className='fixed right-2 top-15 rounded-xl overflow-hidden z-10 h-fit transition-transform duration-650 -translate-y-100 test'
+        className='fixed top-15 right-2 left-2 rounded-2xl overflow-hidden z-10 h-fit transition-transform duration-650 -translate-y-100 w-auto'
       >
-        <section className='flex flex-col justify-center min-w-60'>
+        <section className='flex flex-col justify-center bg-gray-800 '>
           {NAVIGATION.map((el) => (
             <LinkMenu
               key={el.id}

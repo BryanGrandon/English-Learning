@@ -13,9 +13,9 @@ const HamburgerMenuAnimation = () => {
       data-hamburger-menu
       className='relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-4 cursor-pointer flex flex-col justify-between'
     >
-      <b className='absolute left-0 w-full h-0.5 bg-text-primary top-0'></b>
-      <b className='absolute left-0 w-full h-0.5 bg-text-primary top-1/2'></b>
-      <b className='absolute left-0 w-full h-0.5 bg-text-primary top-full'></b>
+      <b className='absolute left-0 w-full h-0.5 bg-text top-0'></b>
+      <b className='absolute left-0 w-full h-0.5 bg-text top-1/2'></b>
+      <b className='absolute left-0 w-full h-0.5 bg-text top-full'></b>
     </a>
   )
 }

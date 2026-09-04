@@ -13,11 +13,11 @@ const LinkMenu = ({ href, text, selected, forPhone = false, onClick }: Props) =>
 
   let selectedClass = ''
 
-  if (forPhone) selectedClass = comparison ? 'bg-primary text-white' : ''
-  else selectedClass = comparison ? 'border-b-2 border-violet-500' : ''
+  if (forPhone) selectedClass = comparison ? 'text-brand p-4' : 'p-4'
+  else selectedClass = comparison ? 'border-b-2 border-brand px-1' : ''
 
   return (
-    <a href={href} className={cn('navigation-link', selectedClass)} onClick={onClick}>
+    <a href={href} className={cn('  text-center block ', 'navigation-link', selectedClass)} onClick={onClick}>
       {text}
     </a>
   )
