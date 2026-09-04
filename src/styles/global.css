@@ -1,14 +1,9 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
-@import './tokens/index.css';
-
-/* Tailwind */
-@import './tailwind.css';
-
-/* Themes */
-@import './themes/light.css';
-@import './themes/dark.css';
+@import './tokens.css';
+@import './tailwind.css'; /* Tailwind */
+@import './themes.css'; /* Themes */
 
 /* Mdx */
 @import './mdx/index.css';
@@ -46,7 +41,7 @@ html {
 }
 
 body {
-  color: var(--text-primary);
+  color: var(--color-text);
   background-color: var(--background);
   font-family: var(--font-body);
   font-size: 16px;
@@ -61,7 +56,14 @@ h3 {
   font-family: var(--font-display);
 }
 
-h1 {
+/* Class Utilities */
+
+.test {
+  border: 1px solid #f00;
+}
+
+/*  ==== MDX ==== */
+/* h1 { 
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
@@ -71,10 +73,4 @@ h2 {
 
 h3 {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
-}
-
-/* Class Utilities */
-
-.test {
-  border: 1px solid #f00;
-}
+} */

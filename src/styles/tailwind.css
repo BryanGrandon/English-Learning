@@ -1,10 +1,10 @@
 @theme {
-  --color-color-brand: var(--color-brand);
-  --color-color-accent: var(--color-accent);
+  --color-brand: var(--color-brand);
+  --color-accent: var(--color-accent);
 
-  --color-color-overlay: var(--color-overlay);
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
+  --color-overlay: var(--color-overlay);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
