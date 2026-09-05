@@ -3,6 +3,9 @@ import ThemeToggle from '@shared/components/ui/theme-toggle/ThemeToggle'
 import HamburgerMenuAnimation from '@shared/components/ui/hamburger-menu-animation/HamburgerMenuAnimation'
 import LinkMenu from './LinkMenu'
 
+// Create new Navbar for add Courses :hover -> Title of the courses for select the course A1 / A2
+// For Vocabulary similar to Courses for view categories School / Travel / Work
+
 const Navbar = () => {
   const { NAVIGATION, getSelectedLink } = useNavbar()
 

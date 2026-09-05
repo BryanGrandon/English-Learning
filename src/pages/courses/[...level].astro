@@ -1,0 +1,23 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { COURSES } from '@shared/utilities/config/courses'
+
+export async function getStaticPaths() {
+  return COURSES.map(({ data }) => {
+    let level = data.level.toLowerCase()
+    return {
+      params: { level },
+      props: { ...data },
+    }
+  })
+}
+
+const { title, description } = Astro.props
+---
+
+<Layout>
+  <main class='min-h-screen py-20'>
+    <h1>{title}</h1>
+    <p>{description}</p>
+  </main>
+</Layout>

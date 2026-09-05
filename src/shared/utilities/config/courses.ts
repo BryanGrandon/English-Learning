@@ -1,5 +1,6 @@
 import { Sprout, BookOpen, TrendingUp, Rocket, Award, Brain } from 'lucide-react'
-import type { Course } from '../types/courses'
+import type { Course } from '../../../features/home/utilities/types/courses'
+import { URLS_COURSES } from './url'
 
 const COURSES_CONFIG = {
   A1: {
@@ -11,7 +12,7 @@ const COURSES_CONFIG = {
       light: '#16A34A',
       dark: '#4ADE80',
     },
-    url: '',
+    url: URLS_COURSES.A1,
   },
 
   A2: {
@@ -23,7 +24,7 @@ const COURSES_CONFIG = {
       light: '#65A30D',
       dark: '#A3E635',
     },
-    url: '',
+    url: URLS_COURSES.A2,
   },
 
   B1: {
@@ -35,7 +36,7 @@ const COURSES_CONFIG = {
       light: '#CA8A04',
       dark: '#FACC15',
     },
-    url: '',
+    url: URLS_COURSES.B1,
   },
 
   B2: {
@@ -47,7 +48,7 @@ const COURSES_CONFIG = {
       light: '#EA580C',
       dark: '#FB923C',
     },
-    url: '',
+    url: URLS_COURSES.B2,
   },
 
   C1: {
@@ -59,7 +60,7 @@ const COURSES_CONFIG = {
       light: '#DC2626',
       dark: '#F87171',
     },
-    url: '',
+    url: URLS_COURSES.C1,
   },
 
   C2: {
@@ -71,7 +72,7 @@ const COURSES_CONFIG = {
       light: '#7C3AED',
       dark: '#A78BFA',
     },
-    url: '',
+    url: URLS_COURSES.C2,
   },
 } as const
 
