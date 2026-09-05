@@ -1,0 +1,17 @@
+---
+type Props = {
+  title: string
+  description: string
+  withSearch?: boolean
+}
+const { title, description, withSearch = false } = Astro.props
+---
+
+<header class='flex flex-col items-center gap-12 test py-20 pt-30 px-4'>
+  <section class='space-y-4'>
+    <h1 class='font-display text-5xl text-center'>{title}</h1>
+    <p class='text-muted'>{description}</p>
+  </section>
+
+  {withSearch ? <div>Search</div> : null}
+</header>

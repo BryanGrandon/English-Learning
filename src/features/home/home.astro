@@ -1,19 +1,11 @@
 ---
-import { COURSES } from '../../shared/utilities/config/courses'
+import { COURSES } from '@shared/utilities/config/courses'
+import Header from '@shared/components/layout/Header.astro'
 import CourseCard from './components/CourseCard.astro'
 ---
 
 <article class='flex flex-col gap-16 max-w-350 mx-auto w-full relative'>
-  <header class='flex flex-col items-center gap-12 test py-20 px-4'>
-    <div class='space-y-4'>
-      <h1 class='text-4xl'>Learning English</h1>
-      <p>description</p>
-    </div>
-
-    <section>
-      <p>Search Lessons</p>
-    </section>
-  </header>
+  <Header title='Learning English' description='description' withSearch />
 
   <main>
     <article class='flex flex-col gap-6 test p-4'>
