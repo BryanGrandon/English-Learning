@@ -1,6 +1,3 @@
-export { default as Vocabulary } from './vocabulary/Vocabulary'
-export { default as Callout } from './callout/Callout.astro'
-export { default as Grammar } from './grammar/Grammar.astro'
 export { default as SectionCard } from './section-card/SectionCard.astro'
 export { default as ContentGrid } from './content-grid/ContentGrid.astro'
 export { default as LessonBlock } from './lesson-block/LessonBlock.astro'
