@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro'
+
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('grammar')
+
+  return lessons.map((lesson) => ({
+    params: {      
+      lesson: lesson.id,
+    },
+    props: {
+      lesson,
+    },
+  }))
+}
+
+const {lesson}= Astro.props
+
+
+---
+
+<Layout>
+  <main>
+    <h2>Lesson</h2>
+  </main>
+</Layout>

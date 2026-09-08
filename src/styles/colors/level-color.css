@@ -1,0 +1,18 @@
+:root,
+[data-theme='light'] {
+  --color-level-a1: #16a34a;
+  --color-level-a2: #65a30d;
+  --color-level-b1: #ca8a04;
+  --color-level-b2: #ea580c;
+  --color-level-c1: #dc2626;
+  --color-level-c2: #7c3aed;
+}
+
+[data-theme='dark'] {
+  --color-level-a1: #4ade80;
+  --color-level-a2: #a3e635;
+  --color-level-b1: #facc15;
+  --color-level-b2: #fb923c;
+  --color-level-c1: #f87171;
+  --color-level-c2: #a78bfa;
+}

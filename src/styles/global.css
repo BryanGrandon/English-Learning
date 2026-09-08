@@ -4,6 +4,7 @@
 @import './tokens.css';
 @import './tailwind.css'; /* Tailwind */
 @import './themes.css'; /* Themes */
+@import './colors/index.css'; /* Colors */
 
 /* Mdx */
 @import './mdx/index.css';

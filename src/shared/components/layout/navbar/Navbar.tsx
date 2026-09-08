@@ -8,14 +8,14 @@ import LinkMenu from './LinkMenu'
 
 const Navbar = () => {
   const { NAVIGATION, getSelectedLink } = useNavbar()
-
   const selectedLink = getSelectedLink()
 
   const clickOpenAndCloseMenu = () => document.getElementById('menu-phone')?.classList.toggle('translate-y-0')
+  const variable = '--color-level-a1'
 
   return (
-    <nav id='navbar' className='block fixed top-0 inset-x-0 z-20 font-display'>
-      <article className='flex justify-between items-center max-w-350 mx-auto p-4'>
+    <nav id='navbar' className={`block fixed top-0 inset-x-0 z-20 font-display bg-(${variable}) rounded-b-xl`}>
+      <article className='flex justify-between items-center max-w-330 mx-auto p-4'>
         <a href='/' className='text-xl'>
           Logo.
         </a>

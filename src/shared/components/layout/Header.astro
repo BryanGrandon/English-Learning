@@ -7,11 +7,13 @@ type Props = {
 const { title, description, withSearch = false } = Astro.props
 ---
 
-<header class='flex flex-col items-center gap-12 test py-20 pt-30 px-4'>
-  <section class='space-y-4'>
-    <h1 class='font-display text-5xl text-center'>{title}</h1>
-    <p class='text-muted'>{description}</p>
-  </section>
-
-  {withSearch ? <div>Search</div> : null}
+<header class='py-20 pt-30 px-4 bg-gray-400 rounded-b-[8rem]'>
+  <article class="flex flex-col items-center gap-12 max-w-330 mx-auto w-full">
+    <section class='space-y-4'>
+      <h1 class='font-display text-5xl text-center'>{title}</h1>
+      <p class='text-muted'>{description}</p>
+    </section>
+  
+    {withSearch ? <div>Search</div> : null}
+  </article>
 </header>

@@ -8,10 +8,6 @@ type Course = {
   url: string
   level: Levels
   icon: LucideIcon
-  color: {
-    dark: string
-    light: string
-  }
 }
 
 export type { Course }

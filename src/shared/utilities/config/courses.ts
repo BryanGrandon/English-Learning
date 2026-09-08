@@ -8,10 +8,6 @@ const COURSES_CONFIG = {
     title: 'Beginner',
     description: 'Curso básico de inglés para quienes están empezando.',
     icon: Sprout,
-    color: {
-      light: '#16A34A',
-      dark: '#4ADE80',
-    },
     url: URLS_COURSES.A1,
   },
 
@@ -20,10 +16,6 @@ const COURSES_CONFIG = {
     title: 'Elementary',
     description: 'Curso de inglés para desarrollar tus conocimientos básicos.',
     icon: BookOpen,
-    color: {
-      light: '#65A30D',
-      dark: '#A3E635',
-    },
     url: URLS_COURSES.A2,
   },
 
@@ -32,10 +24,6 @@ const COURSES_CONFIG = {
     title: 'Intermediate',
     description: 'Curso de inglés para mejorar tu comunicación cotidiana.',
     icon: TrendingUp,
-    color: {
-      light: '#CA8A04',
-      dark: '#FACC15',
-    },
     url: URLS_COURSES.B1,
   },
 
@@ -44,10 +32,6 @@ const COURSES_CONFIG = {
     title: 'Upper Intermediate',
     description: 'Curso de inglés para hablar con mayor fluidez y confianza.',
     icon: Rocket,
-    color: {
-      light: '#EA580C',
-      dark: '#FB923C',
-    },
     url: URLS_COURSES.B2,
   },
 
@@ -56,10 +40,6 @@ const COURSES_CONFIG = {
     title: 'Advanced',
     description: 'Curso avanzado para comunicarte con precisión y naturalidad.',
     icon: Award,
-    color: {
-      light: '#DC2626',
-      dark: '#F87171',
-    },
     url: URLS_COURSES.C1,
   },
 
@@ -68,10 +48,6 @@ const COURSES_CONFIG = {
     title: 'Proficient',
     description: 'Curso para alcanzar un dominio avanzado y completo del inglés.',
     icon: Brain,
-    color: {
-      light: '#7C3AED',
-      dark: '#A78BFA',
-    },
     url: URLS_COURSES.C2,
   },
 } as const

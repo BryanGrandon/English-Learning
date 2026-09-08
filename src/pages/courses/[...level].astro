@@ -1,5 +1,5 @@
 ---
-import Lessons from '@features/courses/components/lessons/Lessons'
+import Lessons from '@features/courses/components/Lessons'
 import Layout from '@layouts/Layout.astro'
 import Header from '@shared/components/layout/Header.astro'
 import { COURSES } from '@shared/utilities/config/courses'
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 
 const data = await getCollection('grammar')
 
-const { title, description, level, color } = Astro.props
+const { title, description, level } = Astro.props
 ---
 
 <Layout>
@@ -25,7 +25,7 @@ const { title, description, level, color } = Astro.props
   <main class='max-w-330 mx-auto w-full'>
     <article class='w-full test p-4 space-y-4'>
       <h2 class='text-3xl font-semibold'>Grammar</h2>
-      <Lessons data={data} level={level} color={color} />
+      <Lessons data={data} level={level} />
     </article>
   </main>
 </Layout>
