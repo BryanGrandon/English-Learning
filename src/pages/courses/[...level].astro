@@ -22,8 +22,8 @@ const { title, description, level } = Astro.props
 
 <Layout>
   <Header title={title} description={description} />
-  <main class='max-w-330 mx-auto w-full'>
-    <article class='w-full test p-4 space-y-4'>
+  <main class='max-w-330 mx-auto w-full py-20'>
+    <article class='w-full p-4 space-y-4'>
       <h2 class='text-3xl font-semibold'>Grammar</h2>
       <Lessons data={data} level={level} />
     </article>

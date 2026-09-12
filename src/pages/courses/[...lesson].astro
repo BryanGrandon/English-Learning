@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
-
+import { render } from 'astro:content'
 
 export async function getStaticPaths() {
   const lessons = await getCollection('grammar')
 
   return lessons.map((lesson) => ({
-    params: {      
+    params: {
       lesson: lesson.id,
     },
     props: {
@@ -16,13 +16,18 @@ export async function getStaticPaths() {
   }))
 }
 
-const {lesson}= Astro.props
-
-
+const { lesson } = Astro.props
+const { Content } = await render(lesson)
 ---
 
 <Layout>
-  <main>
-    <h2>Lesson</h2>
+  <main class='max-w-330 mx-auto test py-10'>
+    <header>home - level - topic - lesson</header>
+    <article class='grid grid-cols-[250px_1fr]'>
+      <aside>aside</aside>
+      <article>
+        <Content />
+      </article>
+    </article>
   </main>
 </Layout>

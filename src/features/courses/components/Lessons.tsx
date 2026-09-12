@@ -13,35 +13,34 @@ const Lessons = ({ data, level }: LessonsProps) => {
   const color = `var(--color-level-${level.toLowerCase()})`
 
   const arr = getConfigByLevel()
+  const url = '/courses/grammar/'
 
   return (
-    <article className={cn('grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4')}>
-      {arr?.map((lesson) => (
-        <section key={lesson.id} className={cn('p-4 space-y-2 border border-muted rounded-lg shadow shadow-muted')}>
-          <header>
-            <section className='text-xl flex justify-between gap-4'>
-              <h3 className='text-xl'>
-                <span className='font-body'>{lesson.id}. </span>
-                {lesson.title}
-              </h3>
+    <article className='grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-4'>
+      {arr?.map((topic) => (
+        <section key={topic.id} className='rounded-lg border border-muted p-4 shadow shadow-muted'>
+          <header className='mb-4 flex items-start justify-between gap-4'>
+            <div>
+              <h3 className='text-xl font-display'>{topic.title}</h3>
 
-              <lesson.icon style={{ color }} />
-            </section>
+              <p className='text-sm font-body' style={{ color }}>
+                {topic.translation}
+              </p>
+            </div>
 
-            <p className={cn('text-[0.8rem] px-5 font-display')} style={{ color }}>
-              {lesson.translation}
-            </p>
+            <topic.icon size={32} style={{ color }} />
           </header>
-          <div className='space-y-2'>
-            {getLessonsByTopic(lesson.topic).map((el) => (
+
+          <nav className='space-y-2'>
+            {getLessonsByTopic(topic.topic).map((lesson) => (
               <a
-                key={el.order}
-                href={'/lessons/grammar/' + el.id}
+                key={lesson.id}
+                href={lesson.id}
                 className={cn(
-                  'block border border-muted py-1 px-3 rounded hover:scale-102 active:scale-98',
-                  'transition-colors duration-200',
-                  'hover:border-(--level-color)',
-                  'hover:bg-(--level-color)',
+                  'list-disc list-inside list-item',
+                  'transition-all duration-200',
+                  'hover:scale-[1.02]',
+                  'active:scale-[0.98]',
                 )}
                 style={
                   {
@@ -49,10 +48,10 @@ const Lessons = ({ data, level }: LessonsProps) => {
                   } as React.CSSProperties
                 }
               >
-                {el.title}
+                {lesson.title}
               </a>
             ))}
-          </div>
+          </nav>
         </section>
       ))}
     </article>
