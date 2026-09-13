@@ -4,5 +4,59 @@ import Home from '../features/home/home.astro'
 ---
 
 <Layout>
-  <Home />
+  <header class='test'>
+    <article class='flex justify-between max-w-330 mx-auto w-full p-4'>
+      <p>Logo</p>
+      <nav class='space-x-6'>
+        <a href='#'>Courses</a>
+        <a href='#'>Vocabulary</a>
+        <a href='#'>About</a>
+      </nav>
+      <button> Light / Dark </button>
+    </article>
+  </header>
+  <main class='space-y-4 max-w-330 mx-auto w-full'>
+    <article class='border border-amber-300'>
+      <section>
+        <h1 class='text-5xl'>Better English, <span>Bigger Opportunities</span></h1>
+        <p>
+          Improve your English skills structured lessons, practical exercises and engaging content. Learn at your own
+          pace, from beginner to advanced.
+        </p>
+        <button>Start Learning -></button>
+      </section>
+      <img src='' alt='' />
+    </article>
+
+    <hr class='test' />
+
+    <article class='flex justify-evenly border border-green-500 p-4'>
+      <section>
+        <p>Icon</p>
+        <h3>Structured Courses</h3>
+        <p>From A1 to C2, with clear and organized content.</p>
+      </section>
+
+      <section>
+        <p>Icon</p>
+        <h3>Interactive Exercises</h3>
+        <p>Practice with quizzes, games and real-life examples.</p>
+      </section>
+
+      <section>
+        <p>Icon</p>
+        <h3>Learn at Your Place</h3>
+        <p>Flexible and accessible anytime, anywhere.</p>
+      </section>
+    </article>
+
+    <article>
+      <span>Courses</span>
+      <h2>Choose your level</h2>
+      <p>Start from the level that matches your current skills and reach your goals step by step.</p>
+      <section>
+        <p>Cards</p>
+      </section>
+    </article>
+  </main>
 </Layout>

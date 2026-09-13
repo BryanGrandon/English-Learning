@@ -14,21 +14,11 @@ import Navbar from '@shared/components/layout/navbar/Navbar'
     <link rel='stylesheet' href='/src/styles/global.css' />
   </head>
   <body>
-    <script is:inline>
-      const root = document.documentElement
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-      function updateTheme() {
-        const savedTheme = localStorage.getItem('theme')
-        const theme = savedTheme ?? (mediaQuery.matches ? 'dark' : 'light')
-        root.dataset.theme = theme
-      }
-      updateTheme()
-      mediaQuery.addEventListener('change', () => {
-        if (!localStorage.getItem('theme')) updateTheme()
-      })
-    </script>
-    <Navbar client:only />
     <slot />
   </body>
+  <script is:inline>
+    const savedTheme = localStorage.getItem('theme')
+    const theme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    document.documentElement.dataset.theme = theme
+  </script>
 </html>
