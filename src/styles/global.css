@@ -57,21 +57,46 @@ h3 {
   font-family: var(--font-display);
 }
 
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  max-width: 65ch;
+  color: var(--color-text-muted);
+}
+
 /* Class Utilities */
 
 .test {
   border: 1px solid #f00;
 }
 
+.max-width {
+  max-width: 82.5rem; /* In tailwind 330 */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.divider {
+  position: relative;
+}
+.divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: gray;
+  transform: translateX(-50%);
+}
+
 /*  ==== MDX ==== */
-/* h1 { 
-  font-size: clamp(2rem, 4vw, 2.8rem);
-}
 
-h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-}
-
-h3 {
+/* h3 {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
 } */

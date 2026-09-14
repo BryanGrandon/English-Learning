@@ -1,61 +1,65 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Home from '../features/home/home.astro'
+import { cn } from '@shared/lib/cn'
+import { FEATURES } from '../data/home'
+import FeatureCard from '@features/home/components/FeatureCard.astro'
+import { COURSES } from '@shared/utilities/config/courses'
+import CourseCard from '@features/home/components/CourseCard.astro'
 ---
 
 <Layout>
-  <header class='test'>
-    <article class='flex justify-between max-w-330 mx-auto w-full p-4'>
-      <p>Logo</p>
-      <nav class='space-x-6'>
-        <a href='#'>Courses</a>
-        <a href='#'>Vocabulary</a>
-        <a href='#'>About</a>
-      </nav>
-      <button> Light / Dark </button>
-    </article>
+  <header class={cn('flex justify-between p-4', 'max-width divider')}>
+    <h3>Learning English</h3>
+    <nav class='space-x-6'>
+      <a href='#'>Courses</a>
+      <a href='#'>Vocabulary</a>
+      <a href='#'>About</a>
+    </nav>
+    <button> Light / Dark </button>
   </header>
-  <main class='space-y-4 max-w-330 mx-auto w-full'>
-    <article class='border border-amber-300'>
-      <section>
-        <h1 class='text-5xl'>Better English, <span>Bigger Opportunities</span></h1>
-        <p>
+
+  <main class={cn('', 'max-width')}>
+    <header class={cn('flex justify-between items-center gap-2 flex-wrap-reverse px-4 py-8 min-h-100', 'divider')}>
+      <section class='space-y-8'>
+        <h1 class='text-5xl flex flex-col font-bold'>
+          Better English, <span class='text-brand font-semibold'>Bigger Opportunities</span>
+        </h1>
+        <p class=''>
           Improve your English skills structured lessons, practical exercises and engaging content. Learn at your own
           pace, from beginner to advanced.
         </p>
-        <button>Start Learning -></button>
+        <button
+          class={cn(
+            'rounded-xl py-2 px-4 bg-brand shadow shadow-gray-800 cursor-pointer',
+            'hover:scale-103 active:scale-97',
+          )}>Start Learning -></button
+        >
       </section>
-      <img src='' alt='' />
+      <picture>
+        <img
+          src='https://i.pinimg.com/originals/4f/ab/4a/4fab4a67d62a285125b6ae2fed52122b.jpg'
+          alt='TEST'
+          class='h-50 rounded-xl'
+        />
+      </picture>
+    </header>
+
+    <article class={cn('px-4 py-12 space-y-8', 'divider')}>
+      <span class='block font-display font-semibold tracking-wider text-brand'>Features</span>
+      <section class='grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8'>
+        {FEATURES.map((el) => <FeatureCard title={el.title} description={el.description} id={el.id} icon={el.icon} />)}
+      </section>
+      <!-- <span class='absolute top-6 left-4 font-display font-semibold tracking-wider text-brand'>Features</span> -->
     </article>
 
-    <hr class='test' />
-
-    <article class='flex justify-evenly border border-green-500 p-4'>
-      <section>
-        <p>Icon</p>
-        <h3>Structured Courses</h3>
-        <p>From A1 to C2, with clear and organized content.</p>
-      </section>
-
-      <section>
-        <p>Icon</p>
-        <h3>Interactive Exercises</h3>
-        <p>Practice with quizzes, games and real-life examples.</p>
-      </section>
-
-      <section>
-        <p>Icon</p>
-        <h3>Learn at Your Place</h3>
-        <p>Flexible and accessible anytime, anywhere.</p>
-      </section>
-    </article>
-
-    <article>
-      <span>Courses</span>
-      <h2>Choose your level</h2>
-      <p>Start from the level that matches your current skills and reach your goals step by step.</p>
-      <section>
-        <p>Cards</p>
+    <article class={cn('py-18 px-4 space-y-8', 'divider')}>
+      <span class='absolute top-6 left-4 font-display font-semibold tracking-wider text-brand'>Courses</span>
+      <div class='space-y-2'>
+        <h2 class='font-bold'>Choose your level</h2>
+        <p>Start from the level that matches your current skills and reach your goals step by step.</p>
+      </div>
+      <section class='grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4'>
+        {COURSES.map((el) => <CourseCard course={el.data} />)}
       </section>
     </article>
   </main>

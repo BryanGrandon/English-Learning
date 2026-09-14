@@ -1,0 +1,24 @@
+---
+import type { LucideIcon } from 'lucide-react'
+
+interface Props {
+  title: string
+  description: string
+  id: string
+  icon: LucideIcon
+}
+
+const { title, description, id, icon: Icon } = Astro.props
+
+const color = `var(--feature-${id})`
+---
+
+<section class='space-y-4'>
+  <span class='inline-block p-3 rounded-full' style={{ background: `color-mix(in srgb, ${color} 30%, transparent)` }}>
+    <Icon color={color} size={30} />
+  </span>
+  <div class='space-y-2'>
+    <h3 class='text-xl font-semibold'>{title}</h3>
+    <p class='my-5'>{description}</p>
+  </div>
+</section>
