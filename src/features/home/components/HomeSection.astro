@@ -1,0 +1,17 @@
+---
+import { cn } from '@shared/lib/cn'
+import { transparentMix } from '@shared/utilities/color/transparentMix'
+
+interface Props {
+  label: string
+  className?: string
+}
+
+const { className, label } = Astro.props
+const labelColor = transparentMix({ color: 'var(--color-brand)', percentage: 93 })
+---
+
+<article class={cn('px-4 py-12 space-y-6', 'divider', className)}>
+  <span class='block font-display font-semibold tracking-wider' style={{ color: labelColor }}>{label}</span>
+  <slot />
+</article>

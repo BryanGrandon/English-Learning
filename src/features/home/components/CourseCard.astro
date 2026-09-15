@@ -1,6 +1,7 @@
 ---
 import { cn } from '@shared/lib/cn'
 import type { Course } from '../utilities/types/courses'
+import { transparentMix } from '@shared/utilities/color/transparentMix'
 
 interface Props {
   course: Course
@@ -10,25 +11,58 @@ const {
   course: { url, level, title, icon: Icon, description },
 } = Astro.props
 
-const levelColor = `var(--color-level-${level.toLowerCase()})`
 const color = `var(--color-level-${level.toLowerCase()})`
+const background = transparentMix({ color, percentage: 10 })
 ---
 
 <a
   href={url}
-  class={cn('relative p-4 rounded-xl border-2', ' hover:scale-102 active:scale-98')}
-  style={{ borderColor: color }}
+  class={cn(
+    'relative rounded-xl border-2 overflow-hidden gap-4 ',
+    'hover:scale-102 active:scale-98',
+    'course-card group',
+  )}
+  style={{ borderColor: color, background }}
 >
-  <span class='absolute top-6 right-0 px-4 rounded-l-lg border-2 border-r-0' style={{ borderColor: color }}
-    >{level}</span
+  <span
+    class={cn(
+      'absolute top-4 right-0 px-4 py-1 rounded-l-2xl font-semibold text-black',
+      'translate-x-14 transition-all duration-150 ease-in',
+      'group-hover:translate-0',
+    )}
+    style={{ background: color }}>{level}</span
   >
 
-  <div class='flex align-center justify-center py-8'>
-    <Icon size={60} color={levelColor} />
+  <div class='flex items-center justify-center'>
+    <Icon size={60} color={color} />
   </div>
 
-  <section class='flex flex-col gap-4'>
-    <h3 class='text-lg font-semibold text-center'>{title}</h3>
-    <p class='text-sm text-text-muted'>{description}</p>
+  <section class='space-y-2'>
+    <h3 class='text-xl font-semibold'>{title}</h3>
+    <p class='text-sm text-muted my-1'>{description}</p>
   </section>
 </a>
+
+<style>
+  .course-card {
+    display: flex;
+    padding: 1rem;
+  }
+
+  @media screen and (min-width: 451px) {
+    .course-card {
+      display: block;
+      padding: 1.5rem 1rem;
+
+      div {
+        padding: 2rem 0;
+      }
+      p {
+        /* margin: 1rem 0; */
+      }
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+</style>

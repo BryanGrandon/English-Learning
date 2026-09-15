@@ -2,9 +2,11 @@
 import Layout from '../layouts/Layout.astro'
 import { cn } from '@shared/lib/cn'
 import { FEATURES } from '../data/home'
-import FeatureCard from '@features/home/components/FeatureCard.astro'
 import { COURSES } from '@shared/utilities/config/courses'
+import Hero from '@features/home/components/Hero'
 import CourseCard from '@features/home/components/CourseCard.astro'
+import FeatureCard from '@features/home/components/FeatureCard.astro'
+import HomeSection from '@features/home/components/HomeSection.astro'
 ---
 
 <Layout>
@@ -19,48 +21,22 @@ import CourseCard from '@features/home/components/CourseCard.astro'
   </header>
 
   <main class={cn('', 'max-width')}>
-    <header class={cn('flex justify-between items-center gap-2 flex-wrap-reverse px-4 py-8 min-h-100', 'divider')}>
-      <section class='space-y-8'>
-        <h1 class='text-5xl flex flex-col font-bold'>
-          Better English, <span class='text-brand font-semibold'>Bigger Opportunities</span>
-        </h1>
-        <p class=''>
-          Improve your English skills structured lessons, practical exercises and engaging content. Learn at your own
-          pace, from beginner to advanced.
-        </p>
-        <button
-          class={cn(
-            'rounded-xl py-2 px-4 bg-brand shadow shadow-gray-800 cursor-pointer',
-            'hover:scale-103 active:scale-97',
-          )}>Start Learning -></button
-        >
-      </section>
-      <picture>
-        <img
-          src='https://i.pinimg.com/originals/4f/ab/4a/4fab4a67d62a285125b6ae2fed52122b.jpg'
-          alt='TEST'
-          class='h-50 rounded-xl'
-        />
-      </picture>
-    </header>
+    <Hero />
 
-    <article class={cn('px-4 py-12 space-y-8', 'divider')}>
-      <span class='block font-display font-semibold tracking-wider text-brand'>Features</span>
+    <HomeSection label='Features'>
       <section class='grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8'>
         {FEATURES.map((el) => <FeatureCard title={el.title} description={el.description} id={el.id} icon={el.icon} />)}
       </section>
-      <!-- <span class='absolute top-6 left-4 font-display font-semibold tracking-wider text-brand'>Features</span> -->
-    </article>
+    </HomeSection>
 
-    <article class={cn('py-18 px-4 space-y-8', 'divider')}>
-      <span class='absolute top-6 left-4 font-display font-semibold tracking-wider text-brand'>Courses</span>
+    <HomeSection label='Courses'>
       <div class='space-y-2'>
         <h2 class='font-bold'>Choose your level</h2>
         <p>Start from the level that matches your current skills and reach your goals step by step.</p>
       </div>
-      <section class='grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4'>
+      <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
         {COURSES.map((el) => <CourseCard course={el.data} />)}
       </section>
-    </article>
+    </HomeSection>
   </main>
 </Layout>
