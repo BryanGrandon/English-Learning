@@ -1,40 +1,36 @@
 import { clickHamburgerMenu } from '@shared/components/ui/hamburger-menu-animation/clickHamburgerMenu'
+import { NAVBAR } from '@shared/utilities/config/navbar'
 import { useEffect, useState } from 'react'
 
-const useNavbar = () => {
-  useEffect(() => {
-    const $links = document.querySelectorAll('.navigation-link')
-    $links.forEach((el) => {
-      el.addEventListener('click', clickHamburgerMenu)
-      return () => el.removeEventListener('click', clickHamburgerMenu)
-    })
-  }, [])
+type simple = {
+  url: string
+  title: string
+}
 
-  const NAVIGATION = [
-    {
-      id: 0,
-      nav: 'home',
-      url: '/',
+const useNavbar = () => {
+  const [statusModal, setStatusModal] = useState(false)
+  const [contentForModal, setContentForModal] = useState<simple[]>([])
+
+  const navbarActions = {
+    status: statusModal,
+    actionsForModal: {
+      open: () => setStatusModal(true),
+      close: () => setStatusModal(false),
+      toggle: () => setStatusModal(!statusModal),
     },
-    {
-      id: 1,
-      nav: 'Learning',
-      url: '/learning',
+    actionsForContent: {
+      getContent: contentForModal,
+      setContent: (content: simple[]) => setContentForModal(content),
     },
-    {
-      id: 2,
-      nav: 'vocabulary',
-      url: '/vocabulary',
-    },
-  ]
+  }
 
   const getSelectedLink = () => {
     const currentPath = window.location.pathname
-    const selectedLink = NAVIGATION.find((el) => el.url === currentPath)
-    return selectedLink?.nav || 'home'
+    const selectedLink = NAVBAR.find((el) => el.data.url === currentPath)
+    return selectedLink?.data.url || 'home'
   }
 
-  return { NAVIGATION, getSelectedLink }
+  return { navbarActions, getSelectedLink, contentForModal }
 }
 
 export default useNavbar

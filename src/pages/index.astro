@@ -1,24 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { cn } from '@shared/lib/cn'
-import { FEATURES } from '../data/home'
+import { FEATURES } from '../shared/utilities/config/home'
 import { COURSES } from '@shared/utilities/config/courses'
 import Hero from '@features/home/components/Hero'
 import CourseCard from '@features/home/components/CourseCard.astro'
 import FeatureCard from '@features/home/components/FeatureCard.astro'
 import HomeSection from '@features/home/components/HomeSection.astro'
+import Navbar from '@shared/components/layout/navbar-v2/Navbar'
 ---
 
 <Layout>
-  <header class={cn('flex justify-between p-4', 'max-width divider')}>
-    <h3>Learning English</h3>
-    <nav class='space-x-6'>
-      <a href='#'>Courses</a>
-      <a href='#'>Vocabulary</a>
-      <a href='#'>About</a>
-    </nav>
-    <button> Light / Dark </button>
-  </header>
+  <Navbar client:only />
 
   <main class={cn('', 'max-width')}>
     <Hero />
