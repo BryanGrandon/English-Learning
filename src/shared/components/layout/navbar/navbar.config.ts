@@ -1,5 +1,5 @@
-import { COURSES } from './courses'
-import { URLS_NAVBAR } from './url'
+import { COURSES } from '@shared/utilities/config/courses'
+import { URLS_NAVBAR } from '@shared/utilities/config/url'
 
 const items: NavbarUrlSimple[] = COURSES.map((el) => {
   return {

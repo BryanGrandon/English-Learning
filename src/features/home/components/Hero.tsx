@@ -1,5 +1,5 @@
 import { cn } from '@shared/lib/cn'
-import { HERO } from '../../../shared/utilities/config/home'
+import { HERO } from '../utilities/config/home'
 import { transparentMix } from '@shared/utilities/color/transparentMix'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 HERO

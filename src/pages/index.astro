@@ -1,35 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { cn } from '@shared/lib/cn'
-import { FEATURES } from '../shared/utilities/config/home'
-import { COURSES } from '@shared/utilities/config/courses'
-import Hero from '@features/home/components/Hero'
-import CourseCard from '@features/home/components/CourseCard.astro'
-import FeatureCard from '@features/home/components/FeatureCard.astro'
-import HomeSection from '@features/home/components/HomeSection.astro'
-import Navbar from '@shared/components/layout/navbar/Navbar'
+import Home from '@features/home/home.astro'
 ---
 
 <Layout>
-  <Navbar client:only />
-
-  <main class={cn('', 'max-width')}>
-    <Hero />
-
-    <HomeSection label='Features'>
-      <section class='grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8'>
-        {FEATURES.map((el) => <FeatureCard title={el.title} description={el.description} id={el.id} icon={el.icon} />)}
-      </section>
-    </HomeSection>
-
-    <HomeSection label='Courses'>
-      <div class='space-y-2'>
-        <h2 class='font-bold'>Choose your level</h2>
-        <p>Start from the level that matches your current skills and reach your goals step by step.</p>
-      </div>
-      <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
-        {COURSES.map((el) => <CourseCard course={el.data} />)}
-      </section>
-    </HomeSection>
-  </main>
+  <Home />
 </Layout>

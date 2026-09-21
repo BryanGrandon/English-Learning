@@ -1,0 +1,71 @@
+---
+import type { LucideIcon } from 'lucide-react'
+import type { GrammarLesson, grammarLevel } from './types/grammar-lesson'
+import { cn } from '@shared/lib/cn'
+
+interface Props {
+  icon: LucideIcon
+  title: string
+  level: grammarLevel
+  data: GrammarLesson[]
+}
+
+const { icon, title, level, data } = Astro.props
+---
+
+<article class={cn('level-content max-width')}>
+  <aside class={cn('test p-4', 'level-content__aside')}>
+    <article class={cn('test rounded-xl min-h-1/2')}>
+      <p>Aside</p>
+    </article>
+  </aside>
+  <main class={cn('flex flex-col gap-4 test p-4', 'level-content__main')}>
+    <header class={cn('test p-4', 'rounded-2xl')}>
+      <h1>{title}</h1>
+    </header>
+
+    <article class={cn('flex justify-between items-center')}>
+      <section>
+        <span class=''>Lessons</span>
+        <h2>{level} Courses Lessons</h2>
+        <p>Explore the topic below and complete each lesson at your own pace.</p>
+      </section>
+      <section class='test'>
+        <input type='search' name='' id='' placeholder='Search Lessons...' />
+      </section>
+    </article>
+
+    <article class={cn('test h-full')}>
+      <section>
+        <p>icon</p>
+        <div>
+          <span>Lesson 1</span>
+          <h3>Title</h3>
+          <p>Translate</p>
+        </div>
+        <div>
+          <span>Status = completed, continues, start </span>
+          <button>Start</button>
+          <button>Drop ⬇️</button>
+        </div>
+      </section>
+    </article>
+  </main>
+</article>
+
+<style>
+  .level-content {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    grid-template-areas:
+      'aside main'
+      'aside main';
+  }
+
+  .level-content__aside {
+    grid-area: aside;
+  }
+  .level-content__main {
+    grid-area: main;
+  }
+</style>

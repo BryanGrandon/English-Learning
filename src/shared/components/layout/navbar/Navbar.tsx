@@ -1,12 +1,14 @@
 import { cn } from '@shared/lib/cn'
-import { NAVBAR } from '@shared/utilities/config/navbar'
+import { NAVBAR } from './navbar.config'
 import NavbarLink from './NavbarLink'
 
 const Navbar = () => {
   return (
     <header className={cn('z-20 bg-gray-900 p-4', 'divider')}>
       <article className={cn('flex items-center justify-between', 'max-width')}>
-        <h3>Learning English</h3>
+        <a href={'/'} className='cursor-default'>
+          Learning English
+        </a>
 
         <nav className='flex space-x-6'>
           {NAVBAR.map((item) => (
