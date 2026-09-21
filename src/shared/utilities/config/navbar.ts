@@ -14,7 +14,7 @@ const NAVBAR_CONFIG = {
     items: items,
   },
   GRAMMAR: {
-    url: '',
+    items: items,
     title: 'Grammar',
   },
   VOCABULARY: {

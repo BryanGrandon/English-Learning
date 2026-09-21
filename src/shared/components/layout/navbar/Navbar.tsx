@@ -1,56 +1,22 @@
-import useNavbar from '@shared/hooks/useNavbar'
-import ThemeToggle from '@shared/components/ui/theme-toggle/ThemeToggle'
-import HamburgerMenuAnimation from '@shared/components/ui/hamburger-menu-animation/HamburgerMenuAnimation'
-import LinkMenu from './LinkMenu'
-
-// Create new Navbar for add Courses :hover -> Title of the courses for select the course A1 / A2
-// For Vocabulary similar to Courses for view categories School / Travel / Work
+import { cn } from '@shared/lib/cn'
+import { NAVBAR } from '@shared/utilities/config/navbar'
+import NavbarLink from './NavbarLink'
 
 const Navbar = () => {
-  const { NAVIGATION, getSelectedLink } = useNavbar()
-  const selectedLink = getSelectedLink()
-
-  const clickOpenAndCloseMenu = () => document.getElementById('menu-phone')?.classList.toggle('translate-y-0')
-  const variable = '--color-level-a1'
-
   return (
-    <nav id='navbar' className={`block fixed top-0 inset-x-0 z-20 font-display bg-(${variable}) rounded-b-xl`}>
-      <article className='flex justify-between items-center max-w-330 mx-auto p-4'>
-        <a href='/' className='text-xl'>
-          Logo.
-        </a>
-        <section className='hidden md:flex gap-4 capitalize '>
-          {NAVIGATION.map((el) => (
-            <LinkMenu key={el.id} href={el.url} text={el.nav} selected={selectedLink} />
-          ))}
-        </section>
+    <header className={cn('z-20 bg-gray-900 p-4', 'divider')}>
+      <article className={cn('flex items-center justify-between', 'max-width')}>
+        <h3>Learning English</h3>
 
-        <div className='flex gap-6 items-center'>
-          <ThemeToggle />
-          <button onClick={clickOpenAndCloseMenu} className='flex md:hidden justify-center items-center h-4 w-5'>
-            <HamburgerMenuAnimation />
-          </button>
-        </div>
-      </article>
-
-      <article
-        id='menu-phone'
-        className='fixed top-15 right-2 left-2 rounded-2xl overflow-hidden z-10 h-fit transition-transform duration-650 -translate-y-100 w-auto'
-      >
-        <section className='flex flex-col justify-center bg-gray-800 '>
-          {NAVIGATION.map((el) => (
-            <LinkMenu
-              key={el.id}
-              href={el.url}
-              text={el.nav}
-              selected={selectedLink}
-              onClick={clickOpenAndCloseMenu}
-              forPhone
-            />
+        <nav className='flex space-x-6'>
+          {NAVBAR.map((item) => (
+            <NavbarLink key={item.data.title} title={item.data.title} url={item.data.url} items={item.data.items} />
           ))}
-        </section>
+        </nav>
+
+        <button type='button'>Light / Dark</button>
       </article>
-    </nav>
+    </header>
   )
 }
 
