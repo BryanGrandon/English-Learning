@@ -7,7 +7,7 @@ type UseGrammarEngine = {
 }
 
 export const useGrammarEngine = ({ data, grammarLevel }: UseGrammarEngine) => {
-  const level = data.filter((lesson) => lesson.data.level == grammarLevel)
+  const level = data.filter((lesson) => lesson.data.level == grammarLevel || lesson.data.level.includes(grammarLevel))
 
   const getLessonsByTopic = (topic: string) => {
     const topics = level

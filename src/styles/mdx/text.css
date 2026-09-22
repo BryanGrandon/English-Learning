@@ -20,6 +20,8 @@
 
 /* ----- Titles ----- */
 
+/* ----- Titles ----- */
+
 .mdx-content {
   > h1,
   > h2,
@@ -41,6 +43,7 @@
 
   > h3 {
     margin-top: 1rem;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
   }
 
   > hr + h2 {
@@ -51,7 +54,6 @@
 /* ----- Paragraphs ----- */
 
 .mdx-content > p {
-  color: var(--mdx-text-secondary);
   line-height: 1.5rem;
   font-size: 1rem;
   max-width: 65ch;

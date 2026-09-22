@@ -1,7 +1,7 @@
 /* ----- Unordered  Lists  ----- */
 
 .mdx-content ul {
-  color: var(--mdx-text-secondary);
+  color: var(--color-text-muted);
   list-style: disc;
   list-style-position: inside;
 }
@@ -29,13 +29,13 @@
 
   &:has(h3, h4) {
     list-style: none;
+    color: var(--color-text);
   }
 
   h3,
   h4 {
     margin: 0.5rem 0;
     font-size: 1.1rem;
-    font-weight: 600;
   }
   h3 {
     font-size: 1.3rem;
