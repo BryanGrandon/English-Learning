@@ -12,7 +12,7 @@ export const useGrammarEngine = ({ data, grammarLevel }: UseGrammarEngine) => {
   const getLessonsByTopic = (topic: string) => {
     const topics = level
       .filter((lesson) => lesson.data.topic.toLowerCase() === topic)
-      .map((lesson) => ({ id: lesson.id, title: lesson.data.title, order: lesson.data.order }))
+      .map((lesson) => ({ id: lesson.id, title: lesson.data.title, order: lesson.data.key.length }))
       .sort((a, b) => a.order - b.order)
 
     return topics
