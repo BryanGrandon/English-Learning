@@ -1,14 +1,14 @@
 ---
 import { cn } from '@shared/lib/cn'
-import type { Course } from '../utilities/types/courses'
 import { transparentMix } from '@shared/utilities/color/transparentMix'
+import type { CourseInformation } from '@config/courses'
 
 interface Props {
-  course: Course
+  course: CourseInformation
 }
 
 const {
-  course: { url, level, title, icon: Icon, description },
+  course: { url, key: level, title, icon: Icon, description },
 } = Astro.props
 
 const color = `var(--color-level-${level.toLowerCase()})`

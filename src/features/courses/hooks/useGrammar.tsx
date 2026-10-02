@@ -13,8 +13,8 @@ export const useGrammar = ({ data, level }: UseGrammar) => {
   const getLessonsByTopic = (topic: string) => {
     const topics = lessons
       .filter((lesson) => lesson.data.topic.toLowerCase() === topic)
-      .map((lesson) => ({ id: lesson.id, title: lesson.data.title, order: lesson.data.order }))
-      .sort((a, b) => a.order - b.order)
+      .map((lesson) => ({ id: lesson.id, title: lesson.data.title, order: lesson.data.key }))
+      .sort((a, b) => a.order.localeCompare(b.order))
 
     return topics
   }

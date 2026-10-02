@@ -1,10 +1,10 @@
-import { COURSES } from '@shared/utilities/config/courses'
-import { URLS_NAVBAR } from '@shared/utilities/config/url'
+import { COURSES } from '@config/courses'
+import { URLS_NAVBAR } from '@config/urls'
 
 const items: NavbarUrlSimple[] = COURSES.map((el) => {
   return {
-    url: el.data.url,
-    title: `${el.data.title}-${el.data.level}`,
+    url: el.url,
+    title: `${el.title}-${el.key}`,
   }
 })
 

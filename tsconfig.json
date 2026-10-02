@@ -14,8 +14,8 @@
       "@shared/*": [
         "./src/shared/*"
       ],
-      "@data/*": [
-        "./src/content/data/*"
+      "@config/*": [
+        "./src/config/*"
       ],
       "@styles/*": [
         "./src/styles/*"

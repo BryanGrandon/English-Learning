@@ -1,6 +1,6 @@
 ---
 import { cn } from '@shared/lib/cn'
-import { COURSES } from '@shared/utilities/config/courses'
+import { COURSES } from '@config/courses'
 import { FEATURES } from './utilities/config/home'
 import Hero from './components/Hero'
 import CourseCard from './components/CourseCard.astro'
@@ -23,7 +23,7 @@ import FeatureCard from './components/FeatureCard.astro'
       <p>Start from the level that matches your current skills and reach your goals step by step.</p>
     </div>
     <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
-      {COURSES.map((el) => <CourseCard course={el.data} />)}
+      {COURSES.map((el) => <CourseCard course={el} />)}
     </section>
   </HomeSection>
 </main>

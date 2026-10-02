@@ -17,3 +17,8 @@
 |    13 | **Quantifiers**           | _Some / Any_ · _A lot of_ · _Much / Many_                                                                 |
 |    14 | **Can / Can't**           | Ability · Permission · Basic Requests                                                                     |
 |    15 | **Conjunctions**          | _And · But · Or · Because_                                                                                |
+
+The config of the Courses A1 - C2 and order of the lessons
+
+- shared folder
+- config folder in the root src/
