@@ -1,9 +1,8 @@
 ---
-import Lessons from '@features/courses/components/Lessons'
-import LevelPage from '@features/courses/levelPage.astro'
 import Layout from '@layouts/Layout.astro'
-import { COURSES } from '@config/courses'
-import { getCollection } from 'astro:content'
+import LevelCoursePage from '@features/courses/levelCoursePage.astro'
+import { COURSES } from '@config/courses.ts'
+import { LEVEL_TOPICS } from '@config/courses/index.ts'
 
 export async function getStaticPaths() {
   return COURSES.map(({ key, ...data }) => {
@@ -15,11 +14,10 @@ export async function getStaticPaths() {
   })
 }
 
-const data = await getCollection('grammar')
-
-const { title, key, icon } = Astro.props
+const course = Astro.props
+const topics = LEVEL_TOPICS[course.key].topics
 ---
 
 <Layout>
-  <LevelPage icon={icon} level={key} title={title} data={data} />
+  <LevelCoursePage course={course} topics={topics} />
 </Layout>

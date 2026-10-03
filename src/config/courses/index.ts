@@ -1,0 +1,10 @@
+import { A1_LEVEL_TOPICS } from './a1'
+
+export const LEVEL_TOPICS = {
+  A1: A1_LEVEL_TOPICS,
+  A2: A1_LEVEL_TOPICS,
+  B1: A1_LEVEL_TOPICS,
+  B2: A1_LEVEL_TOPICS,
+  C1: A1_LEVEL_TOPICS,
+  C2: A1_LEVEL_TOPICS,
+} as const

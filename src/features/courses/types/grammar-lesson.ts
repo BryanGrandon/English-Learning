@@ -1,7 +1,7 @@
-import { GRAMMAR_LEVEL } from '@shared/utilities/constants/courses'
+import { ENGLISH_LEVEL } from '@shared/utilities/constants/english-level'
 import type { InferEntrySchema, RenderedContent } from 'astro:content'
 
-export type grammarLevel = keyof typeof GRAMMAR_LEVEL
+export type grammarLevel = keyof typeof ENGLISH_LEVEL
 
 export type GrammarLesson = {
   id: string

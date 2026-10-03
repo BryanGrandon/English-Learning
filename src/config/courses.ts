@@ -1,7 +1,19 @@
-import { Sprout, BookOpen, TrendingUp, Rocket, Award, Brain } from 'lucide-react'
+import { Sprout, BookOpen, TrendingUp, Rocket, Award, Brain, type LucideIcon } from 'lucide-react'
+import type { ENGLISH_LEVEL } from '@shared/utilities/constants/english-level'
 import { URLS_COURSES } from './urls'
 
-export const COURSES_CONFIG = {
+export type CourseLevel = keyof typeof ENGLISH_LEVEL
+
+export type CourseInformation = {
+  key: CourseLevel
+  title: string
+  description: string
+  icon: LucideIcon
+  url: string
+  order: number
+}
+
+export const COURSES_CONFIG: Record<CourseLevel, CourseInformation> = {
   A1: {
     key: 'A1',
     title: 'Beginner',
@@ -51,9 +63,6 @@ export const COURSES_CONFIG = {
     order: 6,
   },
 } as const
-
-export type CourseLevel = keyof typeof COURSES_CONFIG
-export type CourseInformation = (typeof COURSES_CONFIG)[CourseLevel]
 
 const COURSES: CourseInformation[] = Object.values(COURSES_CONFIG)
 
