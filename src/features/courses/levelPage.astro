@@ -2,6 +2,7 @@
 import type { LucideIcon } from 'lucide-react'
 import type { GrammarLesson, grammarLevel } from './types/grammar-lesson'
 import { cn } from '@shared/lib/cn'
+import { A1_LEVEL_TOPICS } from '@config/courses/a1'
 
 interface Props {
   icon: LucideIcon
@@ -35,20 +36,31 @@ const { icon, title, level, data } = Astro.props
       </section>
     </article>
 
-    <article class={cn('test h-full')}>
-      <section>
-        <p>icon</p>
-        <div>
-          <span>Lesson 1</span>
-          <h3>Title</h3>
-          <p>Translate</p>
-        </div>
-        <div>
-          <span>Status = completed, continues, start </span>
-          <button>Start</button>
-          <button>Drop ⬇️</button>
-        </div>
-      </section>
+    <article class={cn('h-full space-y-2')}>
+      <!-- Create Topics and TopicCard  -->
+      <!-- Topics - select content for the level - useHook -->
+
+      {
+        A1_LEVEL_TOPICS.topics.map((topic) => (
+          <section class={cn('test p-4 flex items-center justify-between gap-4', 'rounded-xl')}>
+            <section class={cn('flex gap-4 items-center')}>
+              <div>
+                <topic.icon size={30} />
+              </div>
+              <div>
+                <span>{topic.title}</span>
+                <h3>description</h3>
+              </div>
+            </section>
+
+            <div>
+              <span>Status = completed, continues, start </span>
+              <button>Start</button>
+              <button>Drop ⬇️</button>
+            </div>
+          </section>
+        ))
+      }
     </article>
   </main>
 </article>

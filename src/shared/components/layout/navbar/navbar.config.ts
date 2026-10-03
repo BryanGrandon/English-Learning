@@ -2,28 +2,29 @@ import { COURSES } from '@config/courses'
 import { URLS_NAVBAR } from '@config/urls'
 
 const items: NavbarUrlSimple[] = COURSES.map((el) => {
-  return {
-    url: el.url,
-    title: `${el.title}-${el.key}`,
-  }
+  return { url: el.url, title: `${el.title}-${el.key}` }
 })
 
 const NAVBAR_CONFIG = {
   COURSES: {
     title: 'Courses',
     items: items,
-  },
-  GRAMMAR: {
-    items: items,
-    title: 'Grammar',
+    order: 1,
   },
   VOCABULARY: {
     url: URLS_NAVBAR.VOCABULARY,
     title: 'Vocabulary',
+    order: 2,
+  },
+  GRAMMAR: {
+    items: items,
+    title: 'Grammar',
+    order: 3,
   },
   ABOUT: {
     url: URLS_NAVBAR.ABOUT,
     title: 'About',
+    order: 4,
   },
 }
 
@@ -40,16 +41,6 @@ type NavbarUrl = {
   items?: NavbarUrlSimple[] | undefined
 }
 
-type Navbar = {
-  order: number
-  data: NavbarUrl
-}
-
-const NAVBAR: Navbar[] = [
-  { order: 1, data: NAVBAR_CONFIG.COURSES },
-  { order: 2, data: NAVBAR_CONFIG.VOCABULARY },
-  { order: 4, data: NAVBAR_CONFIG.GRAMMAR },
-  { order: 3, data: NAVBAR_CONFIG.ABOUT },
-]
+const NAVBAR: NavbarUrl[] = Object.values(NAVBAR_CONFIG).sort((a, b) => a.order - b.order)
 
 export { NAVBAR }
