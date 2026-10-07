@@ -24,7 +24,7 @@ const NavbarLink = ({ title, url, items }: NavbarLinkProps) => {
 
   if (url) {
     return (
-      <a href={url} className='transition-colors hover:text-brand'>
+      <a href={url} className='transition-colors hover:text-brand hover:scale-101'>
         {title}
       </a>
     )
@@ -40,7 +40,7 @@ const NavbarLink = ({ title, url, items }: NavbarLinkProps) => {
         type='button'
         onClick={toggleDropdown}
         aria-expanded={isOpen}
-        className={cn('transition-colors hover:text-brand cursor-pointer')}
+        className={cn('transition-colors hover:text-brand hover:scale-101 cursor-pointer')}
       >
         {title}
       </button>
@@ -49,7 +49,7 @@ const NavbarLink = ({ title, url, items }: NavbarLinkProps) => {
         className={cn(
           'absolute top-10 left-21',
           'min-w-max overflow-hidden rounded-b-xl',
-          'border border-gray-500 border-t-0 bg-gray-900',
+          'border border-divider border-t-0 bg-surface-layout',
           'transition-all duration-150',
         )}
         style={{
@@ -59,7 +59,7 @@ const NavbarLink = ({ title, url, items }: NavbarLinkProps) => {
         }}
       >
         {items?.map((item) => (
-          <a key={item.title} href={item.url} className='block px-4 py-2 transition-colors hover:bg-brand'>
+          <a key={item.title} href={item.url} className='block px-4 py-2 transition-colors hover:bg-highlight-layout'>
             {item.title}
           </a>
         ))}

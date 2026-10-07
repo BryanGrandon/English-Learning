@@ -91,7 +91,7 @@ p {
   left: 50%;
   width: 100vw;
   height: 1px;
-  background: gray;
+  background: var(--color-divider);
   transform: translateX(-50%);
 }
 

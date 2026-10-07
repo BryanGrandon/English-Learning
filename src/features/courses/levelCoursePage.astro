@@ -7,10 +7,13 @@ interface Props {
   course: CourseInformation
   topics: LevelTopic[]
 }
-
+import TopicAccordion from './components/TopicAccordion.astro'
+import { getCollection } from 'astro:content'
 const { course, topics } = Astro.props
 const url = Astro.url.pathname
 const selectedTopic = url.split('/')[2] as string
+
+const data = await getCollection('grammar')
 ---
 
 <article class={cn('level-content max-width')}>
@@ -50,7 +53,7 @@ const selectedTopic = url.split('/')[2] as string
       </section>
     </article>
   </aside>
-  <main class={cn('flex flex-col gap-4 test p-4', 'level-content__main')}>
+  <main class={cn('flex flex-col gap-4  p-4', 'level-content__main')}>
     <header class={cn('test p-4', 'rounded-2xl')}>
       <h1>{course.title}</h1>
     </header>
@@ -69,31 +72,13 @@ const selectedTopic = url.split('/')[2] as string
     <article class={cn('h-full space-y-2')}>
       {
         topics.map((topic) => (
-          <section class={cn('test p-4 flex items-center justify-between gap-4', 'rounded-xl')}>
-            <section class={cn('flex gap-4 items-center')}>
-              <div>
-                <topic.icon size={30} />
-              </div>
-              <div>
-                <span>{topic.title}</span>
-                <h3>description</h3>
-              </div>
-            </section>
-
-            <div>
-              <span>Status = completed, continues, start </span>
-              <button>Start</button>
-              <button>Drop ⬇️</button>
-            </div>
-            <section>
-              {topic.lessons.map((lesson) => (
-                <div class={cn('flex gap-4 items-center')}>
-                  <span>{lesson.title}</span>
-                  <h3>description</h3>
-                </div>
-              ))}
-            </section>
-          </section>
+          <TopicAccordion
+            title={topic.title}
+            description={topic.description}
+            lessons={topic.lessons}
+            icon={topic.icon}
+            data={data.filter((lesson) => lesson.data.topic === topic.key)}
+          />
         ))
       }
     </article>
@@ -116,3 +101,34 @@ const selectedTopic = url.split('/')[2] as string
     grid-area: main;
   }
 </style>
+
+<script>
+  const accordions = document.querySelectorAll<HTMLDetailsElement>('[data-topic-accordion]')
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('toggle', () => {
+      if (!accordion.open) return
+
+      accordions.forEach((item) => {
+        if (item !== accordion) {
+          item.open = false
+        }
+      })
+    })
+  })
+</script>
+
+<script>
+  const accordions = document.querySelectorAll<HTMLDetailsElement>('[data-topic-accordion]')
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('toggle', () => {
+      if (accordion.open) {
+        accordion.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        })
+      }
+    })
+  })
+</script>

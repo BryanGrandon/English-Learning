@@ -1,4 +1,5 @@
 @theme {
+  /* Colors */
   --color-brand: var(--color-brand);
   --color-accent: var(--color-accent);
 
@@ -6,6 +7,12 @@
   --color-text: var(--color-text);
   --color-muted: var(--color-text-muted);
 
+  /* Layout */
+  --color-surface-layout: var(--surface-layout);
+  --color-highlight-layout: var(--highlight-layout);
+  --color-divider: var(--color-divider);
+
+  /* Fonts */
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }

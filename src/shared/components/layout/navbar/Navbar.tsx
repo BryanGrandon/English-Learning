@@ -5,7 +5,7 @@ import { URLS_NAVBAR } from '@config/urls'
 
 const Navbar = () => {
   return (
-    <header className={cn('z-20 bg-gray-900 p-4', 'divider')}>
+    <header className={cn('z-20 bg-surface-layout p-4', 'divider')}>
       <article className={cn('flex items-center justify-between', 'max-width')}>
         <a href={URLS_NAVBAR.HOME} className='cursor-default'>
           Learning English

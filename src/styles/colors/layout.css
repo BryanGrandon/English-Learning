@@ -1,0 +1,11 @@
+:root {
+  --surface-layout: #1e3a8a;
+  --highlight-layout: #2563eb;
+  --color-divider: #64748b;
+}
+
+[data-theme='dark'] {
+  --surface-layout: #0b1b33;
+  --highlight-layout: #1e40af;
+  --color-divider: #334155;
+}
