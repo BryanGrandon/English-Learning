@@ -1,58 +1,24 @@
 ---
 import { cn } from '@shared/lib/cn'
+import { getTopicsWithLessons } from '@shared/lib/grammar'
+import { type EnglishLevel } from '@shared/utilities/constants/english-level'
+
+import CourseSidebar from './components/CourseSidebar.astro'
+import { COURSES_CONFIG } from '@config/courses'
 import type { LevelTopic } from '@shared/utilities/types/level-topics'
-import type { CourseInformation } from '@config/courses'
+import TopicAccordionList from './components/TopicAccordionList.astro'
 
 interface Props {
-  course: CourseInformation
-  topics: LevelTopic[]
+  level: EnglishLevel
 }
-import TopicAccordion from './components/TopicAccordion.astro'
-import { getCollection } from 'astro:content'
-const { course, topics } = Astro.props
-const url = Astro.url.pathname
-const selectedTopic = url.split('/')[2] as string
+const { level } = Astro.props
 
-const data = await getCollection('grammar')
+const topics: LevelTopic[] = await getTopicsWithLessons(level)
+const course = COURSES_CONFIG[level]
 ---
 
 <article class={cn('level-content max-width')}>
-  <aside class={cn('test p-4', 'level-content__aside')}>
-    <article class={cn('rounded-xl min-h-1/2 bg-gray-900')}>
-      <button class={cn('p-4')}> ⬅️ Back to Home </button>
-
-      <section class={cn('flex flex-col gap-2 p-4', 'rounded-xl')}>
-        <div>
-          <course.icon />
-          <p>{course.title}</p>
-        </div>
-        <p>{course.description}</p>
-      </section>
-
-      <button class={cn('px-4 py-2')}> IconHome Overview </button>
-
-      <section class={cn('flex flex-col gap-2 py-4', '')}>
-        <h3 class={cn('text-lg font-semibold px-4')}>Lessons</h3>
-        <section class={cn('space-y-3')}>
-          {
-            topics.map((topic) => (
-              <div
-                class={cn(
-                  'flex gap-3 items-center px-4 py-1',
-                  'text-muted cursor-pointer',
-                  'rounded-r-lg mr-4',
-                  'nouns' === topic.key ? 'bg-blue-900/80' : '',
-                )}
-              >
-                <topic.icon size={20} className='text-muted' />
-                <p>{topic.title}</p>
-              </div>
-            ))
-          }
-        </section>
-      </section>
-    </article>
-  </aside>
+  <CourseSidebar course={course} topics={topics} />
   <main class={cn('flex flex-col gap-4  p-4', 'level-content__main')}>
     <header class={cn('test p-4', 'rounded-2xl')}>
       <h1>{course.title}</h1>
@@ -61,7 +27,7 @@ const data = await getCollection('grammar')
     <article class={cn('flex justify-between items-center')}>
       <section>
         <span class=''>Lessons</span>
-        <h2>{course.key} Courses Lessons</h2>
+        <h2>{level} Courses Lessons</h2>
         <p>Explore the topic below and complete each lesson at your own pace.</p>
       </section>
       <section class='test'>
@@ -69,19 +35,7 @@ const data = await getCollection('grammar')
       </section>
     </article>
 
-    <article class={cn('h-full space-y-2')}>
-      {
-        topics.map((topic) => (
-          <TopicAccordion
-            title={topic.title}
-            description={topic.description}
-            lessons={topic.lessons}
-            icon={topic.icon}
-            data={data.filter((lesson) => lesson.data.topic === topic.key)}
-          />
-        ))
-      }
-    </article>
+    <TopicAccordionList topics={topics} />
   </main>
 </article>
 
@@ -110,25 +64,10 @@ const data = await getCollection('grammar')
       if (!accordion.open) return
 
       accordions.forEach((item) => {
-        if (item !== accordion) {
-          item.open = false
-        }
+        if (item !== accordion) item.open = false
       })
-    })
-  })
-</script>
 
-<script>
-  const accordions = document.querySelectorAll<HTMLDetailsElement>('[data-topic-accordion]')
-
-  accordions.forEach((accordion) => {
-    accordion.addEventListener('toggle', () => {
-      if (accordion.open) {
-        accordion.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        })
-      }
+      if (accordion.open) accordion.scrollIntoView({ behavior: 'smooth', block: 'center' })
     })
   })
 </script>

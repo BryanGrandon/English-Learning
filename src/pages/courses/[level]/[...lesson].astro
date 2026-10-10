@@ -8,6 +8,7 @@ export async function getStaticPaths() {
 
   return lessons.map((lesson) => ({
     params: {
+      level: Array.isArray(lesson.data.level) ? lesson.data.level[0].toLowerCase() : lesson.data.level.toLowerCase(),
       lesson: lesson.id,
     },
     props: {
@@ -18,6 +19,8 @@ export async function getStaticPaths() {
 
 const { lesson } = Astro.props
 const { Content } = await render(lesson)
+
+console.log(lesson)
 ---
 
 <Layout>

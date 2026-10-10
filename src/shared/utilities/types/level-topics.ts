@@ -1,16 +1,24 @@
-import { type CourseLevel } from '@config/courses'
 import type { LucideIcon } from 'lucide-react'
 
-export type LevelTopic = {
+export type TopicLessonConfig = {
+  key: string
+}
+
+export type LevelTopicConfig = {
   order: number
   key: string
   title: string
   description: string
   icon: LucideIcon
-  lessons: { key: string }[]
+  lessons: TopicLessonConfig[]
 }
 
-export type LevelTopics = {
-  level: CourseLevel
-  topics: LevelTopic[]
+export type TopicLesson = TopicLessonConfig & {
+  title: string
+  translation: string
+  href: string
+}
+
+export type LevelTopic = Omit<LevelTopicConfig, 'lessons'> & {
+  lessons: TopicLesson[]
 }

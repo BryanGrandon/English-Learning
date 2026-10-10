@@ -1,11 +1,9 @@
 import { Sprout, BookOpen, TrendingUp, Rocket, Award, Brain, type LucideIcon } from 'lucide-react'
-import type { ENGLISH_LEVEL } from '@shared/utilities/constants/english-level'
+import type { ENGLISH_LEVEL, EnglishLevel } from '@shared/utilities/constants/english-level'
 import { URLS_COURSES } from './urls'
 
-export type CourseLevel = keyof typeof ENGLISH_LEVEL
-
 export type CourseInformation = {
-  key: CourseLevel
+  key: EnglishLevel
   title: string
   description: string
   icon: LucideIcon
@@ -13,7 +11,7 @@ export type CourseInformation = {
   order: number
 }
 
-export const COURSES_CONFIG: Record<CourseLevel, CourseInformation> = {
+export const COURSES_CONFIG: Record<EnglishLevel, CourseInformation> = {
   A1: {
     key: 'A1',
     title: 'Beginner',

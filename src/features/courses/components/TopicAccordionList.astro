@@ -1,0 +1,62 @@
+---
+import { cn } from '@shared/lib/cn'
+import { ChevronDown, MousePointerClick } from 'lucide-react'
+import type { LevelTopic } from '@shared/utilities/types/level-topics'
+
+interface Props {
+  topics: LevelTopic[]
+}
+
+const { topics } = Astro.props
+---
+
+<article class='h-full space-y-2'>
+  {
+    topics.map((topic) => (
+      <details
+        data-topic-accordion
+        class={cn(
+          'rounded-lg border-2 border-transparent bg-surface-layout',
+          'group open:border-divider',
+          'hover:border-divider',
+        )}
+      >
+        <summary
+          class={cn(
+            'relative flex cursor-pointer list-none items-center justify-between p-4',
+            'group-open:border-b-2 group-open:border-divider group-open:bg-highlight-layout/60',
+          )}
+        >
+          <div class='flex items-center gap-4 px-2'>
+            <topic.icon size={25} className='text-muted' />
+            <div>
+              <h3 class='text-lg'>{topic.title}</h3>
+              <p>{topic.description}</p>
+            </div>
+          </div>
+          <ChevronDown size={25} className='transition-transform duration-200 group-open:rotate-180' />
+        </summary>
+        <ul class='space-y-2 p-4'>
+          {topic.lessons.map((lesson, index) => (
+            <li>
+              <a
+                href={lesson.href}
+                class={cn(
+                  'flex items-center justify-between gap-4 rounded-lg px-4 py-2 bg-highlight-layout/30',
+                  'hover:bg-highlight-layout/30',
+                )}
+              >
+                <div>
+                  <span class='text-xs text-muted'>Lesson {index + 1}</span>
+                  <h4 class='font-display'>{lesson.title}</h4>
+                  <p class='px-2 text-sm'>{lesson.translation}</p>
+                </div>
+                <MousePointerClick />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ))
+  }
+</article>

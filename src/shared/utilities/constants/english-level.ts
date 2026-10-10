@@ -6,3 +6,5 @@ export const ENGLISH_LEVEL = {
   C1: 'C1',
   C2: 'C2',
 } as const
+
+export type EnglishLevel = keyof typeof ENGLISH_LEVEL
