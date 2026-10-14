@@ -1,7 +1,7 @@
 ---
 import { cn } from '@shared/lib/cn'
-import { transparentMix } from '@shared/utilities/color/transparentMix'
 import type { CourseInformation } from '@config/courses'
+import { getLevelColorForStyle } from '@shared/utilities/level-colors.ts'
 
 interface Props {
   course: CourseInformation
@@ -11,8 +11,7 @@ const {
   course: { url, key: level, title, icon: Icon, description },
 } = Astro.props
 
-const color = `var(--color-level-${level.toLowerCase()})`
-const background = transparentMix({ color, percentage: 10 })
+const { color, background } = getLevelColorForStyle({ level })
 ---
 
 <a

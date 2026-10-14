@@ -1,12 +1,12 @@
 ---
 import { cn } from '@shared/lib/cn'
+import { COURSES_TOPIC } from '@config/courses'
 import { getTopicsWithLessons } from '@shared/lib/grammar'
-import { type EnglishLevel } from '@shared/utilities/constants/english-level'
-
+import type { LevelTopic } from '@shared/types/level-topics'
+import { type EnglishLevel } from '@shared/constants/english-level'
 import CourseSidebar from './components/CourseSidebar.astro'
-import { COURSES_CONFIG } from '@config/courses'
-import type { LevelTopic } from '@shared/utilities/types/level-topics'
 import TopicAccordionList from './components/TopicAccordionList.astro'
+import Header from './components/Header.astro'
 
 interface Props {
   level: EnglishLevel
@@ -14,15 +14,19 @@ interface Props {
 const { level } = Astro.props
 
 const topics: LevelTopic[] = await getTopicsWithLessons(level)
-const course = COURSES_CONFIG[level]
+const course = COURSES_TOPIC.filter((el) => el.key === level)[0]
 ---
 
 <article class={cn('level-content max-width')}>
   <CourseSidebar course={course} topics={topics} />
   <main class={cn('flex flex-col gap-4  p-4', 'level-content__main')}>
-    <header class={cn('test p-4', 'rounded-2xl')}>
-      <h1>{course.title}</h1>
-    </header>
+    <Header
+      level={course.key}
+      title={course.title}
+      heading={course.heading}
+      description={course.description}
+      numberLessons={topics.length}
+    />
 
     <article class={cn('flex justify-between items-center')}>
       <section>
@@ -30,9 +34,7 @@ const course = COURSES_CONFIG[level]
         <h2>{level} Courses Lessons</h2>
         <p>Explore the topic below and complete each lesson at your own pace.</p>
       </section>
-      <section class='test'>
-        <input type='search' name='' id='' placeholder='Search Lessons...' />
-      </section>
+      <!-- Search ?? -->
     </article>
 
     <TopicAccordionList topics={topics} />
@@ -42,17 +44,31 @@ const course = COURSES_CONFIG[level]
 <style>
   .level-content {
     display: grid;
-    grid-template-columns: 20rem 1fr;
-    grid-template-areas:
-      'aside main'
-      'aside main';
+    grid-template-columns: 20rem minmax(0, 1fr);
+    gap: 1.5rem;
   }
 
   .level-content__aside {
-    grid-area: aside;
+    grid-column: 1;
   }
+
   .level-content__main {
-    grid-area: main;
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  @media (max-width: 900px) {
+    .level-content {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .level-content :global(.level-content__aside) {
+      display: none;
+    }
+
+    .level-content__main {
+      grid-column: 1;
+    }
   }
 </style>
 

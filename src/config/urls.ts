@@ -1,6 +1,6 @@
 // ----- Navbar ----- //
 
-import { ENGLISH_LEVEL } from '@shared/utilities/constants/english-level'
+import { ENGLISH_LEVEL } from '@shared/constants/english-level'
 
 export const URLS_NAVBAR = {
   HOME: '/',

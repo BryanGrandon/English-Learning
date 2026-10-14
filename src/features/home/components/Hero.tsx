@@ -1,13 +1,13 @@
 import { cn } from '@shared/lib/cn'
 import { HERO } from '../utilities/config/home'
-import { transparentMix } from '@shared/utilities/color/transparentMix'
 import { ArrowRight, ChevronRight } from 'lucide-react'
+import { getBackgroundForStyle } from '@shared/utilities/level-colors.ts'
 HERO
 
 const Hero = () => {
   const { title, highlight, description, img } = HERO
 
-  const bgLabel = transparentMix({ color: 'var(--color-brand)', percentage: 93 })
+  const bgLabel = getBackgroundForStyle({ color: 'var(--color-brand)', percentage: 93 })
 
   return (
     <header className={cn('flex flex-col gap-8 justify-center px-4 py-8 min-h-100', 'divider')}>

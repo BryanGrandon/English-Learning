@@ -1,7 +1,7 @@
-import { COURSES } from '@config/courses'
+import { COURSES_CARD } from '@config/courses'
 import { URLS_NAVBAR } from '@config/urls'
 
-const items: NavbarUrlSimple[] = COURSES.map((el) => {
+const items: NavbarUrlSimple[] = COURSES_CARD.map((el) => {
   return { url: el.url, title: `${el.title}-${el.key}` }
 })
 

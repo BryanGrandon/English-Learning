@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content'
 import { LEVEL_TOPICS } from '@config/courses/index'
-import type { EnglishLevel } from '@shared/utilities/constants/english-level'
+import type { EnglishLevel } from '@shared/constants/english-level'
 
 export async function getGrammarLessons() {
   return getCollection('grammar')

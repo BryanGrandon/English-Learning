@@ -1,44 +1,38 @@
 ---
 import { cn } from '@shared/lib/cn'
 import { ArrowLeft, Home } from 'lucide-react'
-import { transparentMix } from '@shared/utilities/color/transparentMix'
+
 import type { CourseInformation } from '@config/courses'
-import type { LevelTopic } from '@shared/utilities/types/level-topics'
+import type { LevelTopic } from '@shared/types/level-topics'
 import AsideAccordionList from './AsideAccordionList.astro'
+import { getLevelColorForStyle } from '@shared/utilities/level-colors.ts'
 
 interface Props {
   course: CourseInformation
   topics: LevelTopic[]
 }
 const { topics, course } = Astro.props
-const { title, description, icon: Icon } = course
+const { title, icon: Icon } = course
 
 const url = Astro.url.pathname
 const selectedTopic = url.split('/').at(-2) as string
 const isLesson = selectedTopic !== 'courses'
 
-const color = `var(--color-level-${course.key.toLowerCase()})`
-const background = transparentMix({ color, percentage: 10 })
+const { color, background } = getLevelColorForStyle({ level: course.key })
 ---
 
 <aside class={cn('p-4', 'level-content__aside')}>
-  <article class={cn('rounded-xl border border-divider bg-surface-layout space-y-4')}>
+  <article class={cn('rounded-xl border border-divider bg-surface-layout space-y-4 overflow-hidden')}>
     <a href='/' class='flex p-4 gap-2'> <ArrowLeft size={25} /> Back to Home </a>
 
-    <section class='space-y-2'>
-      <section class={cn('px-4 flex items-center gap-4')}>
-        <div
-          class='flex items-center justify-center rounded-xl border-2 p-3 m-0'
-          style={{ backgroundColor: background, borderColor: color }}
-        >
-          <Icon size={28} />
-        </div>
-        <div class='flex flex-col text-lg tracking-wide'>
-          <span class='text-sm'>{course.key}</span>
-          {title}
-        </div>
-      </section>
-      <p class='leading-relaxed text-muted px-4 pb-4'>{description}</p>
+    <section class='px-4 flex items-center gap-4'>
+      <div
+        class='flex items-center justify-center rounded-xl border-2 p-3'
+        style={{ backgroundColor: background, borderColor: color }}
+      >
+        <Icon size={28} />
+      </div>
+      <h3 class='flex flex-col text-lg tracking-wide'><span class='text-sm'>{course.key}</span>{title}</h3>
     </section>
 
     <a class={cn('px-4 py-2 flex gap-2 items-center  mr-4 rounded-r-2xl ', !isLesson ? 'bg-highlight-layout/60' : '')}>

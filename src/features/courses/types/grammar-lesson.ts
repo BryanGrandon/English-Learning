@@ -1,4 +1,4 @@
-import { ENGLISH_LEVEL } from '@shared/utilities/constants/english-level'
+import { ENGLISH_LEVEL } from '@shared/constants/english-level'
 import type { InferEntrySchema, RenderedContent } from 'astro:content'
 
 export type grammarLevel = keyof typeof ENGLISH_LEVEL

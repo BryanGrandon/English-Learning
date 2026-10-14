@@ -1,5 +1,5 @@
 ---
-import { transparentMix } from '@shared/utilities/color/transparentMix'
+import { getBackgroundForStyle } from '@shared/utilities/level-colors.ts'
 import type { LucideIcon } from 'lucide-react'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 const { title, description, id, icon: Icon } = Astro.props
 
 const color = `var(--feature-${id})`
-const background = transparentMix({ color })
+const background = getBackgroundForStyle({ color })
 ---
 
 <section class='space-y-4'>

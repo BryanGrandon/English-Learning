@@ -1,0 +1,52 @@
+---
+import type { EnglishLevel } from '@shared/constants/english-level'
+import { cn } from '@shared/lib/cn'
+import { getLevelColorForStyle } from '@shared/utilities/level-colors.ts'
+import { BookOpen, Clock } from 'lucide-react'
+
+interface Props {
+  level: EnglishLevel
+  title: string
+  heading: string
+  description: string
+  numberLessons: number
+}
+
+const { level, title, heading, description, numberLessons } = Astro.props
+
+const { color, background } = getLevelColorForStyle({ level, percentage: 20 })
+---
+
+<header class={cn('p-4 bg-surface-layout flex justify-between rounded-2xl')}>
+  <section class='flex flex-col gap-3 items-start'>
+    <span class='px-4 py-1 rounded-2xl text-sm w-fit' style={{ border: `1px solid ${color}`, background: background }}>
+      {title} - {level}
+    </span>
+    <h1 class=''>{heading}</h1>
+    <p>{description}</p>
+
+    <section class='flex gap-4 test py-2 px-4 rounded-xl'>
+      <div class='flex flex-col gap-1'>
+        <span class='flex gap-2'>
+          <BookOpen />
+          {numberLessons} Lessons
+        </span>
+        <p class='text-xs px-2'>Grammar and vocabulary</p>
+      </div>
+      <div class='flex flex-col gap-1'>
+        <span class='flex gap-2'>
+          <Clock />
+          ~ 3 ~ 5 Minutes
+        </span>
+        <p class='text-xs px-2'>Por Lesson</p>
+      </div>
+    </section>
+  </section>
+  <picture class='max-w-100 overflow-hidden block'>
+    <img
+      class='w-auto block rounded-2xl'
+      src='https://media.istockphoto.com/id/949118068/photo/books.jpg?s=612x612&w=0&k=20&c=1vbRHaA_aOl9tLIy6P2UANqQ27KQ_gSF-BH0sUjQ730='
+      alt=''
+    />
+  </picture>
+</header>
