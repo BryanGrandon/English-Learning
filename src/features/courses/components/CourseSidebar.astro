@@ -19,6 +19,15 @@ const selectedTopic = url.split('/').at(-2) as string
 const isLesson = selectedTopic !== 'courses'
 
 const { color, background } = getLevelColorForStyle({ level: course.key })
+
+console.log(isLesson)
+
+const styleOverview = !isLesson
+  ? {
+      background,
+      border: `1px solid ${color}`,
+    }
+  : null
 ---
 
 <aside class={cn('p-4', 'level-content__aside')}>
@@ -35,7 +44,10 @@ const { color, background } = getLevelColorForStyle({ level: course.key })
       <h3 class='flex flex-col text-lg tracking-wide'><span class='text-sm'>{course.key}</span>{title}</h3>
     </section>
 
-    <a class={cn('px-4 py-2 flex gap-2 items-center  mr-4 rounded-r-2xl ', !isLesson ? 'bg-highlight-layout/60' : '')}>
+    <a
+      class={cn('px-4 py-2 flex gap-2 items-center  mr-4 rounded-r-2xl ', !isLesson ? `bg-[${color}]` : '')}
+      style={styleOverview}
+    >
       <Home size={20} /> Overview
     </a>
 

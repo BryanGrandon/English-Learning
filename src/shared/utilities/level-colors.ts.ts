@@ -15,7 +15,7 @@ export const getBackgroundForStyle = ({ color, percentage = 30 }: Background) =>
   return `color-mix(in srgb, ${color} ${proportion}%, transparent)`
 }
 
-export const getLevelColorForStyle = ({ level, percentage = 10 }: GetLevelColorForStyle) => {
+export const getLevelColorForStyle = ({ level, percentage = 15 }: GetLevelColorForStyle) => {
   const color = `var(--color-level-${level.toLowerCase()})`
   const background = getBackgroundForStyle({ color, percentage })
   return { color, background }
