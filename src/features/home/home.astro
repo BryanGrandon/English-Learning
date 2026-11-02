@@ -4,20 +4,20 @@ import { COURSES_CARD } from '@config/courses'
 import { FEATURES } from './utilities/config/home'
 import Hero from './components/Hero'
 import CourseCard from './components/CourseCard.astro'
-import HomeSection from './components/HomeSection.astro'
+import SectionLayout from './components/SectionLayout.astro'
 import FeatureCard from './components/FeatureCard.astro'
 ---
 
-<main class={cn('', 'max-width')}>
-  <Hero />
+<main class={cn('bg-background flex flex-col')}>
+  <Hero background='bg-surface' />
 
-  <HomeSection label='Features'>
+  <SectionLayout label='Features'>
     <section class='grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8'>
       {FEATURES.map((el) => <FeatureCard title={el.title} description={el.description} id={el.id} icon={el.icon} />)}
     </section>
-  </HomeSection>
+  </SectionLayout>
 
-  <HomeSection label='Courses'>
+  <SectionLayout label='Courses' background='bg-surface'>
     <div class='space-y-2'>
       <h2 class='font-bold'>Choose your level</h2>
       <p>Start from the level that matches your current skills and reach your goals step by step.</p>
@@ -25,5 +25,5 @@ import FeatureCard from './components/FeatureCard.astro'
     <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
       {COURSES_CARD.map((el) => <CourseCard course={el} />)}
     </section>
-  </HomeSection>
+  </SectionLayout>
 </main>

@@ -1,0 +1,18 @@
+---
+import { cn } from '@shared/lib/cn'
+
+interface Props {
+  label: string
+  background?: string
+  className?: string
+}
+
+const { className, background = 'bg-background', label } = Astro.props
+---
+
+<article class={cn('px-4 py-6 border-b border-divider pb-12', className, background)}>
+  <article class={cn('max-width', 'flex flex-col gap-6')}>
+    <span class='block font-display font-semibold tracking-wider text-accent'>{label}</span>
+    <slot />
+  </article>
+</article>

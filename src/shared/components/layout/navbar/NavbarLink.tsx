@@ -49,7 +49,7 @@ const NavbarLink = ({ title, url, items }: NavbarLinkProps) => {
         className={cn(
           'absolute top-10 left-21',
           'min-w-max overflow-hidden rounded-b-xl',
-          'border border-divider border-t-0 bg-surface-layout',
+          'bg-background shadow-lg',
           'transition-all duration-150',
         )}
         style={{
@@ -59,7 +59,7 @@ const NavbarLink = ({ title, url, items }: NavbarLinkProps) => {
         }}
       >
         {items?.map((item) => (
-          <a key={item.title} href={item.url} className='block px-4 py-2 transition-colors hover:bg-highlight-layout'>
+          <a key={item.title} href={item.url} className='block px-4 py-2 transition-colors hover:bg-surface-elevated'>
             {item.title}
           </a>
         ))}

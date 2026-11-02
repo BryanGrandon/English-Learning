@@ -16,14 +16,14 @@ const { topics } = Astro.props
       <details
         data-topic-accordion
         class={cn(
-          'rounded-xl border-2 border-transparent bg-surface-layout overflow-hidden',
+          'rounded-xl border border-transparent bg-surface overflow-hidden shadow',
           'group open:border-divider hover:border-divider',
         )}
       >
         <summary
           class={cn(
             'relative flex cursor-pointer list-none items-center justify-between p-4',
-            'group-open:border-b-2 group-open:border-divider group-open:bg-highlight-layout',
+            'group-open:shadow-lg group-open:bg-surface-elevated',
           )}
         >
           <div class='flex items-center gap-4 px-2'>
@@ -41,8 +41,8 @@ const { topics } = Astro.props
               <a
                 href={lesson.href}
                 class={cn(
-                  'flex items-center justify-between gap-4 rounded-lg px-4 py-2 bg-highlight-layout/70',
-                  'hover:bg-highlight-layout',
+                  'flex items-center justify-between gap-4 rounded-lg px-4 py-2 bg-surface-elevated/40 shadow',
+                  'hover:bg-surface-elevated',
                 )}
               >
                 <div>

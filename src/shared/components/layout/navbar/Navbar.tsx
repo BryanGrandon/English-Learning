@@ -2,10 +2,11 @@ import { cn } from '@shared/lib/cn'
 import { NAVBAR } from './navbar.config'
 import NavbarLink from './NavbarLink'
 import { URLS_NAVBAR } from '@config/urls'
+import LightDarkButton from '@shared/components/ui/LightDarkButton'
 
 const Navbar = () => {
   return (
-    <header className={cn('z-20 bg-surface-layout p-4', 'divider')}>
+    <header className={cn('z-20 bg-background p-4', 'divider')}>
       <article className={cn('flex items-center justify-between', 'max-width')}>
         <a href={URLS_NAVBAR.HOME} className='cursor-default'>
           Learning English
@@ -17,7 +18,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <button type='button'>Light / Dark</button>
+        <LightDarkButton />
       </article>
     </header>
   )
