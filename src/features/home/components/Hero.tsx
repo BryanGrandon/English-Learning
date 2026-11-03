@@ -10,32 +10,41 @@ const Hero = ({ background }: Hero) => {
   const { title, highlight, description, img } = HERO
 
   return (
-    <header className={cn('px-4 py-8 min-h-100 w-full border-b border-divider', background)}>
-      <article className={cn('flex flex-col gap-6', 'max-width')}>
-        <div className='inline-flex gap-2 border rounded-2xl py-1 px-6 w-fit border-accent bg-accent/10'>
-          <span>Learn English</span> <span>●</span>
-          <span className='text-brand'>Build your future</span>
-        </div>
-        <article className='flex justify-between items-center gap-6 flex-wrap-reverse'>
-          <section className='space-y-6'>
-            <h1 className='text-5xl flex flex-col font-bold'>
-              {title}, <span className='text-brand font-semibold'>{highlight}</span>
-            </h1>
-            <p>{description}</p>
-            <button
-              className={cn(
-                'rounded-4xl flex gap-3 py-2 px-6 bg-brand text-white shadow shadow-gray-800 cursor-pointer',
-                'hover:scale-103 active:scale-97',
-              )}
-            >
-              Start Learning <ArrowRight />
-            </button>
-          </section>
-          <picture className='flex justify-center h-50 w-full sm:w-auto'>
-            <img src={img.src} alt={img.alt} className=' h-full rounded-xl' />
+    <header className={cn('relative w-full overflow-hidden border-b border-divider px-4 py-20 md:py-24', background)}>
+      <div className={cn('mx-auto grid min-h-100 max-w-7xl items-center gap-12 md:grid-cols-2', 'max-width')}>
+        <section className='flex flex-col items-start gap-6'>
+          <div className='inline-flex items-center gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm'>
+            <span className='font-medium'>Learn English</span>
+            <span className='size-1.5 rounded-full bg-accent' />
+            <span className='text-brand'>Build your future</span>
+          </div>
+
+          <h1 className='text-4xl font-bold tracking-tight'>
+            {title} <span className='block text-brand'>{highlight}</span>
+          </h1>
+
+          <p className='text-base text-foreground/70 '>{description}</p>
+
+          <button
+            className={cn(
+              'group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-3',
+              'text-white shadow-lg shadow-brand/20 font-display font-semibold tracking-wide',
+              'transition-all duration-300 hover:shadow-xl hover:bg-accent',
+              'active:scale-95 cursor-pointer',
+            )}
+          >
+            Start Learning
+            <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-1' />
+          </button>
+        </section>
+
+        <div className='relative flex items-center justify-center'>
+          <div className='absolute size-64 rounded-full bg-brand/50 blur-3xl sm:size-80' />
+          <picture className='relative w-full max-w-md'>
+            <img src={img.src} alt={img.alt} className='aspect-4/3 w-full rounded-3xl object-cover shadow-2xl' />
           </picture>
-        </article>
-      </article>
+        </div>
+      </div>
     </header>
   )
 }
