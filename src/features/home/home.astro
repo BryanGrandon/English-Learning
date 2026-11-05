@@ -6,10 +6,64 @@ import Hero from './components/Hero'
 import CourseCard from './components/CourseCard.astro'
 import SectionLayout from './components/SectionLayout.astro'
 import FeatureCard from './components/FeatureCard.astro'
+import HeaderSection from './components/HeaderSection.astro'
+import { ArrowRight, BookOpen } from 'lucide-react'
 ---
 
 <main class={cn('bg-background flex flex-col')}>
   <Hero background='bg-surface' />
+
+  <article class='px-4 py-10 min-h-80 flex items-center'>
+    <article class='max-width grid gap-4'>
+      <HeaderSection title='Your Learning Path' paragraph='A structured path to help you reach your goals.' />
+      <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
+        <section class='flex flex-col gap-4 border border-divider rounded-lg p-4 bg-accent/20 shadow'>
+          <div class='flex items-center gap-4'>
+            <span class='flex bg-brand text-white size-14 items-center justify-center rounded-full text-2xl font-bold'
+              >A1</span
+            >
+            <div>
+              <h3 class='font-bold'>Lesson Card</h3>
+              <p>Learn new concepts and skills with our interactive lessons.</p>
+            </div>
+          </div>
+          <div class='flex items-center justify-between'>
+            <p>Bar Progress</p>
+            <button
+              class={cn(
+                'group inline-flex items-center gap-3 rounded-full border border-accent px-5 py-2',
+                'shadow shadow-brand/20 font-display font-semibold tracking-wide text-accent',
+                'transition-all  duration-300 hover:bg-accent hover:text-white',
+                'active:scale-95 cursor-pointer',
+              )}
+            >
+              Start OR Continue
+              <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-1' />
+            </button>
+          </div>
+        </section>
+      </section>
+    </article>
+  </article>
+
+  <article class='px-4 py-16 bg-surface'>
+    <article class='max-width grid gap-8'>
+      <HeaderSection title='Learn by topics' paragraph='Focus on what you want to learn.' />
+      <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
+        <section class='flex flex-col gap-3 border border-brand rounded-lg p-4 bg-brand/20 shadow'>
+          <BookOpen size={38} className='text-brand' />
+          <div>
+            <h3 class='font-bold'>Vocabulary</h3>
+            <p>Grow your word bank with useful and relevant terms.</p>
+          </div>
+          <button class='flex items-center gap-2'>
+            Explore
+            <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-1' />
+          </button>
+        </section>
+      </section>
+    </article>
+  </article>
 
   <SectionLayout label='Features'>
     <section class='grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8'>
