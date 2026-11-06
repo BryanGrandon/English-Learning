@@ -2,16 +2,17 @@
 interface Props {
   title: string
   paragraph: string
-  class?: string
 }
 
-const { title, paragraph, class: className } = Astro.props
+const { title, paragraph } = Astro.props
 ---
 
-<header class:list={['section-heading', className, 'flex items-center gap-4']}>
-  <hr class='flex shrink-0 w-1.5 h-[90%] bg-gradient-primary rounded-full border-0' />
-  <div class='grid gap-1'>
-    <h2 class='text-2xl font-bold'>{title}</h2>
-    <p>{paragraph}</p>
-  </div>
+<header class='grid'>
+  <section class='flex items-center gap-4'>
+    <hr class='flex shrink-0 w-1.5 h-full bg-gradient-primary rounded-full border-0' />
+    <div class='grid gap-1'>
+      <h2 class='text-2xl font-bold'>{title}</h2>
+      <p>{paragraph}</p>
+    </div>
+  </section>
 </header>
