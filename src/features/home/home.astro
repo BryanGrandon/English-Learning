@@ -1,7 +1,7 @@
 ---
 import { cn } from '@shared/lib/cn'
 import { COURSES_CARD } from '@config/courses'
-import { FEATURES } from './utilities/config/home'
+import { FEATURES } from './config/home'
 import Hero from './components/Hero'
 import CourseCard from './components/CourseCard.astro'
 import SectionLayout from './components/SectionLayout.astro'
@@ -9,6 +9,7 @@ import FeatureCard from './components/FeatureCard.astro'
 import HeaderSection from './components/HeaderSection.astro'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Courses from './components/Courses'
+import { HOME_TOPICS } from './config/topics'
 ---
 
 <main class={cn('bg-background flex flex-col')}>
@@ -17,6 +18,34 @@ import Courses from './components/Courses'
   <SectionLayout label='Learning'>
     <HeaderSection title='Your Learning Path' paragraph='A structured path to help you reach your goals.' />
     <Courses client:load />
+  </SectionLayout>
+
+  <SectionLayout label='Topics' background='bg-surface'>
+    <HeaderSection title='Learn by topics' paragraph='Focus on what you want to learn.' />
+    <article class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
+      {
+        HOME_TOPICS.map(({ icon: Icon, title, description, url, key }) => (
+          <a
+            href={url}
+            aria-label={`Explore ${title}`}
+            class='group flex flex-col justify-between gap-4 rounded-xl border border-divider bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-lg'
+          >
+            <div class='flex items-center gap-4'>
+              <div class='flex size-14 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white'>
+                <Icon size={30} />
+              </div>
+            </div>
+
+            <div class='space-y-2'>
+              <h3 class='text-xl font-bold transition-colors group-hover:text-brand'>{title}</h3>
+              <p class='text-sm leading-relaxed text-muted-foreground'>{description}</p>
+            </div>
+
+            <span class='w-fit font-semibold text-brand'>Explore</span>
+          </a>
+        ))
+      }
+    </article>
   </SectionLayout>
 
   <article class='px-4 py-16 bg-surface'>

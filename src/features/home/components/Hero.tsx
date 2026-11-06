@@ -1,6 +1,7 @@
 import { cn } from '@shared/lib/cn'
-import { HERO } from '../utilities/config/home'
-import { ArrowRight } from 'lucide-react'
+import { HERO } from '../config/home'
+import { ArrowRight, BookOpen } from 'lucide-react'
+import Button from '@shared/components/ui/Button'
 
 type Hero = {
   background?: string
@@ -25,17 +26,10 @@ const Hero = ({ background }: Hero) => {
 
           <p className='text-base text-foreground/70 '>{description}</p>
 
-          <button
-            className={cn(
-              'group inline-flex items-center gap-3 rounded-full bg-brand px-7 py-3',
-              'text-white shadow-lg shadow-brand/20 font-display font-semibold tracking-wide',
-              'transition-all duration-300 hover:shadow-xl hover:bg-accent',
-              'active:scale-95 cursor-pointer',
-            )}
-          >
-            Start Learning
-            <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-1' />
-          </button>
+          <div className='flex items-center gap-2'>
+            <Button text='Start Learning' rightIcon={ArrowRight} ariaLabel='Start learning' primary />
+            <Button text='Explore Courses' ariaLabel='Explore courses' leftIcon={BookOpen} />
+          </div>
         </section>
 
         <div className='relative flex items-center justify-center'>

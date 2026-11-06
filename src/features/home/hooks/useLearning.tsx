@@ -6,10 +6,10 @@ import useCourseStatus from '@shared/hooks/useCourseStatus'
 
 const MAX_COURSES = 3
 
-const BUTTON_TEXT = {
-  [COURSE_STATUS.NOT_STARTED]: 'Start',
-  [COURSE_STATUS.IN_PROGRESS]: 'Continue',
-  [COURSE_STATUS.COMPLETED]: 'Review',
+const STATUS_TEXT = {
+  [COURSE_STATUS.NOT_STARTED]: 'Start learning',
+  [COURSE_STATUS.IN_PROGRESS]: 'Continue learning',
+  [COURSE_STATUS.COMPLETED]: 'Review course',
 } as const
 
 const useLearning = () => {
@@ -23,7 +23,7 @@ const useLearning = () => {
     return [...inProgress, ...notStarted, ...completed].slice(0, MAX_COURSES).map((course) => ({
       ...course,
       status: status[course.key],
-      buttonText: BUTTON_TEXT[status[course.key]],
+      statusText: STATUS_TEXT[status[course.key]],
     }))
   }, [status])
 
