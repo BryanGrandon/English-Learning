@@ -1,13 +1,8 @@
 ---
 import { cn } from '@shared/lib/cn'
-import { COURSES_CARD } from '@config/courses'
-import { FEATURES } from './config/home'
 import Hero from './components/Hero'
-import CourseCard from './components/CourseCard.astro'
 import SectionLayout from './components/SectionLayout.astro'
-import FeatureCard from './components/FeatureCard.astro'
 import HeaderSection from './components/HeaderSection.astro'
-import { ArrowRight, BookOpen } from 'lucide-react'
 import Courses from './components/Courses'
 import { HOME_TOPICS } from './config/topics'
 ---
@@ -46,40 +41,5 @@ import { HOME_TOPICS } from './config/topics'
         ))
       }
     </article>
-  </SectionLayout>
-
-  <article class='px-4 py-16 bg-surface'>
-    <article class='max-width grid gap-8'>
-      <HeaderSection title='Learn by topics' paragraph='Focus on what you want to learn.' />
-      <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
-        <section class='flex flex-col gap-3 border border-brand rounded-lg p-4 bg-brand/20 shadow'>
-          <BookOpen size={38} className='text-brand' />
-          <div>
-            <h3 class='font-bold'>Vocabulary</h3>
-            <p>Grow your word bank with useful and relevant terms.</p>
-          </div>
-          <button class='flex items-center gap-2'>
-            Explore
-            <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-1' />
-          </button>
-        </section>
-      </section>
-    </article>
-  </article>
-
-  <SectionLayout label='Features'>
-    <section class='grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-8'>
-      {FEATURES.map((el) => <FeatureCard title={el.title} description={el.description} id={el.id} icon={el.icon} />)}
-    </section>
-  </SectionLayout>
-
-  <SectionLayout label='Courses' background='bg-surface'>
-    <div class='space-y-2'>
-      <h2 class='font-bold'>Choose your level</h2>
-      <p>Start from the level that matches your current skills and reach your goals step by step.</p>
-    </div>
-    <section class='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4'>
-      {COURSES_CARD.map((el) => <CourseCard course={el} />)}
-    </section>
   </SectionLayout>
 </main>

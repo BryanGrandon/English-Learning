@@ -1,5 +1,5 @@
 import { cn } from '@shared/lib/cn'
-import { HERO } from '../config/home'
+import { HERO } from '../config/hero.ts'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Button from '@shared/components/ui/Button'
 
