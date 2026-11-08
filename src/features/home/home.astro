@@ -6,6 +6,7 @@ import HeaderSection from './components/HeaderSection.astro'
 import Courses from './components/Courses'
 import { HOME_TOPICS } from './config/topics'
 import { PLATFORM_FEATURES } from './config/features'
+import Footer from '@shared/components/layout/Footer.astro'
 ---
 
 <main class={cn('bg-background flex flex-col')}>
@@ -24,7 +25,7 @@ import { PLATFORM_FEATURES } from './config/features'
           <a
             href={url}
             aria-label={`Explore ${title}`}
-            class='group flex flex-col justify-between gap-4 rounded-xl border border-divider bg-surface p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-lg'
+            class='group flex flex-col justify-between gap-4 rounded-xl border border-divider bg-surface-elevated p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-lg'
           >
             <div class='flex items-center gap-4'>
               <div class='flex size-14 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white'>
@@ -46,8 +47,8 @@ import { PLATFORM_FEATURES } from './config/features'
 
   <SectionLayout label='Features'>
     <HeaderSection
-      title='Everything You Need to Learn English'
-      paragraph='Explore the tools and resources designed to help you improve your English skills at your own pace.'
+      title='Explore Our Platform Features'
+      paragraph='Explore the tools designed to make learning English easier and more engaging.'
     />
     <article class='grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-8'>
       {
@@ -64,3 +65,5 @@ import { PLATFORM_FEATURES } from './config/features'
     </article>
   </SectionLayout>
 </main>
+
+<Footer background='bg-surface' />

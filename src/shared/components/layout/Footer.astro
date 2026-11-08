@@ -1,0 +1,42 @@
+---
+import { cn } from '@shared/lib/cn'
+import Brand from '../ui/Brand'
+import { NAVBAR_ROUTES } from '@config/routes'
+
+interface Props {
+  background?: string
+}
+
+const { background = 'bg-background' } = Astro.props
+---
+
+<footer class={cn('px-4 py-8 md:py-4', background)}>
+  <article class={cn('max-width gap-4', 'flex flex-col items-center justify-between md:flex-row')}>
+    <section class='flex flex-col gap-1 md:flex-row md:gap-4 md:items-center'>
+      <Brand />
+      <p class='md:border-l md:pl-4 border-divider'>Learn, Practice, Improve</p>
+    </section>
+
+    <hr class='border-0 h-px w-[70%] bg-muted md:hidden' />
+
+    <nav class='flex flex-col md:flex-row gap-3 items-center'>
+      {
+        NAVBAR_ROUTES.map((el) => (
+          <a
+            href={el.href}
+            class={cn(`px-3 inline-block hover:border-brand transition-all duration-300 hover:text-brand`)}
+          >
+            {el.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <hr class='border-0 h-px w-[70%] bg-muted md:hidden' />
+
+    <section class='flex gap-2'>
+      <p>GitHub</p>
+      <p>Link</p>
+    </section>
+  </article>
+</footer>
