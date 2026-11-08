@@ -5,6 +5,7 @@ import SectionLayout from './components/SectionLayout.astro'
 import HeaderSection from './components/HeaderSection.astro'
 import Courses from './components/Courses'
 import { HOME_TOPICS } from './config/topics'
+import { PLATFORM_FEATURES } from './config/features'
 ---
 
 <main class={cn('bg-background flex flex-col')}>
@@ -38,6 +39,26 @@ import { HOME_TOPICS } from './config/topics'
 
             <span class='w-fit font-semibold text-brand'>Explore</span>
           </a>
+        ))
+      }
+    </article>
+  </SectionLayout>
+
+  <SectionLayout label='Features'>
+    <HeaderSection
+      title='Everything You Need to Learn English'
+      paragraph='Explore the tools and resources designed to help you improve your English skills at your own pace.'
+    />
+    <article class='grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-8'>
+      {
+        PLATFORM_FEATURES.map(({ title, description, icon: Icon }) => (
+          <section class='flex flex-col gap-4'>
+            <Icon size={38} className='text-accent' />
+            <div class='grid gap-2'>
+              <h3 class='font-semibold'>{title}</h3>
+              <p>{description}</p>
+            </div>
+          </section>
         ))
       }
     </article>
