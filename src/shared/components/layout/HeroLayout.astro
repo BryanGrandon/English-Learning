@@ -31,12 +31,6 @@ const { label, title, highlight, description, labelIcon: LabelIcon } = Astro.pro
       <slot name='buttons' />
     </section>
 
-    <div class='relative flex items-center justify-center'>
-      <div class='pointer-events-none absolute size-64 rounded-full bg-brand/20 blur-3xl sm:size-80'></div>
-
-      <div class='relative z-10 w-full max-w-md'>
-        <slot name='illustration' class="class='h-auto w-full'" />
-      </div>
-    </div>
+    <slot name='illustration' />
   </div>
 </header>

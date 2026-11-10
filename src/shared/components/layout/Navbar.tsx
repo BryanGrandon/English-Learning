@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { cn } from '@shared/lib/cn'
 
 import { NAVBAR_ROUTES } from '@config/routes'
-import LightDarkButton from '@shared/components/ui/LightDarkButton'
-import MenuButton from '@shared/components/ui/MenuButton'
+import LightDarkButton from '@shared/components/ui/buttons/LightDarkButton'
+import MenuButton from '@shared/components/ui/buttons/MenuButton'
 import Brand from '@shared/components/ui/Brand'
 
 const Navbar = () => {

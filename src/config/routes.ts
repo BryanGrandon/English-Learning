@@ -1,3 +1,5 @@
+import { ENGLISH_LEVEL } from '@shared/constants/english-level'
+
 const BASE_PATH = '/'
 
 export const NAV_ROUTES = {
@@ -15,3 +17,8 @@ export const NAVBAR_ROUTES = [
   { id: 'vocabulary', label: 'Vocabulary', href: NAV_ROUTES.VOCABULARY },
   { id: 'practice', label: 'Practice', href: NAV_ROUTES.PRACTICE },
 ]
+
+type UrlsCourses = Record<keyof typeof ENGLISH_LEVEL, string>
+
+const arrUrlsCourses = Object.entries(ENGLISH_LEVEL).map(([key, value]) => [key, `/courses/${value.toLowerCase()}`])
+export const URLS_COURSES = Object.fromEntries(arrUrlsCourses) as UrlsCourses

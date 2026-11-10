@@ -1,10 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import LevelCoursePage from '@features/courses/levelCoursePage.astro'
-import { COURSES_TOPIC } from '@config/courses.ts'
+import { COURSES } from '@config/courses'
 
 export async function getStaticPaths() {
-  return COURSES_TOPIC.map(({ key, ...data }) => {
+  return COURSES.map(({ level: key, ...data }) => {
     let level = key.toLowerCase()
     return {
       params: { level },

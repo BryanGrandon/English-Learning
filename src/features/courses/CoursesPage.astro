@@ -1,22 +1,33 @@
 ---
 import HeroLayout from '@shared/components/layout/HeroLayout.astro'
-import Button from '@shared/components/ui/Button'
-import { ArrowRight, GraduationCap } from 'lucide-react'
+import Button from '@shared/components/ui/buttons/Button'
+import { ArrowRight } from 'lucide-react'
 import CoursesIllustration from './components/CoursesIllustration'
+import SectionLayout from '@shared/components/layout/SectionLayout.astro'
+import HeaderSection from '@shared/components/layout/HeaderSection.astro'
+import Footer from '@shared/components/layout/Footer.astro'
+import { HERO_COURSE } from './config/hero'
+import CourseCard from '@shared/components/ui/CourseCard'
 ---
 
 <main>
-  <HeroLayout
-    title='English Course for'
-    highlight='Every Level'
-    labelIcon={GraduationCap}
-    label='Our Courses'
-    description='From beginner to advanced, explore our structured courses and take your English to the next level.'
-  >
+  <HeroLayout {...HERO_COURSE}>
     <div slot='buttons' class='flex items-center gap-2'>
       <Button text='Start Learning' rightIcon={ArrowRight} ariaLabel='Start learning' primary />
     </div>
 
     <CoursesIllustration slot='illustration' />
   </HeroLayout>
+
+  <SectionLayout label='Courses'>
+    <HeaderSection title='Courses Levels' paragraph='Choose your level and start your learning journey.' />
+
+    <article></article>
+  </SectionLayout>
+
+  <SectionLayout label='Continue learning' background='bg-surface'>
+    <HeaderSection title='Continue Learning' paragraph='Pick up where you left off' />
+  </SectionLayout>
 </main>
+
+<Footer />

@@ -1,16 +1,26 @@
 ---
+import { ArrowRight, BookOpen } from 'lucide-react'
 import { cn } from '@shared/lib/cn'
-import Hero from './components/Hero'
-import SectionLayout from './components/SectionLayout.astro'
-import HeaderSection from './components/HeaderSection.astro'
-import Courses from './components/Courses'
+import { HERO_HOME } from './config/hero'
 import { HOME_TOPICS } from './config/topics'
 import { PLATFORM_FEATURES } from './config/features'
+import Courses from './components/Courses'
+import Button from '@shared/components/ui/buttons/Button'
 import Footer from '@shared/components/layout/Footer.astro'
+import HeroLayout from '@shared/components/layout/HeroLayout.astro'
+import HeroIllustration from './components/EnglishIllustration'
+import HeaderSection from '@shared/components/layout/HeaderSection.astro'
+import SectionLayout from '@shared/components/layout/SectionLayout.astro'
 ---
 
 <main class={cn('bg-background flex flex-col')}>
-  <Hero background='bg-surface' />
+  <HeroLayout {...HERO_HOME}>
+    <div slot='buttons' class='flex flex-col md:flex-row items-center gap-2'>
+      <Button text='Start Learning' rightIcon={ArrowRight} ariaLabel='Start learning' primary />
+      <Button text='Explore Courses' ariaLabel='Explore courses' leftIcon={BookOpen} />
+    </div>
+    <HeroIllustration slot='illustration' />
+  </HeroLayout>
 
   <SectionLayout label='Learning'>
     <HeaderSection title='Your Learning Path' paragraph='A structured path to help you reach your goals.' />

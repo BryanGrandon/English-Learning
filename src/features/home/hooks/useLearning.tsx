@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 
-import { COURSES_CARD } from '@config/courses'
+import { COURSES } from '@config/courses'
 import { COURSE_STATUS } from '@shared/constants/course-status'
 import useCourseStatus from '@shared/hooks/useCourseStatus'
 
@@ -16,14 +16,14 @@ const useLearning = () => {
   const { status } = useCourseStatus()
 
   const viewCourses = useMemo(() => {
-    const inProgress = COURSES_CARD.filter(({ key }) => status[key] === COURSE_STATUS.IN_PROGRESS)
-    const notStarted = COURSES_CARD.filter(({ key }) => status[key] === COURSE_STATUS.NOT_STARTED)
-    const completed = COURSES_CARD.filter(({ key }) => status[key] === COURSE_STATUS.COMPLETED)
+    const inProgress = COURSES.filter(({ level }) => status[level] === COURSE_STATUS.IN_PROGRESS)
+    const notStarted = COURSES.filter(({ level }) => status[level] === COURSE_STATUS.NOT_STARTED)
+    const completed = COURSES.filter(({ level }) => status[level] === COURSE_STATUS.COMPLETED)
 
     return [...inProgress, ...notStarted, ...completed].slice(0, MAX_COURSES).map((course) => ({
       ...course,
-      status: status[course.key],
-      statusText: STATUS_TEXT[status[course.key]],
+      status: status[course.level],
+      statusText: STATUS_TEXT[status[course.level]],
     }))
   }, [status])
 
