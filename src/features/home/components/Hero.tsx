@@ -2,6 +2,7 @@ import { cn } from '@shared/lib/cn'
 import { HERO } from '../config/hero.ts'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import Button from '@shared/components/ui/Button'
+import HeroIllustration from './EnglishIllustration.tsx'
 
 type Hero = {
   background?: string
@@ -33,10 +34,13 @@ const Hero = ({ background }: Hero) => {
         </section>
 
         <div className='relative flex items-center justify-center'>
-          <div className='absolute size-64 rounded-full bg-brand/50 blur-3xl sm:size-80' />
-          <picture className='relative w-full max-w-md'>
-            <img src={img.src} alt={img.alt} className='aspect-4/3 w-full rounded-3xl object-cover shadow-2xl' />
-          </picture>
+          {/* Background glow */}
+          <div className='pointer-events-none absolute size-64 rounded-full bg-brand/20 blur-3xl sm:size-80' />
+
+          {/* Illustration */}
+          <div className='relative z-10 w-full max-w-md'>
+            <HeroIllustration className='h-auto w-full' />
+          </div>
         </div>
       </div>
     </header>

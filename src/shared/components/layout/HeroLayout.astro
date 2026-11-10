@@ -1,0 +1,42 @@
+---
+import { cn } from '@shared/lib/cn'
+import type { LucideIcon } from 'lucide-react'
+
+interface Props {
+  label: string
+  labelIcon?: LucideIcon
+  title: string
+  highlight: string
+  description: string
+}
+
+const { label, title, highlight, description, labelIcon: LabelIcon } = Astro.props
+---
+
+<header class={cn('relative w-full overflow-hidden border-b border-divider px-4 py-20 md:py-24 bg-surface')}>
+  <div class={cn('mx-auto grid min-h-100 max-w-7xl items-center gap-12 md:grid-cols-2', 'max-width')}>
+    <section class='flex flex-col items-start gap-6'>
+      <div class='inline-flex items-center gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm'>
+        {LabelIcon && <LabelIcon size={20} />}
+        {label}
+      </div>
+
+      <h1 class='text-4xl font-bold tracking-tight'>
+        {title}
+        <span class='block text-brand'>{highlight}</span>
+      </h1>
+
+      <p class='text-base text-foreground/70'>{description}</p>
+
+      <slot name='buttons' />
+    </section>
+
+    <div class='relative flex items-center justify-center'>
+      <div class='pointer-events-none absolute size-64 rounded-full bg-brand/20 blur-3xl sm:size-80'></div>
+
+      <div class='relative z-10 w-full max-w-md'>
+        <slot name='illustration' class="class='h-auto w-full'" />
+      </div>
+    </div>
+  </div>
+</header>

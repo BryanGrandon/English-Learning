@@ -1,0 +1,22 @@
+---
+import HeroLayout from '@shared/components/layout/HeroLayout.astro'
+import Button from '@shared/components/ui/Button'
+import { ArrowRight, GraduationCap } from 'lucide-react'
+import CoursesIllustration from './components/CoursesIllustration'
+---
+
+<main>
+  <HeroLayout
+    title='English Course for'
+    highlight='Every Level'
+    labelIcon={GraduationCap}
+    label='Our Courses'
+    description='From beginner to advanced, explore our structured courses and take your English to the next level.'
+  >
+    <div slot='buttons' class='flex items-center gap-2'>
+      <Button text='Start Learning' rightIcon={ArrowRight} ariaLabel='Start learning' primary />
+    </div>
+
+    <CoursesIllustration slot='illustration' />
+  </HeroLayout>
+</main>
