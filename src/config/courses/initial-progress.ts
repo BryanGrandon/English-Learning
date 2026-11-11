@@ -1,9 +1,9 @@
 import { LEVEL_TOPICS } from '@config/courses/index'
-import type { EnglishLevel } from './english-level'
+import type { EnglishLevel } from '../../shared/constants/english-level'
 
 interface CourseProgress {
   total_lessons: number
-  lessons_completed: number
+  completed_lessons: number
   last_topic: string
   last_lesson: string
 }
@@ -15,7 +15,7 @@ const INITIAL_PROGRESS = Object.fromEntries(
     level,
     {
       total_lessons: topics.length,
-      lessons_completed: 0,
+      completed_lessons: 0,
       last_topic: '',
       last_lesson: '',
     },

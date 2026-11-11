@@ -4,13 +4,13 @@ import { cn } from '@shared/lib/cn'
 import { HERO_HOME } from './config/hero'
 import { HOME_TOPICS } from './config/topics'
 import { PLATFORM_FEATURES } from './config/features'
-import Courses from './components/Courses'
 import Button from '@shared/components/ui/buttons/Button'
 import Footer from '@shared/components/layout/Footer.astro'
 import HeroLayout from '@shared/components/layout/HeroLayout.astro'
 import HeroIllustration from './components/EnglishIllustration'
 import HeaderSection from '@shared/components/layout/HeaderSection.astro'
 import SectionLayout from '@shared/components/layout/SectionLayout.astro'
+import HomeCourses from './components/HomeCourses'
 ---
 
 <main class={cn('bg-background flex flex-col')}>
@@ -24,7 +24,7 @@ import SectionLayout from '@shared/components/layout/SectionLayout.astro'
 
   <SectionLayout label='Learning'>
     <HeaderSection title='Your Learning Path' paragraph='A structured path to help you reach your goals.' />
-    <Courses client:load />
+    <HomeCourses client:load />
   </SectionLayout>
 
   <SectionLayout label='Topics' background='bg-surface'>

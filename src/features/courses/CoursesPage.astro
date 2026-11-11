@@ -8,6 +8,7 @@ import HeaderSection from '@shared/components/layout/HeaderSection.astro'
 import Footer from '@shared/components/layout/Footer.astro'
 import { HERO_COURSE } from './config/hero'
 import CourseCard from '@shared/components/ui/CourseCard'
+import Courses from './components/Courses'
 ---
 
 <main>
@@ -22,7 +23,7 @@ import CourseCard from '@shared/components/ui/CourseCard'
   <SectionLayout label='Courses'>
     <HeaderSection title='Courses Levels' paragraph='Choose your level and start your learning journey.' />
 
-    <article></article>
+    <Courses client:load/>
   </SectionLayout>
 
   <SectionLayout label='Continue learning' background='bg-surface'>

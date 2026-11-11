@@ -1,20 +1,25 @@
 import { type ReactNode } from 'react'
 import { ArrowUpRight } from 'lucide-react'
-import type { EnglishLevel } from '@shared/constants/english-level'
+import type { CoursesType } from '@shared/types/courses.type'
 
-type Props = {
-  level: EnglishLevel
-  href: string
-  title: string
-  description: string
-  statusText: string
+type Props = CoursesType & {
   children?: ReactNode
 }
 
-const CourseCard = ({ level, href = '', title, description, statusText, children }: Props) => {
+const CourseCard = ({
+  level,
+  url = '',
+  title,
+  description,
+  completedLessons,
+  totalLessons,
+  statusAction,
+  percentage,
+  children,
+}: Props) => {
   return (
     <a
-      href={href}
+      href={url}
       className='group flex flex-col gap-6 rounded-xl border border-divider bg-surface p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-md focus-visible:outline-2 focus-visible:outline-brand'
     >
       <section className='flex items-center gap-4'>
@@ -30,19 +35,24 @@ const CourseCard = ({ level, href = '', title, description, statusText, children
 
       <section className='space-y-2'>
         <div className='flex items-center justify-between text-sm'>
-          <span className='font-medium'>Your Progress</span>
-          <span className='font-semibold text-brand'>0%</span>
+          <span className='font-medium'>
+            {completedLessons} / {totalLessons} Lessons
+          </span>
+          <span className='font-semibold text-brand'>{percentage}%</span>
         </div>
 
         <div
           className='h-2 w-full overflow-hidden rounded-full bg-accent/10'
           role='progressbar'
           aria-label={`${title} progress`}
-          aria-valuenow={60}
+          aria-valuenow={percentage}
           aria-valuemin={0}
           aria-valuemax={100}
         >
-          <div className='h-full w-0 rounded-full bg-brand transition-all duration-500' />
+          <div
+            className={`h-full rounded-full bg-brand transition-all duration-500`}
+            style={{ width: `${percentage}%` }}
+          />
         </div>
       </section>
 
@@ -50,7 +60,7 @@ const CourseCard = ({ level, href = '', title, description, statusText, children
 
       <section className='flex items-center justify-between border-t border-divider pt-4'>
         <span className='text-sm font-sans capitalize text-muted-foreground group-hover:font-semibold tracking-wide'>
-          {statusText}
+          {statusAction}
         </span>
 
         <ArrowUpRight

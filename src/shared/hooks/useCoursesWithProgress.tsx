@@ -1,5 +1,5 @@
 import type { EnglishLevel } from '@shared/constants/english-level'
-import { INITIAL_PROGRESS, type InitialProgress } from '@shared/constants/initial-progress'
+import { INITIAL_PROGRESS, type InitialProgress } from '@config/courses/initial-progress'
 import { useState } from 'react'
 
 const useCoursesWithProgress = () => {
@@ -25,12 +25,12 @@ const useCoursesWithProgress = () => {
   const updateProgressLessons = (level: EnglishLevel) => {
     setCourseProgress((prev) => {
       const data = prev[level]
-      if (data.total_lessons === data.lessons_completed) return { ...prev }
+      if (data.total_lessons === data.completed_lessons) return { ...prev }
       return {
         ...prev,
         [level]: {
           ...data,
-          lessons_completed: data.lessons_completed + 1,
+          lessons_completed: data.completed_lessons + 1,
         },
       }
     })
