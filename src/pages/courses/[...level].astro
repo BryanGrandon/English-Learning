@@ -1,7 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import LevelCoursePage from '@features/courses/levelCoursePage.astro'
-import { COURSES } from '@config/courses'
+import { COURSES } from '@config/courses/courses'
+import LevelPage from '@features/courses/pages/level/LevelPage.astro'
 
 export async function getStaticPaths() {
   return COURSES.map(({ level: key, ...data }) => {
@@ -17,5 +18,6 @@ const course = Astro.props
 ---
 
 <Layout>
-  <LevelCoursePage level={course.key} />
+  <LevelPage level={course.key} />
+  <LevelCoursePage level={course.key} />   <!-- Delete -->
 </Layout>

@@ -2,17 +2,16 @@
 import HeroLayout from '@shared/components/layout/HeroLayout.astro'
 import Button from '@shared/components/ui/buttons/Button'
 import { ArrowRight } from 'lucide-react'
-import CoursesIllustration from './components/CoursesIllustration'
+import CoursesIllustration from './components/CoursesIllustration.tsx'
 import SectionLayout from '@shared/components/layout/SectionLayout.astro'
 import HeaderSection from '@shared/components/layout/HeaderSection.astro'
 import Footer from '@shared/components/layout/Footer.astro'
-import { HERO_COURSE } from './config/hero'
-import CourseCard from '@shared/components/ui/CourseCard'
-import Courses from './components/Courses'
+import { HERO_COURSE_PAGE } from './config/hero-courses-page'
+import Courses from './components/Courses.tsx'
 ---
 
 <main>
-  <HeroLayout {...HERO_COURSE}>
+  <HeroLayout {...HERO_COURSE_PAGE}>
     <div slot='buttons' class='flex items-center gap-2'>
       <Button text='Start Learning' rightIcon={ArrowRight} ariaLabel='Start learning' primary />
     </div>

@@ -20,7 +20,7 @@ const CoursesIllustration = () => {
       <div className='absolute left-1/2 top-1/2 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-3xl' />
 
       {/* Main title */}
-      <TitleOfTheIllustration title='COURSES' className='relative z-10 w-full' />
+      <TitleOfTheIllustration title='COURSES' className='relative w-full' />
 
       {/* Top decorative icons */}
       <BookOpen className='absolute left-[8%] top-[12%] size-8 -rotate-12 text-brand/70 sm:size-10' />

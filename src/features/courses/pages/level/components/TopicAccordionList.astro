@@ -1,0 +1,85 @@
+---
+import { cn } from '@shared/lib/cn'
+import { ChevronDown, ArrowUpRight } from 'lucide-react'
+import type { Topic } from '@shared/types/topics.type'
+
+interface Props {
+  topics: Topic[]
+}
+
+const { topics } = Astro.props
+---
+
+<article class='grid gap-2'>
+  {topics.map((topic) => (
+    <details
+      data-topic-accordion
+      class={cn(
+        'group overflow-hidden rounded-xl border border-divider/50',
+        'bg-background/80 shadow-sm transition-colors duration-200',
+        'hover:border-divider open:border-divider',
+      )}
+    >
+      <summary
+        class={cn(
+          'flex cursor-pointer list-none items-center justify-between gap-4 p-4',
+          'transition-colors duration-200',
+          'hover:bg-surface/60',
+          'focus-visible:outline-none focus-visible:ring-2',
+          'focus-visible:ring-brand focus-visible:ring-inset',
+          'group-open:bg-surface-elevated/50',
+          '[&::-webkit-details-marker]:hidden',
+        )}
+      >
+        <div class='flex min-w-0 items-center gap-4'>
+          <div class='grid size-11 shrink-0 place-items-center rounded-lg' , class='bg-surface text-muted'>
+            <topic.icon size={23} aria-hidden='true' />
+          </div>
+
+          <div class='min-w-0 space-y-1'>
+            <h3 class='font-display text-base font-semibold'>{topic.title}</h3>
+            <p class='text-sm text-muted'>{topic.description}</p>
+          </div>
+        </div>
+
+        <ChevronDown
+          size={20}
+          className='shrink-0 text-muted transition-transform duration-300 group-open:rotate-180'
+          aria-hidden='true'
+        />
+      </summary>
+
+      <ul class='space-y-2 border-t border-divider/40 p-3'>
+        {topic.lessons.map((lesson, index) => (
+          <li>
+            <a
+              href={lesson.href}
+              class={cn(
+                'group/lesson flex items-center justify-between gap-4 shadow',
+                'rounded-lg border border-transparent bg-surface/70 px-4 py-3',
+                'transition-all duration-200',
+                'hover:border-divider/60 hover:bg-surface-elevated',
+                'focus-visible:outline-none focus-visible:ring-2',
+                'focus-visible:ring-brand',
+              )}
+            >
+              <div class='min-w-0 space-y-1'>
+                <span class='text-xs font-medium text-muted'>Lesson {String(index + 1).padStart(2, '0')}</span>
+
+                <h4 class='font-medium text-foreground'>{lesson.title}</h4>
+
+                <p class='truncate text-sm text-muted'>{lesson.translation}</p>
+              </div>
+
+              <ArrowUpRight
+                size={20}
+                className='shrink-0 text-muted transition-all duration-200 group-hover/lesson:-translate-y-0.5 group-hover/lesson:translate-x-0.5 group-hover/lesson:text-brand'
+                aria-hidden='true'
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  ))}
+</article>

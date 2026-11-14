@@ -1,4 +1,4 @@
-import { LEVEL_TOPICS } from '@config/courses/index'
+import { LEVEL_TOPICS } from '@config/courses/levels/index'
 import type { EnglishLevel } from '../../shared/constants/english-level'
 
 interface CourseProgress {

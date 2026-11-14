@@ -1,5 +1,5 @@
 import { expect } from 'vitest'
-import { GRAMMAR_A1 } from '../config/grammar'
+import { GRAMMAR_A1 } from '../pages/courses/config/grammar'
 import type { GrammarLesson, grammarLevel } from '../types/grammar-lesson'
 
 type UseGrammar = {

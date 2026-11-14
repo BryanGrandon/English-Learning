@@ -4,7 +4,6 @@
 @import './tokens.css';
 @import './tailwind.css'; /* Tailwind */
 @import './themes.css'; /* Themes */
-@import './colors/index.css'; /* Colors */
 
 /* Mdx */
 @import './mdx/index.css';
@@ -64,9 +63,6 @@ h1 {
 h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
 }
-h3 {
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-}
 
 p {
   max-width: 65ch;
@@ -100,8 +96,6 @@ p {
   transform: translateX(-50%);
 }
 
-/*  ==== MDX ==== */
-
-/* h3 {
+.h3 {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
-} */
+}

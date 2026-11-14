@@ -1,11 +1,11 @@
 ---
 import { cn } from '@shared/lib/cn'
-import { COURSES_TOPIC } from '@config/courses'
+import { COURSES } from '@config/courses/courses'
 import { getTopicsWithLessons } from '@shared/lib/grammar'
 import type { LevelTopic } from '@shared/types/level-topics'
 import { type EnglishLevel } from '@shared/constants/english-level'
 import CourseSidebar from './components/CourseSidebar.astro'
-import TopicAccordionList from './components/TopicAccordionList.astro'
+
 import Header from './components/Header.astro'
 
 interface Props {
@@ -14,14 +14,14 @@ interface Props {
 const { level } = Astro.props
 
 const topics: LevelTopic[] = await getTopicsWithLessons(level)
-const course = COURSES_TOPIC.filter((el) => el.key === level)[0]
+const course = COURSES.filter((el) => el.level === level)[0]
 ---
 
 <article class={cn('level-content max-width')}>
   <CourseSidebar course={course} topics={topics} />
   <main class={cn('flex flex-col gap-4  p-4', 'level-content__main')}>
     <Header
-      level={course.key}
+      level={course.level}
       title={course.title}
       heading={course.heading}
       description={course.description}
@@ -37,7 +37,7 @@ const course = COURSES_TOPIC.filter((el) => el.key === level)[0]
       <!-- Search ?? -->
     </article>
 
-    <TopicAccordionList topics={topics} />
+    <!-- <TopicAccordionList topics={topics} /> -->
   </main>
 </article>
 
@@ -87,3 +87,32 @@ const course = COURSES_TOPIC.filter((el) => el.key === level)[0]
     })
   })
 </script>
+
+<!-- 
+features/
+└── courses/
+    ├── components/
+    │   ├── CourseCard.tsx
+    │   └── CourseProgress.tsx
+    │
+    ├── pages/
+    │   ├── courses/
+    │   │   └── CoursesPage.tsx
+    │   │
+    │   ├── level/
+    │   │   ├── LevelPage.tsx
+    │   │   └── components/
+    │   │       ├── LevelHeader.tsx
+    │   │       ├── LevelTopics.tsx
+    │   │       └── LevelProgress.tsx
+    │   │
+    │   └── lesson/
+    │       ├── LessonPage.tsx
+    │       └── components/
+    │           ├── LessonHeader.tsx
+    │           ├── LessonContent.tsx
+    │           └── LessonNavigation.tsx
+    │
+    ├── hooks/
+    ├── config/
+    └── types/ -->

@@ -2,7 +2,7 @@
 import { cn } from '@shared/lib/cn'
 import { ArrowLeft, Home } from 'lucide-react'
 
-import type { CourseInformation } from '@config/courses'
+import type { CourseInformation } from '@config/courses/levels'
 import type { LevelTopic } from '@shared/types/level-topics'
 import AsideAccordionList from './AsideAccordionList.astro'
 import { getLevelColorForStyle } from '@shared/utilities/level-colors.ts'
@@ -18,7 +18,8 @@ const url = Astro.url.pathname
 const selectedTopic = url.split('/').at(-2) as string
 const isLesson = selectedTopic !== 'courses'
 
-const { color, background } = getLevelColorForStyle({ level: course.key })
+const color = "#f00"
+const background = "#ccc"
 
 console.log(isLesson)
 

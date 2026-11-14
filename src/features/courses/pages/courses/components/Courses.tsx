@@ -1,4 +1,4 @@
-import { LEVEL_TOPICS } from '@config/courses'
+import { LEVEL_TOPICS } from '@config/courses/levels'
 import CourseCard from '@shared/components/ui/CourseCard'
 import useCourseCollection from '@shared/hooks/useCourseCollection'
 

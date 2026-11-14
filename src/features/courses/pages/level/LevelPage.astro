@@ -1,0 +1,69 @@
+---
+import HeroLayout from '@shared/components/layout/HeroLayout.astro'
+import { HERO_COURSES } from './config/hero-courses'
+import type { EnglishLevel } from '@shared/constants/english-level'
+import LevelIllustration from './components/LevelIllustration'
+import Button from '@shared/components/ui/buttons/Button'
+import { getTopicsWithLessons } from '@shared/lib/grammar'
+import type { Topic } from '@shared/types/topics.type'
+import { BookOpen, Clock } from 'lucide-react'
+import AsideAccordionList from '@features/courses/components/AsideAccordionList.astro'
+import TopicAccordionList from '@features/courses/pages/level/components/TopicAccordionList.astro'
+import YourProgress from './components/YourProgress'
+
+interface Props {
+  level: EnglishLevel
+}
+const { level } = Astro.props
+
+const hero = HERO_COURSES[level]
+
+const topics: Topic[] = await getTopicsWithLessons(level)
+---
+
+<main>
+  <HeroLayout {...hero}>
+    <LevelIllustration text={level} slot='illustration' />
+    <section slot='buttons' class='flex flex-col gap-4'>
+      <div class='flex gap-2 items-center'>
+        <span class='flex flex-col gap-1 px-4 py-2 bg-brand/10 rounded-lg border border-divider font-semibold'>
+          <span class='flex items-center gap-3'>
+            <BookOpen size={20} />
+            {topics.length} Topics
+          </span>
+          <span class='pl-3 text-muted text-xs'>Grammar and Vocabulary</span>
+        </span>
+
+        <span class='flex flex-col gap-1 px-4 py-2 bg-brand/10 rounded-lg border border-divider font-semibold'>
+          <span class='flex items-center gap-3'>
+            <Clock size={25} /> 3 ~ 5 Minutes
+          </span>
+          <span class='pl-3 text-muted text-xs'>per lessons</span>
+        </span>
+      </div>
+
+      <Button text='Continue / Start : Learning' primary />
+      <!-- Create Button for getURL if is Continue or Start -->
+    </section>
+  </HeroLayout>
+
+  <article class='max-width grid grid-cols-[1fr_3fr] gap-8 p-4 pt-8'>
+    <aside class='flex flex-col bg-surface py-8 gap-4 rounded-lg shadow'>
+      <h3 class='text-xl px-4'>Course Overview</h3>
+      <hr class='block p-0 border-0 h-px w-full bg-divider' />
+      <AsideAccordionList topics={topics} />
+    </aside>
+
+    <article class='grid gap-4'>
+      <YourProgress client:load level={level} />
+
+      <section class='p-4 bg-surface rounded-lg grid gap-4 shadow'>
+        <div>
+          <h2>{level} Topics</h2>
+          <p>Explore the topic below and complete each lesson at your own pace.</p>
+        </div>
+        <TopicAccordionList topics={topics} />
+      </section>
+    </article>
+  </article>
+</main>

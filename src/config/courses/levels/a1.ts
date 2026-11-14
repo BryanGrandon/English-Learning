@@ -16,9 +16,9 @@ import {
   Zap,
 } from 'lucide-react'
 
-import { type LevelTopicConfig } from '@shared/types/level-topics'
+import type { TopicConfig } from '@shared/types/topics.type'
 
-export const A1_LEVEL_TOPICS: LevelTopicConfig[] = [
+export const A1_LEVEL_TOPICS: TopicConfig[] = [
   {
     order: 1,
     key: 'nouns',
