@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import LevelCoursePage from '@features/courses/levelCoursePage.astro'
+
 import { COURSES } from '@config/courses/courses'
 import LevelPage from '@features/courses/pages/level/LevelPage.astro'
 
@@ -19,5 +19,4 @@ const course = Astro.props
 
 <Layout>
   <LevelPage level={course.key} />
-  <LevelCoursePage level={course.key} />   <!-- Delete -->
 </Layout>

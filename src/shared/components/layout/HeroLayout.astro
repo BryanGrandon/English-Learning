@@ -13,8 +13,8 @@ interface Props {
 const { label, title, highlight, description, labelIcon: LabelIcon } = Astro.props
 ---
 
-<header class={cn('relative w-full overflow-hidden border-b border-divider px-4 py-20 md:py-24 bg-surface')}>
-  <div class={cn('mx-auto grid min-h-100 max-w-7xl items-center gap-12 md:grid-cols-2', 'max-width')}>
+<header class={cn('relative w-full overflow-hidden border-b border-divider px-4 pt-20 pb-15  bg-surface')}>
+  <div class={cn('mx-auto grid min-h-80 max-w-7xl items-center gap-12 md:grid-cols-2', 'max-width')}>
     <section class='flex flex-col items-start gap-6'>
       <div class='inline-flex items-center gap-3 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm'>
         {LabelIcon && <LabelIcon size={20} />}

@@ -1,6 +1,6 @@
 ---
 import { cn } from '@shared/lib/cn'
-import { ChevronDown, MousePointerClick } from 'lucide-react'
+import { ChevronDown, ArrowUpRight } from 'lucide-react'
 import type { LevelTopic } from '@shared/types/level-topics'
 
 interface Props {
@@ -10,47 +10,94 @@ interface Props {
 const { topics } = Astro.props
 ---
 
-<article class='h-full'>
-  {
-    topics.map((topic) => (
-      <details
-        data-topic-accordion
+<article class='grid gap-2'>
+  {topics.map((topic) => (
+    <details
+      data-topic-accordion
+      class={cn(
+        'group mr-3 overflow-hidden rounded-r-xl ',
+        'border border-transparent border-l-2',
+        'transition-all duration-200',
+        'hover:border-divider/70 ',
+        'open:border-divider/70 open:border-l-brand',
+        'open:bg-background/40',
+      )}
+    >
+      <summary
         class={cn(
-          'bg-surface overflow-hidden',
-          'rounded-r-2xl border-2 border-l-0 border-transparent mr-4',
-          'hover:border-divider',
-          'group open:border-divider ',
+          'flex cursor-pointer list-none items-center justify-between gap-3',
+          'px-3 py-1 transition-colors duration-200',
+          'hover:bg-accent/10',
+          'focus-visible:outline-none focus-visible:ring-2',
+          'focus-visible:ring-inset focus-visible:ring-brand',
+          'group-open:bg-accent/10 ',
+          '[&::-webkit-details-marker]:hidden',
         )}
       >
-        <summary
-          class={cn(
-            'flex cursor-pointer list-none items-center justify-between py-2 pr-2 pl-4',
-            'group-open:bg-surface-elevated group-open:font-semibold',
-          )}
-        >
-          <div class='flex items-center gap-4'>
-            <topic.icon size={20} className='text-muted' />
-            <h3 class='text-base'>{topic.title}</h3>
+        <div class='flex min-w-0 items-center gap-3'>
+          <div
+            class={cn(
+              'grid size-9 shrink-0 place-items-center rounded-lg',
+              'bg-accent/10 text-muted transition-all duration-200',
+              'group-open:bg-brand/10 group-open:text-brand',
+            )}
+          >
+            <topic.icon size={19} aria-hidden='true' />
           </div>
-          <ChevronDown size={25} className='transition-transform duration-200 group-open:rotate-180' />
-        </summary>
-        <ul class='space-y-2 px-4 py-3'>
-          {topic.lessons.map((lesson) => (
-            <li>
-              <a
-                href={lesson.href}
-                class={cn(
-                  'flex items-center justify-between gap-4 rounded-lg px-4 py-2 bg-highlight-layout/80',
-                  'hover:bg-surface-elevated',
+
+          <h3
+            class={cn(
+              'truncate text-sm font-medium text-muted',
+              'transition-colors duration-200',
+              'group-open:font-semibold group-open:text-foreground',
+            )}
+          >
+            {topic.title}
+          </h3>
+        </div>
+
+        <ChevronDown
+          size={18}
+          className={cn(
+            'shrink-0 text-muted transition-transform duration-300',
+            'group-open:rotate-180 group-open:text-brand',
+          )}
+          aria-hidden='true'
+        />
+      </summary>
+
+      <ul class='ml-7 grid gap-1 border-l border-divider/70 pb-3 pt-1 pl-3'>
+        {topic.lessons.map((lesson) => (
+          <li>
+            <a
+              href={lesson.href}
+              class={cn(
+                'group/lesson flex min-w-0 items-center justify-between gap-2',
+                'rounded-lg px-3 py-2.5 text-sm text-muted',
+                'transition-all duration-200',
+                'hover:bg-surface-elevated hover:text-foreground',
+                'focus-visible:outline-none focus-visible:ring-2',
+                'focus-visible:ring-brand',
+              )}
+            >
+              <span class='min-w-0 truncate'>{lesson.title}</span>
+
+              <ArrowUpRight
+                size={16}
+                className={cn(
+                  'shrink-0 text-muted opacity-0',
+                  'transition-all duration-200',
+                  'group-hover/lesson:translate-x-0.5',
+                  'group-hover/lesson:-translate-y-0.5',
+                  'group-hover/lesson:text-brand',
+                  'group-hover/lesson:opacity-100',
                 )}
-              >
-                <h4 class='font-display text-sm'>{lesson.title}</h4>
-                <MousePointerClick size={20} />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </details>
-    ))
-  }
+                aria-hidden='true'
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  ))}
 </article>
