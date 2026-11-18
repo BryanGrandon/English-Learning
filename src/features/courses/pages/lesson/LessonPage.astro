@@ -1,0 +1,39 @@
+---
+import AsideCourses from '@features/courses/components/AsideCourses.astro'
+import type { EnglishLevel } from '@shared/constants/english-level'
+import { getTopicsWithLessons } from '@shared/lib/grammar'
+import type { Topic } from '@shared/types/topics.type'
+import './styles/mdx/index.css'
+
+interface Props {
+  level: EnglishLevel
+}
+
+const { level } = Astro.props
+const topics: Topic[] = await getTopicsWithLessons(level)
+---
+
+<main class='pt-18 p-8'>
+  <article class='max-width grid grid-cols-[1fr_3fr] gap-8'>
+    <AsideCourses level={level} topics={topics} />
+    <article class='test'>
+      <slot name='content' />
+    </article>
+  </article>
+</main>
+
+<script>
+  const accordions = document.querySelectorAll<HTMLDetailsElement>('[data-topic-accordion]')
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('toggle', () => {
+      if (!accordion.open) return
+
+      accordions.forEach((item) => {
+        if (item !== accordion) item.open = false
+      })
+
+      if (accordion.open) accordion.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
+  })
+</script>

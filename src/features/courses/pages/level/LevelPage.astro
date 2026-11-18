@@ -6,12 +6,13 @@ import LevelIllustration from './components/LevelIllustration'
 import Button from '@shared/components/ui/buttons/Button'
 import { getTopicsWithLessons } from '@shared/lib/grammar'
 import type { Topic } from '@shared/types/topics.type'
-import { BookOpen, Clock, Home } from 'lucide-react'
-import AsideAccordionList from '@features/courses/components/AsideAccordionList.astro'
+import { BookOpen, Clock } from 'lucide-react'
+
 import TopicAccordionList from '@features/courses/pages/level/components/TopicAccordionList.astro'
 import YourProgress from './components/YourProgress'
 import HeaderSection from '@shared/components/layout/HeaderSection.astro'
 import Footer from '@shared/components/layout/Footer.astro'
+import AsideCourses from '@features/courses/components/AsideCourses.astro'
 
 interface Props {
   level: EnglishLevel
@@ -21,7 +22,6 @@ const { level } = Astro.props
 const hero = HERO_COURSES[level]
 
 const topics: Topic[] = await getTopicsWithLessons(level)
-const isOverview = level === Astro.url.href.split('/').at(-1)?.toUpperCase()
 ---
 
 <main class='border-b border-divider'>
@@ -51,37 +51,8 @@ const isOverview = level === Astro.url.href.split('/').at(-1)?.toUpperCase()
   </HeroLayout>
 
   <article class='max-width grid grid-cols-[1fr_3fr] gap-8 p-4 pt-8'>
-    <aside class='flex flex-col gap-6 rounded-xl bg-surface py-6 shadow'>
-      <header class='flex items-center gap-4 px-5'>
-        <div class='flex size-13 shrink-0 items-center justify-center rounded-xl border border-brand/30 bg-brand/10'>
-          <hero.labelIcon size={30} className='text-brand' />
-        </div>
-
-        <div class='min-w-0 space-y-0.5'>
-          <p class='text-xs font-medium tracking-wider text-muted uppercase'>{hero.label}</p>
-          <h3 class='truncate text-lg font-semibold tracking-wide'>{hero.title}</h3>
-        </div>
-      </header>
-
-      <nav aria-label='Course navigation' class='flex flex-col gap-4'>
-        <a
-          href='/courses/a1'
-          aria-current={isOverview ? 'page' : undefined}
-          class:list={[
-            'mr-4 flex items-center gap-3 rounded-r-xl px-5 py-3 text-sm transition-colors tracking-wider ',
-            isOverview
-              ? 'bg-accent/10 shadow font-semibold'
-              : 'text-muted hover:bg-accent/10 hover:text-foreground border-transparent',
-          ]}
-        >
-          <Home size={20} />
-          Overview
-        </a>
-
-        <h3 class='px-5 text-xs font-semibold tracking-widest text-muted uppercase'>Topics</h3>
-
-        <AsideAccordionList topics={topics} />
-      </nav>
+    <aside class='grid'>
+      <AsideCourses level={level} topics={topics} />
     </aside>
 
     <article class='grid gap-4'>

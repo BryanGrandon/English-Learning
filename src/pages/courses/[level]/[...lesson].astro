@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import { render } from 'astro:content'
+import LessonPage from '@features/courses/pages/lesson/LessonPage.astro'
+import type { EnglishLevel } from '@shared/constants/english-level'
 
 export async function getStaticPaths() {
   const lessons = await getCollection('grammar')
@@ -13,24 +15,26 @@ export async function getStaticPaths() {
     },
     props: {
       lesson,
+      level: Array.isArray(lesson.data.level) ? lesson.data.level[0].toLowerCase() : lesson.data.level.toLowerCase(),
     },
   }))
 }
 
 const { lesson } = Astro.props
 const { Content } = await render(lesson)
-
-console.log(lesson)
+const level = lesson.data.level as EnglishLevel
 ---
 
 <Layout>
-  <main class='max-w-330 mx-auto test py-10'>
-    <header>home - level - topic - lesson</header>
-    <article class='grid grid-cols-[250px_1fr]'>
-      <aside>aside</aside>
-      <article>
-        <Content />
-      </article>
+  <LessonPage level={level}>
+    <article slot='content' class='grid gap-4 p-4'>
+      <section>
+        <h1>{lesson.data.title}</h1>
+        <p>{lesson.data.translation}</p>
+      </section>
+      <section class='mdx-content'>
+        <Content slot='content' />
+      </section>
     </article>
-  </main>
+  </LessonPage>
 </Layout>
