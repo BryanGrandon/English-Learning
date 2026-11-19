@@ -1,4 +1,39 @@
-@import './tokens.css';
 @import './text.css';
 @import './tables.css';
 @import './lists.css';
+
+/* ----- Content Spacing ----- */
+
+.mdx-content {
+  display: flow-root;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+
+  > h1:first-child,
+  > h2:first-child,
+  > h3:first-child {
+    margin-top: 0;
+  }
+
+  > p {
+    margin-top: 0.2rem;
+  }
+
+  > ul,
+  > ol {
+    margin-bottom: 1.25rem;
+  }
+
+  > table,
+  > .table-wrapper {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  > hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}

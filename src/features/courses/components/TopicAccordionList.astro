@@ -1,0 +1,93 @@
+---
+import { cn } from '@shared/lib/cn'
+import type { LevelTopic } from '@shared/types/level-topics'
+import { ChevronDown } from 'lucide-react'
+
+interface Props {
+  topics: LevelTopic[]
+  className?: string
+}
+const { topics, className } = Astro.props
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '')
+const currentTopic = topics.find((topic) =>
+  topic.lessons.some((lesson) => lesson.href.replace(/\/$/, '') === currentPath),
+)
+---
+
+<section class={cn('grid gap-2 pt-3', className)}>
+  {topics.map((topic) => {
+    const TopicIcon = topic.icon
+    const isActiveTopic = topic.key === currentTopic?.key
+
+    return (
+      <details data-topic-accordion class='group/topic border-b border-divider last:border-b-0' open={isActiveTopic}>
+        <summary
+          class={cn(
+            'flex cursor-pointer list-none items-center justify-between gap-3 p-3 text-sm font-semibold transition-colors',
+            '[&::-webkit-details-marker]:hidden tracking-wide',
+            isActiveTopic ? 'text-accent' : 'text-muted hover:text-accent',
+          )}
+        >
+          <span class='flex items-center gap-3'>
+            <TopicIcon size={19} strokeWidth={1.8} />
+            {topic.title}
+          </span>
+
+          <ChevronDown
+            size={18}
+            className='shrink-0 text-muted transition-transform duration-200 group-open/topic:rotate-180'
+          />
+        </summary>
+
+        <ul class='grid gap-1 pb-3 pl-2 pt-2'>
+          {topic.lessons.map((lesson) => {
+            const isActiveLesson = lesson.href.replace(/\/$/, '') === currentPath
+
+            return (
+              <li>
+                <a
+                  href={lesson.href}
+                  aria-current={isActiveLesson ? 'page' : undefined}
+                  class:list={[
+                    'flex items-start gap-3 rounded-lg p-3 transition-colors tracking-wide',
+                    isActiveLesson ? 'bg-brand/10 text-brand' : 'text-muted hover:bg-surface-elevated hover:text-text',
+                  ]}
+                >
+                  <span
+                    class:list={[
+                      'mt-1.5 size-2 shrink-0 rounded-full border',
+                      isActiveLesson ? 'border-brand bg-brand' : 'border-muted',
+                    ]}
+                  />
+
+                  <span class='grid min-w-0 gap-0.5'>
+                    <span class='text-sm font-semibold leading-snug'>{lesson.title}</span>
+
+                    <span class='text-xs text-muted'>{lesson.translation}</span>
+                  </span>
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </details>
+    )
+  })}
+</section>
+
+<script>
+  const accordions = document.querySelectorAll<HTMLDetailsElement>('[data-topic-accordion]')
+
+  accordions.forEach((accordion) => {
+    accordion.addEventListener('toggle', () => {
+      if (!accordion.open) return
+
+      accordions.forEach((item) => {
+        if (item !== accordion) item.open = false
+      })
+
+      if (accordion.open) accordion.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
+  })
+</script>

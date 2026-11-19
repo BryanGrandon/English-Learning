@@ -70,19 +70,3 @@ const topics: Topic[] = await getTopicsWithLessons(level)
 </main>
 
 <Footer />
-
-<script>
-  const accordions = document.querySelectorAll<HTMLDetailsElement>('[data-topic-accordion]')
-
-  accordions.forEach((accordion) => {
-    accordion.addEventListener('toggle', () => {
-      if (!accordion.open) return
-
-      accordions.forEach((item) => {
-        if (item !== accordion) item.open = false
-      })
-
-      if (accordion.open) accordion.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    })
-  })
-</script>

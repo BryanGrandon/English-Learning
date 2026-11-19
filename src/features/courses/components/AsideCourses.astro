@@ -2,8 +2,10 @@
 import type { EnglishLevel } from '@shared/constants/english-level'
 import type { LevelTopic } from '@shared/types/level-topics'
 import { HERO_COURSES } from '../pages/level/config/hero-courses'
-import AsideAccordionList from './AsideAccordionList.astro'
 import { Home } from 'lucide-react'
+import MobileLessonNavigation from './MobileLessonNavigation.astro'
+import { cn } from '@shared/lib/cn'
+import TopicAccordionList from './TopicAccordionList.astro'
 
 interface Props {
   level: EnglishLevel
@@ -16,7 +18,11 @@ const hero = HERO_COURSES[level]
 const isOverview = level === Astro.url.href.split('/').at(-1)?.toUpperCase()
 ---
 
-<aside class='flex flex-col gap-6 rounded-xl bg-surface z-10 py-6 shadow'>
+<div class='w-full md:hidden'>
+  <MobileLessonNavigation level={level} topics={topics} />
+</div>
+
+<aside class='md:flex flex-col gap-6 rounded-xl bg-surface py-6 shadow h-fit hidden'>
   <header class='flex items-center gap-4 px-5'>
     <div class='flex size-13 shrink-0 items-center justify-center rounded-xl border border-brand/30 bg-brand/10'>
       <hero.labelIcon size={30} className='text-brand' />
@@ -28,23 +34,21 @@ const isOverview = level === Astro.url.href.split('/').at(-1)?.toUpperCase()
     </div>
   </header>
 
-  <nav aria-label='Course navigation' class='flex flex-col gap-4'>
+  <nav aria-label='Course navigation' class='flex flex-col gap-6 px-5 py-2'>
     <a
       href='/courses/a1'
       aria-current={isOverview ? 'page' : undefined}
-      class:list={[
-        'mr-4 flex items-center gap-3 rounded-r-xl px-5 py-3 text-sm transition-colors tracking-wider ',
-        isOverview
-          ? 'bg-accent/10 shadow font-semibold'
-          : 'text-muted hover:bg-accent/10 hover:text-foreground border-transparent',
-      ]}
+      class={cn(
+        'flex items-center gap-3 rounded-xl py-3 px-4 text-sm transition-colors tracking-wider group font-semibold border shadow',
+        isOverview ? 'text-brand ' : 'hover:text-brand border-divider',
+      )}
     >
-      <Home size={20} />
+      <Home size={20} className={cn('group-hover:text-brand', isOverview ? 'text-brand' : 'text-text')} />
       Overview
     </a>
 
-    <h3 class='px-5 text-xs font-semibold tracking-widest text-muted uppercase'>Topics</h3>
+    <h3 class='text-xs font-semibold tracking-widest text-muted uppercase'>Topics</h3>
 
-    <AsideAccordionList topics={topics} />
+    <TopicAccordionList topics={topics} />
   </nav>
 </aside>

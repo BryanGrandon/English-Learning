@@ -1,0 +1,81 @@
+---
+import { BookOpen, ChevronDown } from 'lucide-react'
+import type { LevelTopic } from '@shared/types/level-topics'
+import TopicAccordionList from './TopicAccordionList.astro'
+
+interface Props {
+  level: string
+  topics: LevelTopic[]
+}
+
+const { level, topics } = Astro.props
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '')
+const currentTopic = topics.find((topic) =>
+  topic.lessons.some((lesson) => lesson.href.replace(/\/$/, '') === currentPath),
+)
+const currentLesson = currentTopic?.lessons.find((lesson) => lesson.href.replace(/\/$/, '') === currentPath)
+---
+
+<details class='group relative block w-full'>
+  <summary class='flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl border border-divider bg-surface p-4 transition-colors hover:border-brand [&::-webkit-details-marker]:hidden'>
+    <div class='min-w-0'>
+      <span class='mb-1 block text-xs font-semibold uppercase tracking-wider text-muted'>
+        {level.toUpperCase()} · Course navigation
+      </span>
+
+      <div class='flex items-center gap-2 text-sm font-semibold text-text'>
+        <BookOpen size={18} className='shrink-0 text-brand' />
+
+        <span class='truncate'>
+          {currentTopic?.title ?? 'Course contents'}
+          <span class='mx-1 font-normal text-muted'>/</span>
+          {currentLesson?.title ?? 'Select a lesson'}
+        </span>
+      </div>
+    </div>
+
+    <ChevronDown size={20} className='shrink-0 text-muted transition-transform duration-200 group-open:rotate-180' />
+  </summary>
+
+  <section class='aside-scrollbar absolute left-0 top-[calc(100%+0.5rem)] max-h-[min(65vh,30rem)] w-full overflow-y-auto overscroll-contain rounded-xl border border-divider bg-surface p-4 shadow-xl'>
+    <header class='flex items-center justify-between gap-3 border-b border-divider pb-4'>
+      <div>
+        <span class='text-xs font-semibold uppercase tracking-wider text-muted'>Your course</span>
+
+        <h3 class='font-bold text-xl'>{level.toUpperCase()} · Course contents</h3>
+      </div>
+
+      <span class='shrink-0 rounded-full bg-surface-elevated px-2.5 py-1 text-xs font-semibold text-muted'>
+        {topics.length} Topics
+      </span>
+    </header>
+
+    <TopicAccordionList topics={topics} />
+  </section>
+</details>
+
+<style>
+  .aside-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brand) var(--color-surface);
+  }
+
+  .aside-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .aside-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-surface);
+    border-radius: 999px;
+  }
+
+  .aside-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-brand);
+    border-radius: 999px;
+  }
+
+  .aside-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+</style>

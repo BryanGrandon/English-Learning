@@ -1,43 +1,54 @@
-/* ----- Unordered  Lists  ----- */
+/* ----- Unordered Lists ----- */
 
 .mdx-content ul {
+  padding-left: 1.5rem;
   color: var(--color-text-muted);
   list-style: disc;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 /* ----- Ordered Lists ----- */
 
 .mdx-content ol {
-  color: var(--mdx-text-secondary);
+  padding-left: 1.5rem;
+  color: var(--color-text-muted);
   list-style: decimal;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
-/* ----- Item List ----- */
+/* ----- List Items ----- */
 
 .mdx-content li {
-  margin-bottom: 0.2rem;
+  padding-left: 0.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
 
-  > ul {
-    margin-left: 1rem;
+  &::marker {
+    color: var(--mdx-highlight-primary);
   }
 
-  &::first-letter {
-    text-transform: capitalize;
+  > ul,
+  > ol {
+    margin-top: 0.5rem;
+    margin-left: 0.75rem;
   }
 
   &:has(h3, h4) {
-    list-style: none;
     color: var(--color-text);
+    list-style: none;
+    padding-left: 0;
   }
 
   h3,
   h4 {
-    margin: 0.5rem 0;
+    margin: 0.75rem 0 0.5rem;
+    color: var(--color-text);
     font-size: 1.1rem;
+    font-weight: 650;
+    line-height: 1.4;
   }
+
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
